@@ -1,39 +1,41 @@
+import Hero from '../components/Hero'
+// import Buttons from '../components/Buttons'
+
 export const meta = () => {
   return [
-    { title: "New Remix App" },
-    { name: "description", content: "Welcome to Remix!" },
-  ];
-};
+    { title: 'JonathanBytes' },
+    { name: 'description', content: 'Landing page of JonathanBytes personal website' }
+  ]
+}
 
-export default function Index() {
+export default function Index () {
+  // const button = document.querySelector(".button-three")
+  // const mobileNav = document.querySelector(".mobile-nav")
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
-      <h1>Welcome to Remix</h1>
-      <ul>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/blog"
-            rel="noreferrer"
-          >
-            15m Quickstart Blog Tutorial
-          </a>
-        </li>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/jokes"
-            rel="noreferrer"
-          >
-            Deep Dive Jokes App Tutorial
-          </a>
-        </li>
-        <li>
-          <a target="_blank" href="https://remix.run/docs" rel="noreferrer">
-            Remix Docs
-          </a>
-        </li>
-      </ul>
-    </div>
-  );
+    <>
+      {/* <Buttons button={ button } mobileNav={ mobileNav }/> */}
+      <Hero />
+      <main>
+        <div className='aux-text'>
+          <i><svg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
+            <g id='SVGRepo_bgCarrier' strokeWidth='0' />
+            <g id='SVGRepo_tracerCarrier' strokeLinecap='round' strokeLinejoin='round' />
+            <g id='SVGRepo_iconCarrier'>
+              <g id='Interface / Heart_01'>
+                <path
+                  id='Vector'
+                  d='M12 7.69431C10 2.99988 3 3.49988 3 9.49991C3 15.4999 12 20.5001 12 20.5001C12 20.5001 21 15.4999 21 9.49991C21 3.49988 14 2.99988 12 7.69431Z'
+                  stroke='#282828' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round'
+                />
+              </g>
+            </g>
+          </svg>
+          </i>
+          <h2>¡Saludos, cibernauta!</h2>
+          <p>Bienvenido a mi pequeño rincón en línea. Un pedacito de mi mundo en la web.</p>
+        </div>
+        <p />
+      </main>
+    </>
+  )
 }
