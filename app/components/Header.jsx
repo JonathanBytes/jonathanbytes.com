@@ -1,5 +1,19 @@
 import { Link } from "@remix-run/react";
 
+
+export function ButtonToggle() {
+  const button = document.querySelector(".button-three")
+  const mobileNav = document.querySelector(".mobile-nav")
+      const currentState = mobileNav.getAttribute("data-visible");
+      if (!currentState || currentState === "false") {
+        button.setAttribute("aria-expanded", "true");
+        mobileNav.setAttribute("data-visible", "true");
+      } else {
+          button.setAttribute("aria-expanded", "false");
+          mobileNav.setAttribute("data-visible", "false");
+      }
+}
+
 export default function Header() {
   return (
       <header className='header'>
@@ -46,7 +60,7 @@ export default function Header() {
           <a className='btn mobile' href='About:blank' target='_blank' rel='noreferrer'>Contáctame</a>
         </div>
 
-        <button className='button-three' aria-controls='primary-navigation' aria-expanded='false'>
+        <button className='button-three' onClick={ButtonToggle} aria-controls='primary-navigation' aria-expanded='false'>
           <svg stroke='var(--button-color)' fill='none' className='hamburger' viewBox='-10 -10 120 120' width='40'>
             <path
               className='line' strokeWidth='6' strokeLinecap='round' strokeLinejoin='round'
