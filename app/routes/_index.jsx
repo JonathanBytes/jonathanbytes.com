@@ -3,7 +3,7 @@ import Hero from '../components/Hero'
 
 export const meta = () => {
   return [
-    { title: 'JonathanBytes develop branch' },
+    { title: 'JonathanBytes' },
     { name: 'description', content: 'Landing page of JonathanBytes personal website' }
   ]
 }

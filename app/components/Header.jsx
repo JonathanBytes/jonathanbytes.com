@@ -1,6 +1,5 @@
 import { Link } from "@remix-run/react";
 
-
 export function ButtonToggle() {
   const button = document.querySelector(".button-three")
   const mobileNav = document.querySelector(".mobile-nav")
