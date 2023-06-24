@@ -12,7 +12,7 @@ import {
 } from '@remix-run/react'
 import Header from './components/Header'
 import Footer from './components/Footer'
-function loadCSS() { if(media!='all') media='all' }
+// function loadCSS() { if(media!='all')media='all' }
 
 
 export const links = () => [
@@ -39,7 +39,7 @@ export const links = () => [
       rel: 'stylesheet',
       href: 'https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Montserrat&family=Yeseva+One&display=swap',
       media: 'none',
-      onLoad: loadCSS
+      onLoad: function(){if(media!='all')media='all'}
     }
   ])
 ]
