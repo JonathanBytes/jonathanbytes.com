@@ -12,7 +12,7 @@ import {
 } from '@remix-run/react'
 import Header from './components/Header'
 import Footer from './components/Footer'
-function loadCSS() { if(media!='all')media='all' }
+function loadCSS() { if(media!='all') media='all' }
 
 
 export const links = () => [
