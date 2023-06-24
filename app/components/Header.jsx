@@ -42,16 +42,16 @@ export default function Header() {
         <div data-visible='false' className='mobile-nav' id='primary-navigation'>
           <nav>
             <ul className='nav mobile'>
-              <li><a className='first-a' href='About:blank' target='_blank' rel='noreferrer'>Proyectos</a></li>
-              <li><a className='first-a' href='about-me.html'>Sobre mí</a></li>
+              <li><Link className='first-a' to='projects' rel='noreferrer'>Proyectos</Link></li>
+              <li><Link className='first-a' to='about'>Sobre mí</Link></li>
               <li className='other'>Otros <svg className='dropmenu-svg' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'>
                 <path
                   d='M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z'
                 />
               </svg>
                 <ul className='dropdown'>
-                  <li><a className='first-a' href='#'>Blog</a></li>
-                  <li><a className='first-a' href='#'>Galería</a></li>
+                  <li><Link className='first-a' to='blog'>Blog</Link></li>
+                  <li><Link className='first-a' to='gallery'>Galería</Link></li>
                 </ul>
               </li>
             </ul>
