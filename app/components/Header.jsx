@@ -5,7 +5,7 @@ export default function Header() {
       <header className='header'>
       <Link className='home' to='/'>
           <img
-            width='180' height='auto' className='logo' decoding='async' loading='lazy' src='/assets/logo.png'
+            width='180' height='auto' className='logo' decoding='async' loading='lazy' src='/assets/logo.webp'
             alt='JonathanBytes personal logo'
           />
       </ Link>

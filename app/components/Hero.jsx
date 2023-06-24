@@ -10,10 +10,10 @@ export default function Hero(){
         <div className='person'>
           <div className='person-container'>
             <img
-              className='person-img' src='/assets/jonathan.png' alt='Jonathan Cardona portrait photo'
+              className='person-img' src='/assets/jonathan.webp' alt='Jonathan Cardona portrait photo'
               decoding='async'
             />
-            <img className='person-circle' src='/assets/texture2.png' alt='' decoding='async' />
+            <img className='person-circle' src='/assets/texture.webp' alt='' decoding='async' />
           </div>
         </div>
       </div>

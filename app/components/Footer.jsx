@@ -4,7 +4,7 @@ export default function Footer () {
         <div className='footer-logo'>
           <a href='/media/home.html'>
             <img
-              width='400' height='auto' src='/assets/logoW.png' alt='JonathanBytes personal logo White version'
+              width='400' height='auto' src='/assets/logoW.webp' alt='JonathanBytes personal logo White version'
               loading='lazy' decoding='async'
             />
           </a>
