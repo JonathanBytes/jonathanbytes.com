@@ -351,7 +351,7 @@ footer .footer-logo p {
   align-items: center;
   justify-content: center;
   color: var(--white);
-  background-image: url(/assets/interior.jpg);
+  background-image: url(/assets/interior.webp);
   object-fit: cover;
   background-size: cover;
   height: 60vh;
