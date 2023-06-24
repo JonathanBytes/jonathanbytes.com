@@ -27,7 +27,7 @@ export const links = () => [
     {
       rel: 'preconnect',
       href: 'https://fonts.googleapis.com',
-      crossorigin: '',
+      crossOrigin: '',
     },
     {
       rel: 'preconnect',
