@@ -36,11 +36,9 @@ export const links = () => [
     {
       rel: 'stylesheet',
       href: 'https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Montserrat&family=Yeseva+One&display=swap',
-      defer: true
     }
   ])
 ]
-
 
 export default function App () {
   return (
