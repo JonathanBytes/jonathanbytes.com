@@ -23,6 +23,20 @@ export const links = () => [
       rel: 'stylesheet',
       href: highlight
     },
+    // Google fonts link tags
+    {
+      rel: 'preconnect',
+      href: 'https://fonts.googleapis.com',
+      crossorigin: '',
+    },
+    {
+      rel: 'preconnect',
+      href: 'https://fonts.gstatic.com'
+    },
+    {
+      rel: 'stylesheet',
+      href: 'https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Montserrat&family=Yeseva+One&display=swap'
+    }
   ])
 ]
 
