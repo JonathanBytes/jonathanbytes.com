@@ -12,16 +12,6 @@ export const links = () => {
 }
 import BlogCard from '../components/BlogCard'
 
-export const links = () => {
-  return [
-    {
-      rel: 'stylesheet',
-      href: blogCardCSS
-    }
-  ]
-}
-import BlogCard from '../components/BlogCard'
-
 // Import all your posts from the app/routes/posts directory. Since these are
 // regular route modules, they will all be available for individual viewing
 // at /posts/a, for example.
