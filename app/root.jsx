@@ -1,6 +1,4 @@
 import { cssBundleHref } from '@remix-run/css-bundle'
-import globalCSS from '~/styles/global.css'
-import highlight from 'highlight.js/styles/base16/gruvbox-dark-soft.css'
 
 import {
   Links,
@@ -10,6 +8,9 @@ import {
   Scripts,
   ScrollRestoration
 } from '@remix-run/react'
+
+import globalCSS from '~/styles/global.css'
+import highlight from 'highlight.js/styles/base16/gruvbox-dark-soft.css'
 import Header from './components/Header'
 import Footer from './components/Footer'
 
