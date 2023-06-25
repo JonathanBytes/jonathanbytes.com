@@ -17,8 +17,18 @@
   display: flex;
   flex-direction: column;
   padding-left: 0;
-  gap: 1.5rem;
+  gap: 1.5rem; 
+  max-width: 1600px;
 
+}
+
+
+.blog-card-title {
+  font-size: 2rem;
+}
+
+.blog-card-p {
+  font-size: 0.5em;
 }
 
 @media only screen and (max-width: 815px) {

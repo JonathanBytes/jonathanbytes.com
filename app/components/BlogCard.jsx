@@ -4,9 +4,9 @@ function BlogCard( {slug, title, description, image, } ) {
   return (
     <li className='blog-card' key={slug}>
       <img className='card-img' src={ image.src } alt={ image.alt } />
-      <div>
+      <div className='blog-card-title'>
         <Link to={slug} > {title} </ Link>  
-        <p>{description}</p>
+        <p className='blog-card-p'>{description}</p>
       </div>
     </li>
   )
