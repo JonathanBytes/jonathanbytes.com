@@ -1,6 +1,5 @@
 import { json } from '@remix-run/node' // or cloudflare/deno
 import { Link, useLoaderData } from '@remix-run/react'
-import blogCardCSS from '~/styles/blogCard.css'
 
 export const links = () => {
   return [
