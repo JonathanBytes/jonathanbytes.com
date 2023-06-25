@@ -1,5 +1,16 @@
 import { json } from '@remix-run/node' // or cloudflare/deno
 import { Link, useLoaderData } from '@remix-run/react'
+import blogCardCSS from '~/styles/blogCard.css'
+
+export const links = () => {
+  return [
+    {
+      rel: 'stylesheet',
+      href: blogCardCSS
+    }
+  ]
+}
+import BlogCard from '../components/BlogCard'
 
 // Import all your posts from the app/routes/posts directory. Since these are
 // regular route modules, they will all be available for individual viewing
@@ -33,51 +44,23 @@ export async function loader () {
     postFromModule(postC)
   ])
 }
+const image = {
+  src : '/assets/cat.jpg',
+  alt : 'This is a cat portrait generated with AI'
+  
+}
 
 export default function BlogIndex () {
   const posts = useLoaderData()
 
   return (
-    <main>
+    <>
     <h1>Post del blog</h1>
-    <ul>
+    <ul className='blog-list'>
       {posts.map((post) => (
-        <li key={post.slug}>
-          <Link to={post.slug}>{post[0].title}</Link>
-          {post[1].description
-            ? (
-            <p>{post[1].description}</p>
-              )
-            : null}
-        </li>
+        <BlogCard image={image} slug={post.slug} title={post[0].title} description={post[1].description}/>
       ))}
     </ul>
-    </main>
+    </>
   )
 }
-
-// import { Link } from '@remix-run/react'
-
-// export const meta = () => {
-//   return [{ title: 'Blog posts' }]
-// }
-
-// export default function Posts () {
-//   return (
-//     <main>
-//       <h1>Posts</h1>
-//           <ul>
-//             <li>
-//               <Link to='/post/first'>Primer post</Link>
-//             </li>
-//             <li>
-//               <Link to='/post/second'>Second post</Link>
-//             </li>
-//             <li>
-//               <Link to='/post/third'>Third post</Link>
-//             </li>
-//           </ul>
-//     </main>
-//   )
-// }
-

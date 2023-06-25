@@ -1,0 +1,29 @@
+.card-img {
+  aspect-ratio: 21/9;
+  object-fit: cover;
+  width: 100%;
+  min-width: 10rem;
+
+}
+
+.blog-card {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  
+}
+
+.blog-list {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  gap: 1.5rem;
+
+}
+
+@media only screen and (max-width: 815px) {
+  .blog-card {
+  display: flex;
+  flex-wrap: wrap;
+  }
+}
