@@ -1,11 +1,18 @@
 ---
-    title: 'First post'
     meta: [
         {title: 'First post'},
-        {description: 'This is my first post of the blog for testing.'}
+        {description: 'This is my first post of the blog for testing. Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet.'},
+        {image: {
+          src : '/assets/cat.jpg',
+          alt : 'This is a cat portrait generated with AI'
+        }}
     ]
 ---
+import PostBanner from '../components/PostBanner'
+
+<PostBanner src={ attributes.meta[2].image.src } alt={ attributes.meta[2].image.alt }/>
 
 # {attributes.title}
+
 
 This is the very first post.

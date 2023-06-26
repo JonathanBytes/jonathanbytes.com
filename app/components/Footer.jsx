@@ -1,13 +1,15 @@
+import { Link } from "@remix-run/react"
+
 export default function Footer () {
   return (
       <footer>
         <div className='footer-logo'>
-          <a href='/media/home.html'>
+          <Link to='/'>
             <img
               width='400' height='auto' src='/assets/logoW.webp' alt='JonathanBytes personal logo White version'
               loading='lazy' decoding='async'
             />
-          </a>
+          </Link>
           <p>Apasionado por <strong>aprender y crear.</strong></p>
         </div>
         <div className='footer-links'>
