@@ -1,6 +1,7 @@
-function PostBanner ({ src, alt }) {
+function PostBanner ({ image }) {
+  console.log(image)
   return (
-    <img className='post-banner' src={ src } alt={ alt }/>
+    <img className='post-banner' src={ image.src } alt={ image.alt }/>
   )
 }
 

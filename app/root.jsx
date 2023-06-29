@@ -17,13 +17,13 @@ import Error404 from './components/Error404'
 
 export const links = () => [
   ...(cssBundleHref ? [{ rel: 'stylesheet', href: cssBundleHref }] : [
-    { 
-      rel: 'stylesheet', 
-      href: globalCSS
-    },
     {
       rel: 'stylesheet',
       href: highlight
+    },
+    { 
+      rel: 'stylesheet', 
+      href: globalCSS
     },
     // Google fonts link tags
     {

@@ -20,6 +20,10 @@
 }
 
 /* Bloques de código */
+pre {
+  width: 80%;
+  max-width: 50rem;
+}
 code {
   font-size: 1rem;
   border-radius: 8px;

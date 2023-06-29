@@ -19,6 +19,7 @@ import * as postA from './post.first.mdx'
 import * as postB from './post.second.mdx'
 import * as postC from './post.third.mdx'
 import * as postD from './post.fourth.mdx'
+import * as postE from './post.nuevopost.mdx'
 
 export const meta = () => {
   return [
@@ -43,7 +44,8 @@ export async function loader () {
     postFromModule(postA),
     postFromModule(postB),
     postFromModule(postC),
-    postFromModule(postD)
+    postFromModule(postD),
+    postFromModule(postE)
   ])
 }
 
