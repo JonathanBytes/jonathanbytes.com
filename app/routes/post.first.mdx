@@ -6,11 +6,14 @@
           src : '/assets/cat.jpg',
           alt : 'This is a cat portrait generated with AI'
         }}
+        {date: '27/06/2023'}
     ]
 ---
 import PostBanner from '../components/PostBanner'
 
 <PostBanner image={attributes.meta[2].image} />
+
+> {attributes.meta[3].date}
 
 # {attributes.title}
 

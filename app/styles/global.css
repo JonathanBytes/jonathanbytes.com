@@ -2,8 +2,12 @@
   --black: #282828;
   --blue: #6ba4a7;
   --white: #fff;
+  --white2: #FBF1C7;
+  --white3: #D5C4A1;
   --purple: #b16286;
   --purple-alt: #d3869b;
+  --gray: #928374;
+  --gray2: #7C6F64;
   --animation-duration: 0.15s
 }
 
@@ -21,13 +25,49 @@
 
 /* Bloques de código */
 pre {
-  width: 80%;
+  width: 85%;
   max-width: 50rem;
 }
+
+
 code {
   font-size: 1rem;
-  border-radius: 8px;
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  font-family: 'IBM Plex Mono';
+  color: var(--white2);
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.10) 1.95px 1.95px 2.6px;
+  background-color: var(--black);
+}
+
+p code {
+  font-size: 0.8rem;
+  padding: 0.2rem;
+}
+
+blockquote {
+  font-size: 1rem;
+  opacity: 0.3;
+  font-style: italic;
+  position: relative;
+  color: var(--black);
+  font-weight: 800;
+  display: block;
+}
+
+blockquote p{
+  margin: 0;
+  text-align: left;
+}
+
+blockquote::before {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -0.8rem;
+  content: '';
+  width: 1.5px;
+  height: 100%;
+  background-color: var(--black);
 }
 
 html,
