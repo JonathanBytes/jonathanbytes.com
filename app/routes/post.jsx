@@ -14,16 +14,15 @@ export const links = () => {
   ]
 }
 
-// const navigate = useNavigate()
-// const goBack = () => navigate(-1)
-
+const navigate = useNavigate()
+const goBack = () => navigate(-1)
 
 export default function App () {
   return (
       <main>
         <Outlet />
-        <Link to="/blog" className='btn' >Volver</Link>
-        {/* <a href="#" onClick={goBack}>Go Back</a> */}
+        <Link to="../" className='btn' >Volver</Link>
+        <a href="#" onClick={goBack} className='btn'>Go Back</a>
       </main>
   )
 }

@@ -7,10 +7,10 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@remix-run/css-bundle": "^1.17.1",
-    "@remix-run/node": "^1.17.1",
-    "@remix-run/react": "^1.17.1",
-    "@remix-run/vercel": "^1.17.1",
+    "@remix-run/css-bundle": "^1.18.0",
+    "@remix-run/node": "^1.18.0",
+    "@remix-run/react": "^1.18.0",
+    "@remix-run/vercel": "^1.18.0",
     "@vercel/node": "^2.10.3",
     "isbot": "^3.6.8",
     "react": "^18.2.0",
@@ -19,9 +19,9 @@
     "typed.js": "^2.0.16"
   },
   "devDependencies": {
-    "@remix-run/dev": "^1.17.1",
-    "@remix-run/eslint-config": "^1.17.1",
-    "@remix-run/serve": "^1.17.1",
+    "@remix-run/dev": "^1.18.0",
+    "@remix-run/eslint-config": "^1.18.0",
+    "@remix-run/serve": "^1.18.0",
     "@types/react": "^18.0.35",
     "@types/react-dom": "^18.0.11",
     "eslint": "^8.0.1",
