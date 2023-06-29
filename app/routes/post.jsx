@@ -1,6 +1,6 @@
 import {
   Link,
-  Outlet
+  Outlet,
 } from '@remix-run/react'
 import postBannerCSS from '../styles/postBanner.css'
 
