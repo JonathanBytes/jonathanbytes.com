@@ -3,14 +3,10 @@ import {
   Outlet
 } from '@remix-run/react'
 
-import highlight from 'highlight.js/styles/base16/gruvbox-dark-soft.css'
-
-export const links = () => {
+export const meta = () => {
   return [
-    {
-      rel: 'stylesheet',
-      href: highlight
-    },
+    { title: 'Blog' },
+    { name: 'description', content: 'Blog of JonathanBytes website' }
   ]
 }
 
@@ -18,7 +14,9 @@ export default function App () {
   return (
       <main>
         <Outlet />
+        <p/>
         <Link to="/" className='btn' >Volver</Link>
+        <p/>
       </main>
   )
 }

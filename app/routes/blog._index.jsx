@@ -1,5 +1,5 @@
 import { json } from '@remix-run/node' // or cloudflare/deno
-import { Link, useLoaderData } from '@remix-run/react'
+import { useLoaderData } from '@remix-run/react'
 import blogCardCSS from '~/styles/blogCard.css'
 
 export const links = () => {
@@ -18,6 +18,8 @@ import BlogCard from '../components/BlogCard'
 import * as postA from './post.first.mdx'
 import * as postB from './post.second.mdx'
 import * as postC from './post.third.mdx'
+import * as postD from './post.fourth.mdx'
+import * as postE from './post.nuevopost.mdx'
 
 export const meta = () => {
   return [
@@ -41,24 +43,28 @@ export async function loader () {
   return json([
     postFromModule(postA),
     postFromModule(postB),
-    postFromModule(postC)
+    postFromModule(postC),
+    postFromModule(postD),
+    postFromModule(postE)
   ])
-}
-const image = {
-  src : '/assets/cat.jpg',
-  alt : 'This is a cat portrait generated with AI'
-  
 }
 
 export default function BlogIndex () {
   const posts = useLoaderData()
+  console.log(posts)
 
   return (
     <>
     <h1>Post del blog</h1>
     <ul className='blog-list'>
+        {
+          posts.map((post) => {
+            console.log(post) 
+          })
+        }
+        
       {posts.map((post) => (
-        <BlogCard image={image} slug={post.slug} title={post[0].title} description={post[1].description}/>
+        <BlogCard image={post[2].image} slug={post.slug} title={post[0].title} description={post[1].description}/>
       ))}
     </ul>
     </>
