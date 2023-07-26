@@ -2,7 +2,7 @@
   "redirects": [
     {
       "source": "/install",
-      "destination": "https://github.com/JonathanBytes/dotfiles.git"
+      "destination": "https://github.com/JonathanBytes/dotfiles"
     }
   ]
 }
