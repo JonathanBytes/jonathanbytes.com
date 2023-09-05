@@ -1,0 +1,8 @@
+{
+  "redirects": [
+    {
+      "source": "/install",
+      "destination": "https://github.com/JonathanBytes/dotfiles"
+    }
+  ]
+}
