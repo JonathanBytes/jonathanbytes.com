@@ -3,6 +3,10 @@
     {
       "source": "/install",
       "destination": "https://github.com/JonathanBytes/dotfiles"
+    },
+    {
+      "source": "/ngrok",
+      "destination": "https://wombat-grown-walrus.ngrok-free.app"
     }
   ]
 }
