@@ -10,7 +10,7 @@
     },
     {
       "source": "/script",
-      "destination": "/script.sh"
+      "destination": "https://raw.githubusercontent.com/JonathanBytes/dotfiles/main/script.install"
     }
   ]
 }
