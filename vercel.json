@@ -1,15 +1,11 @@
 {
   "redirects": [
     {
-      "source": "/install",
-      "destination": "https://github.com/JonathanBytes/dotfiles"
-    },
-    {
       "source": "/ngrok",
       "destination": "https://wombat-grown-walrus.ngrok-free.app"
     },
     {
-      "source": "/script",
+      "source": "/install",
       "destination": "https://raw.githubusercontent.com/JonathanBytes/dotfiles/main/script.install"
     }
   ]
