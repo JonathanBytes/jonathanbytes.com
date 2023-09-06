@@ -7,6 +7,10 @@
     {
       "source": "/ngrok",
       "destination": "https://wombat-grown-walrus.ngrok-free.app"
+    },
+    {
+      "source": "/script",
+      "destination": "/script.sh"
     }
   ]
 }
