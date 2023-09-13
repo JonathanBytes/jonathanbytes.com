@@ -51,18 +51,10 @@ export async function loader() {
 
 export default function BlogIndex() {
   const posts = useLoaderData()
-  console.log(posts)
-
   return (
     <>
       <h1>Post del blog</h1>
       <ul className='blog-list'>
-        {
-          posts.map((post) => {
-            console.log(post)
-          })
-        }
-
         {posts.map((post) => (
           <BlogCard date={post[3].date} image={post[2].image} slug={post.slug} title={post[0].title} description={post[1].description} />
         ))}
