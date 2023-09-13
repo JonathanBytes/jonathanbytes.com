@@ -6,17 +6,13 @@ function BlogCard({ slug, title, description, image, date }) {
       <Link to={slug} className='card-img-a'>
         <img className='card-img' src={image.src} alt={image.alt} />
       </ Link>
-      <div className='blog-card-content'>
-        <div className='blog-card-tida'>
-          <Link className='blog-card-title' to={slug} >
-            {title}
-          </ Link>
+      <Link to={slug} >
+        <div className='blog-card-content'>
+          <div className='blog-card-title'>{title}</div>
           <p className='blog-card-date'>{date}</p>
-        </div>
-        <Link to={slug} >
           <p className='blog-card-p'>{description}</p>
-        </ Link>
-      </div>
+        </div>
+      </ Link>
     </li>
   )
 }

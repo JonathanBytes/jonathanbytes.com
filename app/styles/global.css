@@ -84,6 +84,10 @@ body {
   overflow-x: hidden;
 }
 
+p {
+  font-family: inherit;
+}
+
 /* Estilo para los títulos */
 h1,
 h2,
