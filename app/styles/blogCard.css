@@ -4,8 +4,7 @@
   width: 100%;
   min-width: 10rem;
   transition: filter var(--animation-duration) ease-in-out;
-}
-
+} 
 .card-img-a:hover {
   opacity: 1;
 }
@@ -38,8 +37,28 @@
 .blog-card-title {
   font-size: 1.5rem;
   font-weight: 600;
+  display: block;
 }
 
+.blog-card-date {
+  font-size: 1rem;
+  opacity: 0.6;
+  margin: 0;
+  margin-left: 0.8rem;
+  display: inline;
+  position: relative;
+}
+
+.blog-card-date::before {
+  display: block;
+  position: absolute;
+  top: 15%;
+  left: -0.8rem;
+  content: '';
+  width: 2px;
+  height: 70%;
+  background-color: var(--blue);
+}
 .blog-card-p {
   margin-top: 0.6rem;
   font-size: 1rem;
@@ -61,8 +80,5 @@
   .blog-card-content {
     padding-left: 0; 
     padding-top: 1rem;
-  }
-  .blog-card-p {
-    margin-top: 1rem;
   }
 }

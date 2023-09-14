@@ -28,14 +28,14 @@ export const meta = () => {
   ]
 }
 
-function postFromModule (mod) {
+function postFromModule(mod) {
   return {
     slug: mod.filename.replace(/\.mdx?$/, '').replace('.', '/').replace('post', '/post'),
     ...mod.attributes.meta
   }
 }
 
-export async function loader () {
+export async function loader() {
   // Return metadata about each of the posts for display on the index page.
   // Referencing the posts here instead of in the Index component down below
   // lets us avoid bundling the actual posts themselves in the bundle for the
@@ -49,24 +49,16 @@ export async function loader () {
   ])
 }
 
-export default function BlogIndex () {
+export default function BlogIndex() {
   const posts = useLoaderData()
-  console.log(posts)
-
   return (
     <>
-    <h1>Post del blog</h1>
-    <ul className='blog-list'>
-        {
-          posts.map((post) => {
-            console.log(post) 
-          })
-        }
-        
-      {posts.map((post) => (
-        <BlogCard image={post[2].image} slug={post.slug} title={post[0].title} description={post[1].description}/>
-      ))}
-    </ul>
+      <h1>Post del blog</h1>
+      <ul className='blog-list'>
+        {posts.map((post) => (
+          <BlogCard date={post[3].date} image={post[2].image} slug={post.slug} title={post[0].title} description={post[1].description} />
+        ))}
+      </ul>
     </>
   )
 }

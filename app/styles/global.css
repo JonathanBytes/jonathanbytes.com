@@ -29,7 +29,6 @@ pre {
   max-width: 50rem;
 }
 
-
 code {
   font-size: 1rem;
   font-family: 'IBM Plex Mono';
@@ -46,17 +45,18 @@ p code {
 
 blockquote {
   font-size: 1rem;
-  opacity: 0.3;
+  opacity: 0.5;
   font-style: italic;
   position: relative;
   color: var(--black);
   font-weight: 800;
   display: block;
+  margin-right: 85%;
 }
 
 blockquote p{
   margin: 0;
-  text-align: left;
+  text-align: right;
 }
 
 blockquote::before {
@@ -82,6 +82,10 @@ body {
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
+}
+
+p {
+  font-family: inherit;
 }
 
 /* Estilo para los títulos */

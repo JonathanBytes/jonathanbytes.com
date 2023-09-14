@@ -22,7 +22,7 @@ If you're used to using the `vercel dev` command provided by [Vercel CLI](https:
 
 ## TODO
 
-- [ ] Date for blogCards.
+- [x] Date for blogCards.
 - [ ] Tags for post categories.
 - [ ] Projects page
 - [ ] Gallery page
