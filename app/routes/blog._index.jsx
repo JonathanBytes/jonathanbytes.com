@@ -1,7 +1,9 @@
 import { json } from '@remix-run/node' // or cloudflare/deno
 import { useLoaderData } from '@remix-run/react'
-import blogCardCSS from '~/styles/blogCard.css'
+// import fs from 'fs'
+// import path from 'path'
 
+import blogCardCSS from '../styles/blogCard.css'
 export const links = () => {
   return [
     {
@@ -10,7 +12,20 @@ export const links = () => {
     }
   ]
 }
+
 import BlogCard from '../components/BlogCard'
+
+export const meta = () => {
+  return [
+    { title: 'Blog' },
+    { description: 'Landing page for JonathanBytes blog' }
+  ]
+}
+
+// const process = require('process')
+// const routesPath = path.join(process.cwd(), 'app', 'routes');
+// const postFiles = fs.readdirSync(routesPath).filter((file) => file.includes('post') && file.endsWith('.mdx'));
+// console.log(postFiles)
 
 // Import all your posts from the app/routes/posts directory. Since these are
 // regular route modules, they will all be available for individual viewing
@@ -21,20 +36,22 @@ import * as postC from './post.third.mdx'
 import * as postD from './post.fourth.mdx'
 import * as postE from './post.nuevopost.mdx'
 
-export const meta = () => {
-  return [
-    { title: 'Blog posts' },
-    { description: 'Landing page for JonathanBytes blog' }
-  ]
-}
-
 function postFromModule(mod) {
-  return {
+  const { meta, ...rest } = mod.attributes; // Extraemos 'meta' y el resto de propiedades
+  const post = {
     slug: mod.filename.replace(/\.mdx?$/, '').replace('.', '/').replace('post', '/post'),
-    ...mod.attributes.meta
-  }
-}
+    ...rest, // Incluimos las propiedades que no son 'meta'
+  };
 
+  // Ahora, recorremos el array 'meta' y añadimos cada propiedad al objeto 'post'
+  for (const item of meta) {
+    for (const key in item) {
+      post[key] = item[key];
+    }
+  }
+
+  return post;
+}
 export async function loader() {
   // Return metadata about each of the posts for display on the index page.
   // Referencing the posts here instead of in the Index component down below
@@ -55,8 +72,9 @@ export default function BlogIndex() {
     <>
       <h1>Post del blog</h1>
       <ul className='blog-list'>
+
         {posts.map((post) => (
-          <BlogCard date={post[3].date} image={post[2].image} slug={post.slug} title={post[0].title} description={post[1].description} />
+          <BlogCard slug={post.slug} image={post.image} date={post.date} title={post.title} description={post.description} />
         ))}
       </ul>
     </>

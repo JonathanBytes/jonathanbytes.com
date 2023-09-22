@@ -9,7 +9,8 @@ import {
   ScrollRestoration,
 } from '@remix-run/react'
 
-import globalCSS from '~/styles/global.css'
+import { Analytics } from "@vercel/analytics/react";
+import globalCSS from './styles/global.css'
 import highlight from 'highlight.js/styles/base16/gruvbox-dark-soft.css'
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -21,8 +22,8 @@ export const links = () => [
       rel: 'stylesheet',
       href: highlight
     },
-    { 
-      rel: 'stylesheet', 
+    {
+      rel: 'stylesheet',
       href: globalCSS
     },
     // Google fonts link tags
@@ -42,7 +43,7 @@ export const links = () => [
   ])
 ]
 
-export default function App () {
+export default function App() {
   return (
     <html lang='es'>
       <head>
@@ -58,6 +59,7 @@ export default function App () {
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
+        <Analytics />
       </body>
     </html>
   )
@@ -69,24 +71,25 @@ import {
 
 export function ErrorBoundary() {
   const error = useRouteError();
-  if (error.status === 404){
+  if (error.status === 404) {
     return (
-    <html lang='es'>
-      <head>
-        <meta charSet='utf-8' />
-        <meta name='viewport' content='width=device-width,initial-scale=1' />
-        <Meta />
-        <Links />
-      </head>
-      <body>
-        <Header />
-        <Error404 />
-        <Footer />
-        <ScrollRestoration />
-        <Scripts />
-        <LiveReload />
-      </body>
-    </html>
+      <html lang='es'>
+        <head>
+          <meta charSet='utf-8' />
+          <meta name='viewport' content='width=device-width,initial-scale=1' />
+          <Meta />
+          <Links />
+        </head>
+        <body>
+          <Header />
+          <Error404 />
+          <Footer />
+          <ScrollRestoration />
+          <Scripts />
+          <LiveReload />
+          <Analytics />
+        </body>
+      </html>
     )
   }
 
