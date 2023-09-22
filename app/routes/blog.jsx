@@ -3,20 +3,24 @@ import {
   Outlet
 } from '@remix-run/react'
 
-export const meta = () => {
+import postBannerCSS from '../styles/postBanner.css'
+
+export const links = () => {
   return [
-    { title: 'Blog' },
-    { name: 'description', content: 'Blog of JonathanBytes website' }
+    {
+      rel: 'stylesheet',
+      href: postBannerCSS
+    }
   ]
 }
 
-export default function App () {
+export default function App() {
   return (
-      <main>
-        <Outlet />
-        <p/>
-        <Link to="/" className='btn' >Volver</Link>
-        <p/>
-      </main>
+    <main>
+      <Outlet />
+      <p />
+      <Link to="/" className='btn' >Volver</Link>
+      <p />
+    </main>
   )
 }

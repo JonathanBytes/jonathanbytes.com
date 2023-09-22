@@ -1,21 +1,20 @@
 ---
-    meta: [
-        {title: 'First post'},
-        {description: 'This is my first post of the blog for testing. Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.'},
-        {image: {
+    meta: 
+        - image: {
           src : '/assets/cat.jpg',
           alt : 'This is a cat portrait generated with AI'
-        }},
-        {date: '27/06/2023'}
-    ]
+        }
+        - date: '27/06/2023'
+        - title: 'First post'
+        - description: 'This is my first post of the blog for testing. Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.'
 ---
 import PostBanner from '../components/PostBanner'
 
-<PostBanner image={attributes.meta[2].image} />
+<PostBanner image={attributes.meta[0].image} />
 
-> {attributes.meta[3].date}
+> {attributes.meta[1].date}
 
-# {attributes.meta[0].title}
+# {attributes.meta[2].title}
 
 
 This is the very first post.

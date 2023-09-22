@@ -1,5 +1,4 @@
 import Hero from '../components/Hero'
-// import Buttons from '../components/Buttons'
 
 export const meta = () => {
   return [
@@ -8,12 +7,9 @@ export const meta = () => {
   ]
 }
 
-export default function Index () {
-  // const button = document.querySelector(".button-three")
-  // const mobileNav = document.querySelector(".mobile-nav")
+export default function Index() {
   return (
     <>
-      {/* <Buttons button={ button } mobileNav={ mobileNav }/> */}
       <Hero />
       <main>
         <div className='aux-text'>
