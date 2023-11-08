@@ -4,6 +4,7 @@ node_modules
 .env
 .vercel
 .output
+pnpm-lock.yaml
 
 /build/
 /public/build
