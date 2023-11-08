@@ -1,7 +1,8 @@
 import { json } from '@remix-run/node' // or cloudflare/deno
 import { useLoaderData } from '@remix-run/react'
-// import fs from 'fs'
-// import path from 'path'
+import fs from 'fs'
+import path from 'path'
+import process from 'process'
 
 import blogCardCSS from '../styles/blogCard.css'
 export const links = () => {
@@ -22,10 +23,13 @@ export const meta = () => {
   ]
 }
 
-// const process = require('process')
-// const routesPath = path.join(process.cwd(), 'app', 'routes');
-// const postFiles = fs.readdirSync(routesPath).filter((file) => file.includes('post') && file.endsWith('.mdx'));
-// console.log(postFiles)
+const routesPath = path.join(process.cwd(), 'app', 'routes');
+const postFiles = fs.readdirSync(routesPath).filter((file) => file.includes('post') && file.endsWith('.mdx'));
+console.log(postFiles)
+const postsPath = postFiles.map((poster) => (
+
+  console.log(path.join(routesPath, poster))
+))
 
 // Import all your posts from the app/routes/posts directory. Since these are
 // regular route modules, they will all be available for individual viewing
