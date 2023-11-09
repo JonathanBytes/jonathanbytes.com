@@ -1,5 +1,4 @@
 import { Link } from '@remix-run/react'
-import Pill from '../components/Pill'
 
 export const meta = () => {
   return [
@@ -16,7 +15,6 @@ export default function App() {
         Esto es un place holder.
         En esta ruta planeo poner una colección de imágenes que me gusten y representen (abrán muchas de mi gatita :D)
       </p>
-      <Pill> Pill test </Pill>
       <p />
       <Link to="/" className='btn'>Volver</Link>
       <p />

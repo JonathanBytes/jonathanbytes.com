@@ -4,17 +4,7 @@ import fs from 'fs'
 import path from 'path'
 import process from 'process'
 
-import blogCardCSS from '../styles/blogCard.css'
-export const links = () => {
-  return [
-    {
-      rel: 'stylesheet',
-      href: blogCardCSS
-    }
-  ]
-}
-
-import BlogCard from '../components/BlogCard'
+import BlogCard from '../components/BlogCard/BlogCard'
 
 export const meta = () => {
   return [
@@ -78,7 +68,7 @@ export default function BlogIndex() {
       <ul className='blog-list'>
 
         {posts.map((post) => (
-          <BlogCard slug={post.slug} image={post.image} date={post.date} title={post.title} description={post.description} />
+          <BlogCard key={post.slug} slug={post.slug} image={post.image} date={post.date} title={post.title} description={post.description} />
         ))}
       </ul>
     </>
