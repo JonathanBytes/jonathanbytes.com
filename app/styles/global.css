@@ -1,11 +1,13 @@
 :root {
   --black: #282828;
   --blue: #6ba4a7;
+  --green: #b8bb26;
+  --altgreen: #98971a;
   --white: #fff;
   --white2: #FBF1C7;
   --white3: #D5C4A1;
-  --purple: #b16286;
-  --purple-alt: #d3869b;
+  --purple: #d3869b;
+  --altpurple: #b16286;
   --gray: #928374;
   --gray2: #7C6F64;
   --animation-duration: 0.15s

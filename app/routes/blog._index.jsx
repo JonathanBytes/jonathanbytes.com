@@ -65,10 +65,10 @@ export default function BlogIndex() {
   return (
     <>
       <h1>Post del blog</h1>
-      <ul className='blog-list'>
+      <ul className='blog-list' style={{paddingLeft: 0}}>
 
         {posts.map((post) => (
-          <BlogCard key={post.slug} slug={post.slug} image={post.image} date={post.date} title={post.title} description={post.description} />
+          <BlogCard key={post.slug} slug={post.slug} image={post.image} date={post.date} title={post.title} description={post.description} categories={post.categories}/>
         ))}
       </ul>
     </>
