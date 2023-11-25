@@ -1,76 +1,70 @@
-import { json } from '@remix-run/node' // or cloudflare/deno
-import { useLoaderData } from '@remix-run/react'
-import fs from 'fs'
-import path from 'path'
-import process from 'process'
+import { json } from '@remix-run/node';
+import { useLoaderData } from '@remix-run/react';
+import fs from 'fs/promises';
+import path from 'path';
 
-import BlogCard from '../components/BlogCard/BlogCard'
+import BlogCard from '../components/BlogCard/BlogCard';
 
 export const meta = () => {
   return [
     { title: 'Blog' },
-    { description: 'Landing page for JonathanBytes blog' }
-  ]
+    { description: 'Landing page for JonathanBytes blog' },
+  ];
+};
+
+async function getPostFiles() {
+  const routesPath = path.join(process.cwd(), 'app', 'routes');
+
+  try {
+    const files = await fs.readdir(routesPath);
+    return files.filter((file) => file.endsWith('.mdx'));
+  } catch (error) {
+    console.error('Error reading files from routes directory:', error);
+    return [];
+  }
 }
-
-const routesPath = path.join(process.cwd(), 'app', 'routes');
-const postFiles = fs.readdirSync(routesPath).filter((file) => file.includes('post') && file.endsWith('.mdx'));
-console.log(postFiles)
-const postsPath = postFiles.map((poster) => (
-
-  console.log(path.join(routesPath, poster))
-))
-
-// Import all your posts from the app/routes/posts directory. Since these are
-// regular route modules, they will all be available for individual viewing
-// at /posts/a, for example.
-import * as postA from './post.first.mdx'
-import * as postB from './post.second.mdx'
-import * as postC from './post.third.mdx'
-import * as postD from './post.fourth.mdx'
-import * as postE from './post.nuevopost.mdx'
 
 function postFromModule(mod) {
-  const { meta, ...rest } = mod.attributes; // Extraemos 'meta' y el resto de propiedades
-  const post = {
-    slug: mod.filename.replace(/\.mdx?$/, '').replace('.', '/').replace('post', '/post'),
-    ...rest, // Incluimos las propiedades que no son 'meta'
+  return {
+    slug: mod.filename.replace(/\.mdx?$/, ''),
+    ...mod.attributes,
   };
-
-  // Ahora, recorremos el array 'meta' y añadimos cada propiedad al objeto 'post'
-  for (const item of meta) {
-    for (const key in item) {
-      post[key] = item[key];
-    }
-  }
-
-  return post;
 }
+
+async function loadPosts() {
+  const postFiles = await getPostFiles();
+
+  const postPromises = postFiles.map(async (fileName) => {
+    const modulePath = `../app/routes/${fileName}`;
+    const mod = await import(modulePath);
+    return postFromModule(mod);
+  });
+
+  return Promise.all(postPromises);
+}
+
 export async function loader() {
-  // Return metadata about each of the posts for display on the index page.
-  // Referencing the posts here instead of in the Index component down below
-  // lets us avoid bundling the actual posts themselves in the bundle for the
-  // index page.
-  return json([
-    postFromModule(postA),
-    postFromModule(postB),
-    postFromModule(postC),
-    postFromModule(postD),
-    postFromModule(postE)
-  ])
+  return json(await loadPosts());
 }
 
 export default function BlogIndex() {
-  const posts = useLoaderData()
+  const posts = useLoaderData();
   return (
     <>
       <h1>Post del blog</h1>
-      <ul className='blog-list' style={{paddingLeft: 0}}>
-
+      <ul className="blog-list" style={{ paddingLeft: 0 }}>
         {posts.map((post) => (
-          <BlogCard key={post.slug} slug={post.slug} image={post.image} date={post.date} title={post.title} description={post.description} categories={post.categories}/>
+          <BlogCard
+            key={post.slug}
+            slug={post.slug}
+            image={post.image}
+            date={post.date}
+            title={post.title}
+            description={post.description}
+            categories={post.categories}
+          />
         ))}
       </ul>
     </>
-  )
+  );
 }
