@@ -1,6 +1,5 @@
 {
-  "name": "my-app",
-  "version": "0.1.0",
+  "name": "JonathanBytes.com",
   "private": true,
   "scripts": {
     "dev": "next dev",
