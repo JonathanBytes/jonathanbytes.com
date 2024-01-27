@@ -1,10 +1,10 @@
-import Hero from '../components/Hero'
+import Hero from './components/Hero'
 
-export const meta = () => {
-  return [
-    { title: 'JonathanBytes' },
-    { name: 'description', content: 'Landing page of JonathanBytes personal website' }
-  ]
+export const metadata = () => {
+  return {
+    title: 'JonathanBytes',
+    description: 'Landing page of JonathanBytes personal website'
+  }
 }
 
 export default function Index() {

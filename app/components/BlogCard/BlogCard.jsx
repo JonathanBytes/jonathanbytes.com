@@ -1,12 +1,12 @@
 import styles from './blogCard.module.css'
 import Pill from '../Pill/Pill'
-import { Link } from '@remix-run/react'
+import Link from "next/link";
 
 function BlogCard({ slug, title, description, image, date, categories }) {
-  const currentCategory = categories === undefined ? [''] : categories 
+  const currentCategory = categories === undefined ? [''] : categories
   return (
     <li className={styles.blogCard}>
-      <Link to={slug} className={styles.cardImgA}>
+      <Link href={slug} className={styles.cardImgA}>
         <img className={styles.cardImg} src={image.src} alt={image.alt} />
         <div className={styles.tagContainer}>
           {
@@ -16,7 +16,7 @@ function BlogCard({ slug, title, description, image, date, categories }) {
           }
         </div>
       </Link>
-      <Link to={slug}>
+      <Link href={slug}>
         <div className={styles.blogCardContent}>
           <div className={styles.blogCardTitle}>{title}</div>
           <p className={styles.blogCardDate}>{date}</p>
