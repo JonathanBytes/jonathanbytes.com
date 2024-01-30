@@ -19,7 +19,7 @@
   font-size: 1rem;
   padding: 0.675em 6em 0.675em 1em;
   background-color: var(--white);
-  border: 1px solid var(--gray);
+  border: 1px solid var(--white4);
   border-radius: 0.5rem;
   color: var(--black);
   cursor: pointer;
@@ -27,7 +27,7 @@
 }
 
 .select:hover {
-  border: 1px solid var(--black)
+  border: 1px solid var(--gray)
 }
 
 .customSelect::before,
@@ -42,7 +42,7 @@
 .customSelect::before {
   border-left: var(--size) solid transparent;
   border-right: var(--size) solid transparent;
-  border-bottom: var(--size) solid black;
+  border-bottom: var(--size) solid var(--black);
   top: 40%;
   z-index: 10;
 }
@@ -50,7 +50,7 @@
 .customSelect::after {
   border-left: var(--size) solid transparent;
   border-right: var(--size) solid transparent;
-  border-top: var(--size) solid black;
+  border-top: var(--size) solid var(--black);
   top: 55%;
   z-index: 10;
 }
