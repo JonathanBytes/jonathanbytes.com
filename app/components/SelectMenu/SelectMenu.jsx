@@ -1,24 +1,34 @@
 'use client'
 
-import styles from './selectMenu.module.css'
-import { useState } from 'react'
+import React from 'react';
+import styles from './selectMenu.module.css';
 
-export default function SelectMenu() {
-  const [selectedSort, setSelectedSort] = useState('hide');
+const SelectMenu = ({ onSortingChange }) => {
+  const handleSortingSelectChange = (event) => {
+    onSortingChange?.(event.target.value);
+  };
+
   return (
-    < div className={styles.container} >
+    <div className={styles.container}>
       <div className={styles.customSelect}>
         <select
-          value={selectedSort}
           className={styles.select}
-          onChange={e => setSelectedSort(e.target.value)}
-          defaultValue="hide"
+          defaultValue="placeholder"
+          onChange={handleSortingSelectChange}
         >
-          <option value="hide" disabled hidden className={styles.li}>Ordenar por</option>
-          <option value="recent" className={styles.li}>Más reciente primero</option>
-          <option value="old" className={styles.li}>Más antiguo primero</option>
+          <option value="placeholder" disabled hidden className={styles.li}>
+            Ordenar por
+          </option>
+          <option value="recent" className={styles.li}>
+            Más reciente primero
+          </option>
+          <option value="old" className={styles.li}>
+            Más antiguo primero
+          </option>
         </select>
       </div>
-    </ div >
-  )
-}
+    </div>
+  );
+};
+
+export default SelectMenu;
