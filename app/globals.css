@@ -96,10 +96,6 @@ body {
   overflow-x: hidden;
 }
 
-p {
-  font-family: inherit;
-}
-
 /* Estilo para los títulos */
 h1,
 h2,
@@ -108,6 +104,9 @@ h4,
 h5,
 h6 {
   text-align: center;
+}
+
+h1 {
   font-family: 'Yeseva One';
 }
 
@@ -641,7 +640,7 @@ footer .footer-logo p {
   .mobile-nav .btn {
     background: 0;
     color: var(--black);
-    font-family: Montserrat;
+    font-family: 'Montserrat';
     padding: 0 1rem;
     margin: 0;
   }
