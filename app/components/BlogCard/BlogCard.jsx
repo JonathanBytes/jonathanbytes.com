@@ -18,7 +18,7 @@ function BlogCard({ slug, title, description, image, date, categories }) {
       </Link>
       <Link href={slug}>
         <div className={styles.blogCardContent}>
-          <div className={styles.blogCardTitle}>{title}</div>
+          <h2 className={styles.blogCardTitle}>{title}</h2>
           <p className={styles.blogCardDate}>{date}</p>
           <p className={styles.blogCardP}>{description}</p>
         </div>

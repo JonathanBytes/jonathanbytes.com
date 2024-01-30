@@ -6,6 +6,7 @@
   transition: filter var(--animation-duration) ease-in-out;
   display: flex;
   flex-wrap: wrap;
+  border-radius: 0.25rem;
 } 
 .cardImgA{
   position: relative;
@@ -47,18 +48,22 @@
 }
 
 .blogCardTitle {
+  font-family: 'Montserrat';
   font-size: 1.5rem;
   font-weight: 600;
   display: block;
+  text-align: start;
 }
 
 .blogCardDate {
+  display: inline;
   font-size: 1rem;
   opacity: 0.6;
   margin: 0;
   margin-left: 0.8rem;
-  display: inline;
   position: relative;
+  vertical-align: middle;
+
 }
 
 .blogCardDate::before {
