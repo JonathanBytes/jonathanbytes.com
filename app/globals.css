@@ -49,7 +49,7 @@ pre {
 
 code {
   font-size: 1rem;
-  font-family: 'IBM Plex Mono';
+  font-family: var(--font-ibm);
   color: var(--white2);
   border-radius: 6px;
   box-shadow: rgba(0, 0, 0, 0.10) 1.95px 1.95px 2.6px;
@@ -280,7 +280,7 @@ ul .other {
 }
 
 button {
-  font-family: 'IBM Plex Mono';
+  font-family: var(--font-ibm);
   background: transparent;
   padding: 0;
   border: 0;
