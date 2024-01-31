@@ -52,6 +52,7 @@
   font-weight: 600;
   display: block;
   text-align: start;
+  margin-top: 0;
 }
 
 .blogCardDate {

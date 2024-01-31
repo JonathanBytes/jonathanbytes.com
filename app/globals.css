@@ -91,6 +91,7 @@ blockquote::before {
 html,
 body {
   color: var(--black);
+  background: var(--white);
 }
 
 /* Tipo de letra principal y margen lateral */

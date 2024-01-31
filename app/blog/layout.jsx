@@ -1,3 +1,4 @@
+
 export const metadata = () => {
   return {
     title: 'Blog',
