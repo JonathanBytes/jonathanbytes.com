@@ -1,5 +1,6 @@
 :root {
-  --black: #282828;
+  --altblack: #282828;
+  --black: #3c3836;
   --red: #fb4934;
   --altred: #cc241d;
   --yellow: #fabd2f;
@@ -12,7 +13,7 @@
   --altaqua: #689d6a;
   --orange: #fe8019;
   --altorange: #d65d0e;
-  --white: #fff;
+  --white: #fdfbf2;
   --white2: #f9f5d7;
   --white3: #FBF1C7;
   --white4: #D5C4A1;
@@ -626,7 +627,8 @@ footer .footer-logo p {
     align-items: center;
     flex-direction: column;
     inset: 0 0 0 40%;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: var(--white2);
+    opacity: 0.9;
     backdrop-filter: blur(0.5rem);
     height: 100%;
     width: 60%;

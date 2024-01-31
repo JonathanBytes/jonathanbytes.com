@@ -19,7 +19,7 @@
   font-size: 1rem;
   padding: 0.675em 6em 0.675em 1em;
   background-color: var(--white);
-  border: 1px solid var(--white4);
+  border: 1px solid var(--gray);
   border-radius: 0.5rem;
   color: var(--black);
   cursor: pointer;
