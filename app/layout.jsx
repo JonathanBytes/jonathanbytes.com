@@ -9,8 +9,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="es">
-      <body className={`${montserrat.className} ${yeseva.className} ${ibm.className}`}>
+    <html lang="es" className={`${montserrat.variable} ${ibm.variable} ${yeseva.variable}`}>
+      <body >
         <Header />
         {children}
         <Footer />
