@@ -2,6 +2,14 @@
 
 import React from 'react';
 import styles from './selectMenu.module.css';
+import {
+  sortedFilesByRecent,
+  sortedFilesByOld,
+  sortedFilesByTitleAscending,
+  sortedFilesByTitleDescending,
+  sortedFilesByCategoriesAscending,
+  sortedFilesByCategoriesDescending,
+} from '@/lib/sortPosts';
 
 const SelectMenu = ({ onSortingChange }) => {
   const handleSortingSelectChange = (event) => {
@@ -24,6 +32,18 @@ const SelectMenu = ({ onSortingChange }) => {
           </option>
           <option value="old" className={styles.li}>
             Más antiguo primero
+          </option>
+          <option value="titleAscending" className={styles.li}>
+            Título (A-Z)
+          </option>
+          <option value="titleDescending" className={styles.li}>
+            Título (Z-A)
+          </option>
+          <option value="categoriesAscending" className={styles.li}>
+            Categorías (A-Z)
+          </option>
+          <option value="categoriesDescending" className={styles.li}>
+            Categorías (Z-A)
           </option>
         </select>
       </div>

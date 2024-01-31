@@ -23,6 +23,12 @@
   --animation-duration: 0.15s
 }
 
+img {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+}
+
 .socialsSVG {
   fill: currentColor;
   color: var(--white2);

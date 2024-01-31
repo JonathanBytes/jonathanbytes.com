@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 export const metadata = () => {
   return {
     title: 'Blog',
@@ -7,8 +9,11 @@ export const metadata = () => {
 
 export default function BlogLayout({ children }) {
   return (
-    <main>
+    <>
       {children}
-    </ main >
+      <p />
+      < Link href="/blog" className='btn' > Volver</Link >
+      <p />
+    </>
   )
 }

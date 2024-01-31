@@ -1,17 +1,12 @@
 import styles from './pill.module.css'
 import Link from 'next/link'
+import categories from '@/data/categories.json'
 
 export default function Pill(props) {
-  const categories = {
-    Senderismo: "blue",
-    Code: "green",
-    Astronomía: "purple",
-    Música: "yellow"
-  }
   return (
-    <Link href={'/post/' + props.category}>
-      <div className={styles.container} style={{ backgroundColor: "var(--" + categories[props.category] + ")" }}>
-        {props.category}
+    <Link href={'/blog/category/' + props.category}>
+      <div className={styles.container} style={{ backgroundColor: "var(--" + (categories[props.category]?.color || 'default-color') + ")" }}>
+        {categories[props.category]?.display}
       </div >
     </ Link>
   )

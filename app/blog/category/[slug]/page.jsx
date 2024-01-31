@@ -1,8 +1,8 @@
 'use client'
 
-import Link from "next/link"
 import { useState } from 'react';
-import posts from '../../data/rawPosts.json'
+import rawPosts from '@/data/rawPosts.json'
+import categories from '@/data/categories.json'
 import {
   sortedFilesByRecent,
   sortedFilesByOld,
@@ -12,13 +12,21 @@ import {
   sortedFilesByCategoriesDescending,
   filteredPostsByCategory
 } from '@/lib/sortPosts';
-import SelectMenu from '../components/SelectMenu/SelectMenu';
-import BlogCard from '../components/BlogCard/BlogCard';
+import SelectMenu from '../../../components/SelectMenu/SelectMenu';
+import BlogCard from '../../../components/BlogCard/BlogCard';
 
-const Blog = () => {
+
+const Blog = ({ params }) => {
+  const selectedCategory = params.slug
+  let posts;
+
+  if (selectedCategory) {
+    posts = filteredPostsByCategory(selectedCategory, rawPosts);
+  } else {
+    posts = sortedPosts;
+  }
 
   const [sortBy, setSortBy] = useState('recent');
-
   const sortedPosts =
     sortBy === 'recent'
       ? sortedFilesByRecent(posts)
@@ -34,9 +42,10 @@ const Blog = () => {
                 ? sortedFilesByCategoriesDescending(posts)
                 : [];
 
+  console.log(categories[selectedCategory].display)
   return (
     <>
-      <h1>Posts del blog</h1>
+      <h1>Posts sobre {categories[selectedCategory].display.toLowerCase()}</h1>
       <SelectMenu onSortingChange={setSortBy} />
       <ul className="blog-list" style={{ paddingLeft: 0 }}>
         {sortedPosts.map((post) => (
@@ -51,9 +60,6 @@ const Blog = () => {
           />
         ))}
       </ul>
-      <p />
-      < Link href="/" className='btn' > Volver</Link >
-      <p />
     </>
   );
 };
