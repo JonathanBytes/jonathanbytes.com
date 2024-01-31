@@ -352,7 +352,7 @@ footer {
   flex-wrap: wrap;
   justify-content: space-between;
   background-color: var(--black);
-  padding: 4rem 5vw;
+  padding: 2rem;
   max-height: 305px;
 }
 
@@ -388,6 +388,8 @@ footer .footer-links ul li a:hover {
 footer .footer-logo img {
   width: 400px;
   transition: opacity var(--animation-duration) ease-in-out;
+  padding-top: 0.5rem;
+  padding-right: 1rem;
 }
 
 footer .footer-logo img:hover {
