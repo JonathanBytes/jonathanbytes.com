@@ -13,7 +13,7 @@ export default function Hero() {
             className='person-img' src='/assets/jonathan.webp' alt='Jonathan Cardona portrait photo'
             decoding='async'
           />
-          <img className='person-circle' src='/assets/texture.webp' alt='' decoding='async' />
+          <img className='person-circle' src='/assets/texture.webp' alt='Geometric texture' decoding='async' />
         </div>
       </div>
     </div>

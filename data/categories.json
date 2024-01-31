@@ -1,0 +1,22 @@
+{
+  "code": {
+    "color": "green",
+    "display": "Code"
+  },
+  "hiking": {
+    "color": "blue",
+    "display": "Senderismo"
+  },
+  "astronomy": {
+    "color": "purple",
+    "display": "Astronomía"
+  },
+  "music": {
+    "color": "yellow",
+    "display": "Música"
+  },
+  "math": {
+    "color": "orange",
+    "display": "Matemáticas"
+  }
+}
