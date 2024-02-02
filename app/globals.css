@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --altblack: #282828;
   --black: #3c3836;
@@ -45,7 +49,7 @@ img {
 /* Bloques de código */
 pre {
   width: 85%;
-  max-width: 50rem;
+  max-width: 45rem;
 }
 
 code {
@@ -89,6 +93,14 @@ blockquote::before {
   background-color: var(--black);
 }
 
+ol {
+  list-style-type: decimal;
+}
+
+ul {
+  list-style-type: square;
+}
+
 html,
 body {
   color: var(--black);
@@ -112,6 +124,7 @@ h4,
 h5,
 h6 {
   text-align: center;
+  margin: 1rem;
 }
 
 h1 {
@@ -145,9 +158,11 @@ main h1 {
 
 main p {
   font-size: 1.1rem;
+  width: 100%;
   max-width: 50rem;
   word-spacing: -1px;
   line-height: 1.7rem;
+  margin: 0.5rem;
 }
 
 main .aux-text p {
@@ -155,7 +170,6 @@ main .aux-text p {
   margin-bottom: inherit;
   word-spacing: inherit;
   line-height: inherit;
-
 }
 
 .home {
@@ -225,8 +239,10 @@ a:hover {
   position: absolute;
   padding-left: 0;
   left: 0;
+  top: 1.5rem;
   display: none;
   background: var(--white);
+  border-radius: 0.25rem;
 }
 
 .nav li:hover>.dropdown,
@@ -234,10 +250,8 @@ a:hover {
   visibility: visible;
   opacity: 1;
   display: block;
-  min-width: 150px;
+  min-width: 130px;
   text-align: left;
-  padding-top: 10px;
-  padding-bottom: 5px;
   box-shadow: 0px 3px 5px -1px #cccccc52;
 }
 
@@ -252,7 +266,10 @@ a:hover {
 }
 
 ul .other {
-  cursor: default
+  cursor: default;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.25rem;
 }
 
 .mobile li:hover>.dropdown,
@@ -481,8 +498,8 @@ footer .footer-logo p {
 }
 
 .aux-text i {
-  text-align: center;
-  display: block;
+  display: flex;
+  justify-content: center;
   width: 100%;
 }
 
@@ -492,6 +509,7 @@ footer .footer-logo p {
   background-clip: border-box;
   fill: #ffffff00;
   transition: fill var(--animation-duration) ease-in-out;
+  vertical-align: bottom;
 }
 
 .aux-text i svg:hover {

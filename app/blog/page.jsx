@@ -9,11 +9,11 @@ import {
   sortedFilesByTitleAscending,
   sortedFilesByTitleDescending,
   sortedFilesByCategoriesAscending,
-  sortedFilesByCategoriesDescending,
-  filteredPostsByCategory
+  sortedFilesByCategoriesDescending
 } from '@/lib/sortPosts';
 import SelectMenu from '../components/SelectMenu/SelectMenu';
 import BlogCard from '../components/BlogCard/BlogCard';
+import { Search } from "../components/Search/Search";
 
 const Blog = () => {
 
@@ -37,8 +37,11 @@ const Blog = () => {
   return (
     <>
       <h1>Posts del blog</h1>
-      <SelectMenu onSortingChange={setSortBy} />
-      <ul className="blog-list" style={{ paddingLeft: 0 }}>
+      <div className="w-full flex justify-end mb-4 gap-2 items-center" >
+        <Search />
+        <SelectMenu onSortingChange={setSortBy} />
+      </div>
+      <ul className="pl-0" >
         {sortedPosts.map((post) => (
           <BlogCard
             key={post.slug}

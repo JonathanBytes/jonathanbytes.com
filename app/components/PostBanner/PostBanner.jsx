@@ -1,7 +1,5 @@
-import styles from './postBanner.module.css'
-
 export default function PostBanner({ image }) {
   return (
-    <img className={styles.postBanner} src={image.src} alt={image.alt} />
+    <img className='aspect-[21/9] object-cover w-full' src={image.src} alt={image.alt} />
   )
 }

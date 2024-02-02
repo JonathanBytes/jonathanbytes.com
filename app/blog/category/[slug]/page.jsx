@@ -12,8 +12,9 @@ import {
   sortedFilesByCategoriesDescending,
   filteredPostsByCategory
 } from '@/lib/sortPosts';
-import SelectMenu from '../../../components/SelectMenu/SelectMenu';
-import BlogCard from '../../../components/BlogCard/BlogCard';
+import SelectMenu from '@/app/components/SelectMenu/SelectMenu';
+import { Search } from '@/app/components/Search/Search';
+import BlogCard from '@/app/components/BlogCard/BlogCard';
 
 
 const Blog = ({ params }) => {
@@ -46,7 +47,10 @@ const Blog = ({ params }) => {
   return (
     <>
       <h1>Posts sobre {categories[selectedCategory].display.toLowerCase()}</h1>
-      <SelectMenu onSortingChange={setSortBy} />
+      <div className="w-full flex justify-end mb-4 gap-2 items-center" >
+        <Search />
+        <SelectMenu onSortingChange={setSortBy} />
+      </div>
       <ul className="blog-list" style={{ paddingLeft: 0 }}>
         {sortedPosts.map((post) => (
           <BlogCard
