@@ -18,7 +18,7 @@ const Button = ({ children, onClick, isSelected }) => {
   return (
     <button
       type="button"
-      className={`text-background p-1 w-8 h-8 aspect-square ${isSelected ? 'bg-primary text-text dark:text-background' : 'hover:bg-primary hover:text-text dark:hover:text-background bg-text'} rounded-lg transition`}
+      className={`text-background p-1 w-8 h-8 aspect-square ${isSelected ? 'bg-primary text-text dark:text-background' : 'hover:bg-primary hover:text-text dark:hover:text-background bg-text'} rounded-lg transition-colors duration-300`}
       onClick={onClick}>
       {children}
     </button>
@@ -65,7 +65,7 @@ const SwitchTheme = ({ className }) => {
         <Button onClick={() => setTheme('dark')} isSelected={theme === 'dark'}><Moon /></Button>
         <Button onClick={() => setTheme('system')} isSelected={theme === 'system'}><System /></Button>
       </div>
-      <select onChange={handleColorSchemeChange} className="h-8 rounded-lg bg-text text-background py-1 px-2 hover:opacity-80 cursor-pointer">
+      <select onChange={handleColorSchemeChange} className="h-8 rounded-lg bg-text text-background py-1 px-2 hover:opacity-80 cursor-pointer transition-opacity">
         <option value="gruvbox">Gruvbox &#x1F39E;</option>
         <option value="catppuccin">Catpuccin &#x1F431;</option>
       </select>

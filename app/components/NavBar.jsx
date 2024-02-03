@@ -35,7 +35,7 @@ export const NavBar = ({ onClick, className }) => {
 
 export const MobileNav = ({ ButtonToggle }) => {
   return (
-    <div data-visible='false' id='primary-navigation' className='mobile-nav hidden transition duration-300 inset-y-0 right-0 fixed z-20 justify-start items-center flex-col opacity-95 bg-background px-4 h-full pt-16 gap-4 font-bold'>
+    <div data-visible='false' id='primary-navigation' className='mobile-nav hidden transition-transform duration-300 inset-y-0 right-0 fixed z-20 justify-start items-center flex-col opacity-95 bg-background px-4 h-full pt-16 gap-4 font-bold'>
       <NavBar onClick={ButtonToggle} className='mobile' />
       <a onClick={ButtonToggle} className='underlined relative' href='mailto:contacto@jonathanbytes.com' target='_blank' rel='noreferrer'>Contáctame</a>
       <div className="flex flex-col flex-grow justify-end items-center">

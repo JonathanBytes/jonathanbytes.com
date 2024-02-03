@@ -55,8 +55,8 @@
   --gray2: #7C6F64;
   --animation-duration: 300ms
 }
-  * { 
-    @apply transition duration-500
+  body { 
+    @apply transition-colors duration-500
   }
 
   img {
@@ -198,7 +198,7 @@
     background-color: var(--primary);
     visibility: hidden;
     transform: scaleX(0);
-    transition: all var(--animation-duration) cubic-bezier(.06, .78, .39, .93) 0s;
+    transition: transform var(--animation-duration) cubic-bezier(.06, .78, .39, .93) 0s;
     border-radius: 6px;
   }
   .underlined:hover::before {
@@ -326,7 +326,7 @@ button {
 
 .btn:hover {
   background-color: var(--primary);
-  color: var(--background);
+  color: var(--text);
 }
 
 /* Footer Styles */
