@@ -6,12 +6,16 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 - [ ] Dynamic metadata for blog posts
 - [ ] Migrate all CSS to Tailwind
-- [ ] [Dark mode](https://dev.to/whitep4nth3r/the-best-lightdark-mode-theme-toggle-in-javascript-368f) or [with tailwind](https://tailwindcss.com/docs/dark-mode)
+- [ ] [Dark mode](https://sreetamdas.com/blog/the-perfect-dark-mode)
+- [ ] Switch code blocks color scheme
 - [ ] Search bar for blog post (DocSearch x Algolia)
+    - [x] Implement it
+    - [ ] Style it
 - [ ] Blog post summary/index
 - [ ] Sitemap
 - [ ] Scroll app Arrow
 - [ ] Readtime for blog posts
+- [ ] Refine the profile pic
 - [ ] Projects page
 - [ ] Gallery page
 
