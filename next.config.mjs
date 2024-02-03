@@ -1,7 +1,8 @@
 import nextMdx from '@next/mdx'
-import rehypeHighlight from 'rehype-highlight'
 import remarkFrontmatter from 'remark-frontmatter'
 import remarkMdxFrontmatter from 'remark-mdx-frontmatter'
+import remarkCodeTitle from 'remark-code-title'
+import rehypePrism from 'rehype-prism-plus'
 
 const withMdx = nextMdx({
   extension: /\.mdx?$/,
@@ -9,9 +10,10 @@ const withMdx = nextMdx({
     jsx: true,
     remarkPlugins: [
       remarkFrontmatter,
-      remarkMdxFrontmatter
+      remarkMdxFrontmatter,
+      remarkCodeTitle,
     ],
-    rehypePlugins: [rehypeHighlight]
+    rehypePlugins: [rehypePrism]
   },
 })
 

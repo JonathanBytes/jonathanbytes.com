@@ -10,7 +10,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="es" className={`${montserrat.variable} ${ibm.variable} ${yeseva.variable}`}>
-      <body >
+      <body className='text-text bg-background font-sans m-0 flex flex-col items-center overflow-x-hidden'>
         <Header />
         {children}
         <Footer />

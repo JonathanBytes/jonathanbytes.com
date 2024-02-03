@@ -10,18 +10,18 @@
   /* other styles for aesthetics */
   width: 100%;
   font-size: 1rem;
-  padding: 0.675em 6em 0.675em 1em;
-  background-color: var(--white);
-  border: 1px solid var(--gray);
-  border-radius: 0.5rem;
-  color: var(--black);
+  padding: 0.5rem 2rem 0.5rem 0.5rem;
+  background-color: var(--primary);
+  /* border: 1px solid var(--secondary); */
+  border-radius: 8px;
+  color: var(--background);
   cursor: pointer;
   position: relative;
 }
 
-.select:hover {
-  border: 1px solid var(--gray)
-}
+/* .select:hover { */
+/*   border: 1px solid var(--primary) */
+/* } */
 
 .customSelect::before,
 .customSelect::after {
@@ -35,7 +35,7 @@
 .customSelect::before {
   border-left: var(--size) solid transparent;
   border-right: var(--size) solid transparent;
-  border-bottom: var(--size) solid var(--black);
+  border-bottom: var(--size) solid var(--background);
   top: 40%;
   z-index: 10;
 }
@@ -43,7 +43,7 @@
 .customSelect::after {
   border-left: var(--size) solid transparent;
   border-right: var(--size) solid transparent;
-  border-top: var(--size) solid var(--black);
+  border-top: var(--size) solid var(--background);
   top: 55%;
   z-index: 10;
 }

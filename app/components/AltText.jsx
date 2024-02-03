@@ -30,6 +30,6 @@ export default function AltText() {
   }, []);
 
   return (
-    <p ref={el} className='alt-text' />
+    <p ref={el} className='alt-text m-0' />
   );
 }

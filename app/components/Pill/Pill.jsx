@@ -6,7 +6,7 @@ export default function Pill(props) {
   return (
     <Link href={'/blog/category/' + props.category}>
       <div
-        className='text-[color:var(--altblack)] text-xs shadow-md ml-2 px-2.5 py-1 rounded-full'
+        className='dark:text-background text-text text-xs shadow-md ml-2 px-2.5 py-1 rounded-full'
         style={{ backgroundColor: "var(--" + (categoryColor || 'default-color') + ")" }}
       >
         {categories[props.category]?.display}
