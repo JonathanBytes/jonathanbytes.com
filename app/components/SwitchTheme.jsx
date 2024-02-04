@@ -59,13 +59,13 @@ const SwitchTheme = ({ className }) => {
   }, [theme, colorScheme])
 
   return (
-    <div className={`${className} flex flex-col gap-2 mb-2`}>
-      <div className="flex gap-1 justify-center">
+    <div className={`${className} flex flex-col gap-2 mb-2 w-fit justify-center items-center`}>
+      <div className="flex gap-1 justify-center w-fit">
         <Button onClick={() => setTheme('light')} isSelected={theme === 'light'}><Sun /></Button>
         <Button onClick={() => setTheme('dark')} isSelected={theme === 'dark'}><Moon /></Button>
         <Button onClick={() => setTheme('system')} isSelected={theme === 'system'}><System /></Button>
       </div>
-      <select onChange={handleColorSchemeChange} className="h-8 rounded-lg bg-text text-background py-1 px-2 hover:opacity-80 cursor-pointer transition-opacity">
+      <select onChange={handleColorSchemeChange} className="w-fit h-8 rounded-lg bg-text text-background py-1 px-2 hover:opacity-80 cursor-pointer transition-opacity">
         <option value="gruvbox">Gruvbox &#x1F39E;</option>
         <option value="catppuccin">Catpuccin &#x1F431;</option>
       </select>

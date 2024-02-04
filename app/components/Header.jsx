@@ -5,6 +5,7 @@ import Image from 'next/image';
 import SwitchTheme from "./SwitchTheme";
 import { NavBar, MobileNav } from "./NavBar";
 import { Hamburguer, MainLogo } from "./Icons";
+import SwitchThemeDesktop from "./SwitchThemeDesktop";
 
 function ButtonToggle() {
   const button = document.querySelector(".button-three")
@@ -26,8 +27,10 @@ export default function Header() {
         <MainLogo className='text-text text-xl' />
       </ Link>
       <NavBar />
-      <SwitchTheme className='hidden md:flex' />
-      <a className='btn desktop' href='mailto:contacto@jonathanbytes.com' target='_blank' rel='noreferrer'>Contáctame</a>
+      <div className="flex gap-2">
+        <SwitchThemeDesktop className='hidden md:flex relative' />
+        <a className='btn desktop h-8' href='mailto:contacto@jonathanbytes.com' target='_blank' rel='noreferrer'>Contáctame</a>
+      </div>
       <MobileNav />
       <button type='button' className='button-three' onClick={ButtonToggle} aria-controls='primary-navigation' aria-expanded='false'>
         < Hamburguer />

@@ -19,7 +19,10 @@ module.exports = {
         mono: ['var(--font-ibm)'],
         sans: ['var(--font-montserrat)'],
         serif: ['var(--font-yeseva-one)'],
-      }
+      },
+      screens: {
+        'md': '820px',
+      },
     },
   },
   plugins: [],

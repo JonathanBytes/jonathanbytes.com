@@ -9,9 +9,9 @@ const SelectMenu = ({ onSortingChange }) => {
   };
 
   return (
-    <div className={styles.customSelect}>
+    <div className={`${styles.customSelect} dark:before:border-b-background dark:after:border-t-background`}>
       <select
-        className={styles.select}
+        className={`${styles.select} py-2 pl-2 pr-8 rounded-lg bg-secondary text-text appearance-none w-full text-sm cursor-pointer relative dark:text-background`}
         defaultValue="placeholder"
         onChange={handleSortingSelectChange}
       >
