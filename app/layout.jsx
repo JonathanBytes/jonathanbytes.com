@@ -3,6 +3,7 @@ import { ibm, yeseva, montserrat } from './fonts'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import Script from 'next/script'
 
 export const metadata = {
   metadataBase: new URL('https://jonathanbytes.com'),
@@ -12,11 +13,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="es" className={`${montserrat.variable} ${ibm.variable} ${yeseva.variable}`}>
       <body className='text-text bg-background font-sans m-0 flex flex-col items-center overflow-x-hidden'>
-        <script
+        <Script
           dangerouslySetInnerHTML={{
             __html: blockingSetInitialColorMode,
           }}
-        ></script>
+        ></Script>
         <Header />
         {children}
         <Footer />
