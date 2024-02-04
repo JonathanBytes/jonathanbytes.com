@@ -25,9 +25,12 @@ const Button = ({ children, onClick, isSelected }) => {
   )
 }
 
-const SwitchTheme = ({ className, onClick, onMouseEnter, onMouseLeave }) => {
-  const [theme, setTheme] = useState('system')
-  const [colorScheme, setColorScheme] = useState('gruvbox')
+const SwitchTheme = ({ className, onClick }) => {
+  const [theme, setTheme] = useState(undefined)
+
+  const storedColorScheme = localStorage.getItem('colorScheme')
+  // const storedColorScheme = undefined
+  const [colorScheme, setColorScheme] = useState(storedColorScheme || 'gruvbox')
 
   const handleColorSchemeChange = (event) => {
     if (localStorage.theme === 'light') {
@@ -35,7 +38,7 @@ const SwitchTheme = ({ className, onClick, onMouseEnter, onMouseLeave }) => {
     } else {
       document.documentElement.classList.remove(colorSchemes[colorScheme].dark)
     }
-    setColorScheme(event.target.value);
+    setColorScheme(event.target.value)
   };
 
   useEffect(() => {
@@ -43,9 +46,12 @@ const SwitchTheme = ({ className, onClick, onMouseEnter, onMouseLeave }) => {
       localStorage.removeItem('theme')
     } else if (theme === 'dark') {
       localStorage.theme = 'dark'
-    } else {
+    } else if (theme === 'light') {
       localStorage.theme = 'light'
     }
+
+    if (colorScheme === 'gruvbox') { localStorage.colorScheme = 'gruvbox' }
+    else if (colorScheme === 'catppuccin') { localStorage.colorScheme = 'catppuccin' }
 
     if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
       document.documentElement.classList.remove(colorSchemes[colorScheme].light)
@@ -65,7 +71,7 @@ const SwitchTheme = ({ className, onClick, onMouseEnter, onMouseLeave }) => {
         <Button onClick={() => setTheme('dark')} isSelected={theme === 'dark'}><Moon /></Button>
         <Button onClick={() => setTheme('system')} isSelected={theme === 'system'}><System /></Button>
       </div>
-      <select onMouseEnter={onMouseEnter} onChange={handleColorSchemeChange} className="w-fit h-8 rounded-lg bg-text text-background py-1 px-2 hover:opacity-80 cursor-pointer transition-opacity">
+      <select defaultValue={colorScheme} onChange={handleColorSchemeChange} className="w-fit h-8 rounded-lg bg-text text-background py-1 px-2 hover:opacity-80 cursor-pointer transition-opacity">
         <option value="gruvbox">Gruvbox &#x1F39E;</option>
         <option value="catppuccin">Catpuccin &#x1F431;</option>
       </select>
