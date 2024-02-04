@@ -38,7 +38,6 @@ const SwitchTheme = ({ className, onClick }) => {
       }
     }
     setColorScheme(event.target.value);
-    console.log('Handle color')
   };
 
   useEffect(() => {
@@ -71,7 +70,6 @@ const SwitchTheme = ({ className, onClick }) => {
         document.documentElement.classList.add(colorSchemes[colorScheme].light)
       }
     }
-    console.log(theme, colorScheme)
   }, [theme, colorScheme])
 
   return (

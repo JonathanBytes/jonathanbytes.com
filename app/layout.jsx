@@ -76,4 +76,5 @@ function setInitialColorMode() {
 
   if (colorMode === 'dark') { root.classList.add('dark'); root.classList.add(colorSchemes[colorScheme].dark) }
   else if (colorMode === 'light') { root.classList.add('light'); root.classList.add(colorSchemes[colorScheme].light) }
+  alert('Blocking render')
 }
