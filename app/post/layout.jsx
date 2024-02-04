@@ -1,6 +1,6 @@
 import Link from "next/link"
 // import 'highlight.js/styles/base16/gruvbox-dark-soft.css'
-import '../prism-gruvbox-dark.css'
+import '../prism-classes.css'
 
 export default function PostLayout({ children }) {
   return (

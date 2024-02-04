@@ -1,3 +1,5 @@
+@import url('prism-highlight-colors.css');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -19,7 +21,7 @@
   }
   .catppuccin {
     --text: #4b4e68;
-    --background: #eff1f5;
+    --background: #EFF1F5;
     --primary: #dc8a78;
     --secondary: #f9e2af;
     --accent: #cba6f7;
@@ -67,11 +69,11 @@
 
   /* Bloques de código */
   pre {
-    @apply w-[85%] max-w-[45rem] shadow-sm rounded-lg mt-0
+    @apply w-[85%] max-w-[45rem] shadow-md rounded-lg mt-0
   }
   
   article div {
-    @apply mt-4 ml-[45%] sm:ml-[63%] px-2 py-1 bg-text font-mono text-sm text-background dark:text-background font-semibold rounded-t-lg ;
+    @apply mt-4 ml-[45%] sm:ml-[63%] px-2 py-1 bg-[var(--base00)] font-mono text-sm text-text font-semibold rounded-t-lg ;
   }
 
   /* code { */
@@ -206,6 +208,7 @@
     transform: scaleX(1);
   }
 }
+
 
 .nav li {
   display: inline-block;
