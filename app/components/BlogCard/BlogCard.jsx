@@ -1,6 +1,7 @@
 import styles from './blogCard.module.css'
 import Pill from '../Pill/Pill'
 import Link from "next/link";
+import Image from 'next/image';
 
 function BlogCard({ slug, title, description, image, date, categories }) {
   const currentCategory = categories === undefined ? [''] : categories
@@ -15,7 +16,7 @@ function BlogCard({ slug, title, description, image, date, categories }) {
           }
         </div>
         <Link href={slug} className={styles.cardImgA}>
-          <img className={styles.cardImg} src={image.src} alt={image.alt} />
+          <Image className={styles.cardImg} src={image.src} alt={image.alt} width='500' height='250' />
         </Link>
       </div>
       <Link href={slug}>

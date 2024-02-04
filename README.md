@@ -11,11 +11,13 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 - [ ] Search bar for blog post (DocSearch x Algolia)
     - [x] Implement it
     - [ ] Style it
+- [ ] Rework landing page, add latest post overview, latest project overview, etc...
 - [ ] Blog post summary/index
 - [ ] Sitemap
 - [ ] Scroll app Arrow
 - [ ] Readtime for blog posts
 - [ ] Refine the profile pic
+- [ ] Contact page
 - [ ] Projects page
 - [ ] Gallery page
 

@@ -1,4 +1,5 @@
 import AltText from '../components/AltText'
+import Image from 'next/image';
 
 export default function Hero() {
   return (
@@ -9,11 +10,16 @@ export default function Hero() {
       </div>
       <div className='person'>
         <div className='person-container'>
-          <img
+          <Image
             className='person-img' src='/assets/jonathan.webp' alt='Jonathan Cardona portrait photo'
+            width='350' height='500'
             decoding='async'
           />
-          <img className='person-circle' src='/assets/texture.webp' alt='Geometric texture' decoding='async' />
+          <Image
+            className='person-circle' src='/assets/texture.webp' alt='Geometric texture'
+            decoding='async'
+            width='350' height='500'
+          />
         </div>
       </div>
     </div>
