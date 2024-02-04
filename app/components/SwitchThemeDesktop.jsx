@@ -16,7 +16,7 @@ const SwitchThemeDesktop = ({ className }) => {
       <button className='rounded-lg w-8 h-8 p-1 text-accent' onClick={handleClick}>
         <MagicWand />
       </button>
-      <SwitchTheme className={`${showSwitchMenu} absolute top-10 -translate-x-[3.75rem] bg-text p-2 rounded-lg`} />
+      <SwitchTheme className={`${showSwitchMenu} absolute top-10 -translate-x-[3.75rem] bg-text p-2 rounded-lg z-10`} />
     </div>
   )
 }
