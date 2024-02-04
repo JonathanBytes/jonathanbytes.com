@@ -69,11 +69,11 @@
 
   /* Bloques de código */
   pre {
-    @apply w-[85%] max-w-[45rem] shadow-md rounded-lg mt-0
+    @apply m-auto w-[85%] max-w-[45rem] shadow-md rounded-lg mt-0
   }
   
   article div {
-    @apply mt-4 ml-[45%] sm:ml-[63%] px-2 py-1 bg-[var(--base00)] font-mono text-sm text-text font-semibold rounded-t-lg ;
+    @apply mt-4 w-fit ml-[62%] sm:ml-[70%] px-2 py-1 bg-[var(--base00)] font-mono text-sm text-text font-semibold rounded-t-lg ;
   }
 
   /* code { */
@@ -97,9 +97,10 @@
     position: relative;
     color: var(--text);
     font-weight: 700;
-    display: block;
+    display: inline-flex;
     margin-top: 0.5rem;
-    width: calc(100% - 15.5px);
+    margin-left: 0.5rem;
+    /* width: calc(100% - 15.5px); */
   }
 
   blockquote p{
@@ -160,7 +161,7 @@
   article {
     width: 100%;
   }
-  main, article {
+  main {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -185,6 +186,10 @@
 
   a:hover {
     opacity: 0.6;
+  }
+
+  #pill {
+    /* font-family: var(--font-montserrat); */
   }
 
 }

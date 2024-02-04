@@ -1,5 +1,5 @@
 import styles from './blogCard.module.css'
-import Pill from '../Pill/Pill'
+import { PillCategories } from '../Pill/Pill'
 import Link from "next/link";
 import Image from 'next/image';
 
@@ -9,11 +9,7 @@ function BlogCard({ slug, title, description, image, date, categories }) {
     <li className={styles.blogCard}>
       <div className='relative'>
         <div className='absolute bottom-2 z-10 flex justify-end'>
-          {
-            currentCategory.map((category) => (
-              <Pill key={category} className={styles.Pill} category={category} />
-            ))
-          }
+          <PillCategories categories={currentCategory} />
         </div>
         <Link href={slug} className={styles.cardImgA}>
           <Image className={styles.cardImg} src={image.src} alt={image.alt} width='500' height='250' />

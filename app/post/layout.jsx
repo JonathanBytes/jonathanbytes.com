@@ -1,6 +1,12 @@
 import Link from "next/link"
-// import 'highlight.js/styles/base16/gruvbox-dark-soft.css'
 import '../prism-classes.css'
+
+
+export const metadata = {
+  title: 'Post del blog',
+  description: 'Contenido de un post del Blog de Jonathan',
+  author: 'Jonathan Cardona Ramírez',
+}
 
 export default function PostLayout({ children }) {
   return (
