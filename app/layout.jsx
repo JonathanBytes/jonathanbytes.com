@@ -14,6 +14,7 @@ export default function RootLayout({ children }) {
     <html lang="es" className={`${montserrat.variable} ${ibm.variable} ${yeseva.variable}`}>
       <body className='text-text bg-background font-sans m-0 flex flex-col items-center overflow-x-hidden'>
         <Script
+          id='blockingScript'
           dangerouslySetInnerHTML={{
             __html: blockingSetInitialColorMode,
           }}
