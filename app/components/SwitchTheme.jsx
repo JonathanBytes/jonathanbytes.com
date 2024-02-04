@@ -27,19 +27,26 @@ const Button = ({ children, onClick, isSelected }) => {
 
 const SwitchTheme = ({ className, onClick }) => {
   const [theme, setTheme] = useState(undefined)
-
-  const storedColorScheme = localStorage.getItem('colorScheme')
-  // const storedColorScheme = undefined
-  const [colorScheme, setColorScheme] = useState(storedColorScheme || 'gruvbox')
+  const [colorScheme, setColorScheme] = useState(undefined)
 
   const handleColorSchemeChange = (event) => {
-    if (localStorage.theme === 'light') {
-      document.documentElement.classList.remove(colorSchemes[colorScheme].light)
-    } else {
-      document.documentElement.classList.remove(colorSchemes[colorScheme].dark)
+    if (colorSchemes[colorScheme]) {
+      if (localStorage.theme === 'light') {
+        document.documentElement.classList.remove(colorSchemes[colorScheme].light)
+      } else {
+        document.documentElement.classList.remove(colorSchemes[colorScheme].dark)
+      }
     }
-    setColorScheme(event.target.value)
+    setColorScheme(event.target.value);
+    console.log('Handle color')
   };
+
+  useEffect(() => {
+    const storedTheme = localStorage.getItem('theme')
+    const storedColorScheme = localStorage.getItem('colorScheme')
+    setTheme(storedTheme || 'system')
+    setColorScheme(storedColorScheme || 'gruvbox')
+  }, [])
 
   useEffect(() => {
     if (theme === 'system') {
@@ -53,15 +60,18 @@ const SwitchTheme = ({ className, onClick }) => {
     if (colorScheme === 'gruvbox') { localStorage.colorScheme = 'gruvbox' }
     else if (colorScheme === 'catppuccin') { localStorage.colorScheme = 'catppuccin' }
 
-    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      document.documentElement.classList.remove(colorSchemes[colorScheme].light)
-      document.documentElement.classList.add(colorSchemes[colorScheme].dark)
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-      document.documentElement.classList.remove(colorSchemes[colorScheme].dark)
-      document.documentElement.classList.add(colorSchemes[colorScheme].light)
+    if (colorSchemes[colorScheme]) {
+      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.remove(colorSchemes[colorScheme].light)
+        document.documentElement.classList.add(colorSchemes[colorScheme].dark)
+        document.documentElement.classList.add('dark')
+      } else {
+        document.documentElement.classList.remove('dark')
+        document.documentElement.classList.remove(colorSchemes[colorScheme].dark)
+        document.documentElement.classList.add(colorSchemes[colorScheme].light)
+      }
     }
+    console.log(theme, colorScheme)
   }, [theme, colorScheme])
 
   return (
@@ -71,7 +81,7 @@ const SwitchTheme = ({ className, onClick }) => {
         <Button onClick={() => setTheme('dark')} isSelected={theme === 'dark'}><Moon /></Button>
         <Button onClick={() => setTheme('system')} isSelected={theme === 'system'}><System /></Button>
       </div>
-      <select defaultValue={colorScheme} onChange={handleColorSchemeChange} className="w-fit h-8 rounded-lg bg-text text-background py-1 px-2 hover:opacity-80 cursor-pointer transition-opacity">
+      <select defaultValue={colorScheme} value={colorScheme} onChange={handleColorSchemeChange} className="w-fit h-8 rounded-lg bg-text text-background py-1 px-2 hover:opacity-80 cursor-pointer transition-opacity">
         <option value="gruvbox">Gruvbox &#x1F39E;</option>
         <option value="catppuccin">Catpuccin &#x1F431;</option>
       </select>
