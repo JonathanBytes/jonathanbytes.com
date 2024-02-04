@@ -4,19 +4,17 @@ import { Pallette } from "./Icons";
 
 const SwitchThemeDesktop = ({ className }) => {
   const [showSwitchMenu, setShowSwitchMenu] = useState('hidden')
-  const handleMouseEnter = () => {
-    setShowSwitchMenu('')
-  }
-  const handleMouseLeave = () => {
-    setShowSwitchMenu('hidden')
+  const handleClick = () => {
+    if (showSwitchMenu === '') { setShowSwitchMenu('hidden') }
+    else { setShowSwitchMenu('') }
   }
   return (
-    <div className={className} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-      <button className='rounded-lg w-8 h-8 p-1 text-accent' >
+    <div className={className} >
+      <button onClick={handleClick} className='rounded-lg w-6 h-6 text-accent transform active:scale-75 transition-transform' >
         <Pallette />
       </button>
-      <div className="h-2 w-8 bg-transparent absolute top-8"></div>
-      <SwitchTheme onMouseEnter={handleMouseEnter} className={`${showSwitchMenu} absolute top-10 -translate-x-[3.75rem] bg-text p-2 rounded-lg z-10`} />
+      <div className="h-2 w-8 absolute top-8"></div>
+      <SwitchTheme onClick={handleClick} className={`${showSwitchMenu} absolute top-10 -translate-x-[3.75rem] bg-text p-2 rounded-lg z-10`} />
     </div>
   )
 }

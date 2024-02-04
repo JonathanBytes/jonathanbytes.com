@@ -27,8 +27,8 @@ export default function Header() {
         <MainLogo className='text-text text-xl' />
       </ Link>
       <NavBar />
-      <div className="flex gap-2">
-        <SwitchThemeDesktop className='hidden md:flex relative' />
+      <div className="flex gap-2 items-center">
+        <SwitchThemeDesktop className='hidden md:flex relative ' />
         <a className='btn desktop h-8' href='mailto:contacto@jonathanbytes.com' target='_blank' rel='noreferrer'>Contáctame</a>
       </div>
       <MobileNav />
