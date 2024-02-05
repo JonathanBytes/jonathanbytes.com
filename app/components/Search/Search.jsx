@@ -6,8 +6,6 @@ import Head from 'next/head';
 export const SEARCH_API_KEY = process.env.NEXT_PUBLIC_ALGOLIA_KEY;
 export const SEARCH_APP_ID = process.env.NEXT_PUBLIC_ALGOLIA_APP_ID;
 
-console.log(SEARCH_APP_ID, SEARCH_API_KEY)
-
 export function Search() {
   if (!SEARCH_APP_ID || !SEARCH_API_KEY) {
     return null;
