@@ -19,7 +19,9 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
     - [x] Implement it
     - [ ] Style it
 - [ ] Rework landing page, add latest post overview, latest project overview, etc...
-- [ ] Blog post summary/index
+- [ ] Posts table of contents (TOC)
+    - [x] Implement it
+    - [ ] Style it
 - [ ] Sitemap
 - [ ] Scroll app Arrow
 - [ ] Readtime for blog posts
