@@ -4,6 +4,9 @@
 @tailwind components;
 @tailwind utilities;
 
+  .hash-link::before {
+      content: '# ';
+  }
 @layer base {
   .gruvbox {
     --text: #3c3836;
@@ -119,12 +122,12 @@
     border-radius: 5px;
   }
 
-  ol {
-    @apply list-decimal
-  }
+  /* ol { */
+  /*   @apply list-decimal list-inside */
+  /* } */
 
   ul {
-    @apply list-disc
+    @apply list-none [&_ul]:pl-6 pb-1 opacity-90
   }
 
   /* Estilo para los títulos */
@@ -186,10 +189,6 @@
 
   a:hover {
     opacity: 0.6;
-  }
-
-  #pill {
-    /* font-family: var(--font-montserrat); */
   }
 
 }
