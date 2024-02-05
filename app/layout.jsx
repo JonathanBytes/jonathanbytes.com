@@ -14,11 +14,13 @@ export default function RootLayout({ children }) {
     <html lang="es" className={`${montserrat.variable} ${ibm.variable} ${yeseva.variable}`}>
       <body className='text-text bg-background font-sans m-0 flex flex-col items-center overflow-x-hidden'>
         <Script
+          strategy='beforeInteractive'
           id='blockingScript'
           dangerouslySetInnerHTML={{
             __html: blockingSetInitialColorMode,
           }}
-        ></Script>
+        >
+        </Script>
         <Header />
         {children}
         <Footer />
@@ -46,6 +48,7 @@ function setInitialColorMode() {
     }
   }
   function getInitialColorMode() {
+    alert('Blocking render')
     const preference = window.localStorage.getItem("theme");
     const hasExplicitPreference = typeof preference === "string";
     //
@@ -77,6 +80,5 @@ function setInitialColorMode() {
   root.style.setProperty("--initial-color-mode", colorMode);
 
   if (colorMode === 'dark') { root.classList.add('dark'); root.classList.add(colorSchemes[colorScheme].dark) }
-  else if (colorMode === 'light') { root.classList.add('light'); root.classList.add(colorSchemes[colorScheme].light) }
-  alert('Blocking render')
+  else if (colorMode === 'light') { root.classList.add(colorSchemes[colorScheme].light) }
 }
