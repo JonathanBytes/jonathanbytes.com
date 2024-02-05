@@ -48,7 +48,7 @@ function setInitialColorMode() {
     }
   }
   function getInitialColorMode() {
-    alert('Blocking render')
+    console.log('Blocking render')
     const preference = window.localStorage.getItem("theme");
     const hasExplicitPreference = typeof preference === "string";
     //
