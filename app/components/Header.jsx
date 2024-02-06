@@ -1,8 +1,6 @@
 'use client'
 
 import Link from "next/link";
-import Image from 'next/image';
-import SwitchTheme from "./SwitchTheme";
 import { NavBar, MobileNav } from "./NavBar";
 import { Hamburguer, MainLogo } from "./Icons";
 import SwitchThemeDesktop from "./SwitchThemeDesktop";
