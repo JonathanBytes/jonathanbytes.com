@@ -35,6 +35,7 @@ const blockingSetInitialColorMode = `(function() {
 `;
 
 function setInitialColorMode() {
+  alert("Starting Initial Color Mode")
   const colorSchemes = {
     gruvbox: {
       light: 'gruvbox',
@@ -46,7 +47,6 @@ function setInitialColorMode() {
     }
   }
   function getInitialColorMode() {
-    console.log('Blocking render')
     const preference = window.localStorage.getItem("theme");
     const hasExplicitPreference = typeof preference === "string";
     //
@@ -77,6 +77,7 @@ function setInitialColorMode() {
   const root = document.documentElement;
   root.style.setProperty("--initial-color-mode", colorMode);
 
-  if (colorMode === 'dark') { root.classList.add('dark'); root.classList.add(colorSchemes[colorScheme].dark) }
-  else if (colorMode === 'light') { root.classList.add(colorSchemes[colorScheme].light) }
+  if (colorMode === 'dark') { root.classList.add('dark'); root.classList.add(colorSchemes[colorScheme].dark); console.log("Cambiando la clase: " + colorMode) }
+  else if (colorMode === 'light') { root.classList.add(colorSchemes[colorScheme].light); console.log("Cambiando la clase: " + colorMode) }
+  alert("Finishing color mode")
 }
