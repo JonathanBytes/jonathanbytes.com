@@ -14,7 +14,6 @@ export default function RootLayout({ children }) {
       <body className='text-text bg-background font-sans m-0 flex flex-col items-center overflow-x-hidden'>
         <script
           id='blockingScript'
-          defer
           dangerouslySetInnerHTML={{
             __html: blockingSetInitialColorMode,
           }}
