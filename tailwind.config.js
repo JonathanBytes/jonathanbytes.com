@@ -7,14 +7,14 @@ module.exports = {
   ],
   darkMode: 'class',
   theme: {
-    colors: {
-      'text': 'var(--text)',
-      'background': 'var(--background)',
-      'primary': 'var(--primary)',
-      'secondary': 'var(--secondary)',
-      'accent': 'var(--accent)',
-    },
     extend: {
+      colors: {
+        'text': 'var(--text)',
+        'background': 'var(--background)',
+        'primary': 'var(--primary)',
+        'secondary': 'var(--secondary)',
+        'accent': 'var(--accent)',
+      },
       fontFamily: {
         mono: ['var(--font-ibm)'],
         sans: ['var(--font-montserrat)'],

@@ -15,17 +15,18 @@ const ListItemLink = ({ children, onClick, href, className }) => {
 export const NavBar = ({ onClick, className }) => {
   return (
     <nav>
-      <ul className={`nav list-none p-0 flex justify-between flex-wrap ${className}`}>
-        <ListItemLink onClick={onClick} href='/projects' className='underlined'>Proyectos</ListItemLink>
+      <ul className={`nav list-none p-0 flex justify-between flex-wrap gap-5 ${className}`}>
+        <ListItemLink onClick={onClick} href='/projects' className='underlined '>Proyectos</ListItemLink>
         <ListItemLink onClick={onClick} href='/about' className='underlined'>Sobre mí</ListItemLink>
-        <li className='relative flex flex-col items-center gap-0 other'>
-          <div className="flex gap-1">
+        <li id='dropdownTrigger' className='relative flex flex-col items-center gap-0'>
+          <div className="flex gap-1 relative cursor-default">
             Otros <DownArrow />
           </div>
-          <ul className='dropdown primary'>
-            <ListItemLink onClick={onClick} href='/blog'>Blog</ListItemLink
+          <div className="absolute w-16 h-2 -bottom-2"></div>
+          <ul id='dropdown' className={`absolute top-8 left-0 rounded bg-background text-left pl-1 pr-6 pt-1 shadow-md w-[120px]`}>
+            <ListItemLink onClick={onClick} className='sideline' href='/blog'>Blog</ListItemLink
             >
-            <ListItemLink onClick={onClick} href='/gallery'>Galería</ListItemLink>
+            <ListItemLink onClick={onClick} className='sideline' href='/gallery'>Galería</ListItemLink>
           </ul>
         </li>
       </ul>

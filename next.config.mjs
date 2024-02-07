@@ -6,6 +6,7 @@ import rehypePrism from 'rehype-prism-plus'
 import remarkToc from 'remark-toc'
 import rehypeSlug from 'rehype-slug'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
+import remarkGfm from 'remark-gfm'
 
 const withMdx = nextMdx({
   extension: /\.mdx?$/,
@@ -14,6 +15,7 @@ const withMdx = nextMdx({
     remarkPlugins: [
       remarkFrontmatter,
       remarkMdxFrontmatter,
+      remarkGfm,
       remarkCodeTitle,
       [remarkToc,
         {

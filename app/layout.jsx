@@ -35,7 +35,6 @@ const blockingSetInitialColorMode = `(function() {
 `;
 
 function setInitialColorMode() {
-  alert("Starting Initial Color Mode")
   const colorSchemes = {
     gruvbox: {
       light: 'gruvbox',
@@ -75,9 +74,7 @@ function setInitialColorMode() {
   const colorMode = getInitialColorMode();
   const colorScheme = getInitialColorScheme();
   const root = document.documentElement;
-  root.style.setProperty("--initial-color-mode", colorMode);
 
   if (colorMode === 'dark') { root.classList.add('dark'); root.classList.add(colorSchemes[colorScheme].dark); console.log("Cambiando la clase: " + colorMode) }
   else if (colorMode === 'light') { root.classList.add(colorSchemes[colorScheme].light); console.log("Cambiando la clase: " + colorMode) }
-  alert("Finishing color mode")
 }
