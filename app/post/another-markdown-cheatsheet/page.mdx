@@ -9,6 +9,7 @@ description: 'This is another markdown Cheatsheet on the blog its source from ht
 categories: [ 'code']
 authors: { name: 'Jonathan Cardona Ramírez' }
 ---
+
 export async function generateMetadata(parent) {
   const previousImages = (await parent).openGraph?.images || []
   return {
@@ -25,7 +26,6 @@ export async function generateMetadata(parent) {
 import PostHead from '../../components/PostHead.jsx'
 
 <PostHead frontmatter={frontmatter}/>
-
 
 This is intended as a quick reference and showcase. For more complete info, see [John Gruber's original spec](http://daringfireball.net/projects/markdown/) and the [Github-flavored Markdown info page](http://github.github.com/github-flavored-markdown/).
 
@@ -47,8 +47,6 @@ Note that there is also a [Cheatsheet specific to Markdown Here](./Markdown-Here
 [YouTube Videos](#videos)  
 
 <a name="headers"/>
-
-## Contenido
 
 ## Headers
 
