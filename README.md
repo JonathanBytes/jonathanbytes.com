@@ -4,9 +4,6 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## TODO
 
-- [x] Dynamic metadata for blog posts
-- [ ] OpenGraph protocol for the entire web (landing, projects, gallery, blog and posts)
-- [ ] Migrate all CSS to Tailwind
 - [ ] [Dark mode](https://sreetamdas.com/blog/the-perfect-dark-mode)
     - [x] Make colors as CSS vars
     - [x] Make a way to select the theme
@@ -14,21 +11,24 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
         - [x] Desktop
     - [x] Save selection on localStorage
     - [ ] Fix bug when first open show UI before loading colors (defer or category='beforeInteract' doesn't work)
-- [x] Switch code blocks color scheme
-- [ ] Search bar for blog post (DocSearch x Algolia)
-    - [x] Implement it
-    - [ ] Style it
+- [ ] OpenGraph protocol for the entire web (landing, projects, gallery, blog and posts)
+- [ ] Migrate all CSS to Tailwind
 - [ ] Rework landing page, add latest post overview, latest project overview, etc...
-- [x] Posts table of contents (TOC)
-    - [x] Implement it
-    - [x] Style it
 - [ ] Sitemap
 - [ ] Scroll up Arrow
-- [x] Readtime for blog posts
-- [ ] Refine the profile pic
 - [ ] Contact page
 - [ ] Projects page
 - [ ] Gallery page
+- [x] Refine the profile pic
+- [x] Posts table of contents (TOC)
+    - [x] Implement it
+    - [x] Style it
+- [x] Dynamic metadata for blog posts
+- [x] Switch code blocks color scheme
+- [x] Search bar for blog post (DocSearch x Algolia)
+    - [x] Implement it
+    - [x] Style it
+- [x] Readtime for blog posts
 
 ## Getting Started
 
