@@ -7,14 +7,23 @@ date: '21/06/2023'
 title: 'First post'
 description: 'This is my first post of the blog for testing. Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.'
 categories: [ 'code' , 'music']
+authors: { name: 'Jonathan Cardona Ramírez' }
 ---
+export async function generateMetadata(parent) {
+  const previousImages = (await parent).openGraph?.images || []
+  return {
+    title: frontmatter.title,
+    description: frontmatter.description,
+    category: frontmatter.categories,
+    authors: frontmatter.authors,
+    openGraph: {
+      images: [frontmatter.image.src, ...previousImages],
+    },
+  }
+}
 
-import PostBanner from '../../components/PostBanner/PostBanner.jsx'
+import PostHead from '../../components/PostHead.jsx'
 
-<PostBanner image={{src : '/assets/cat.webp', alt : 'This is a cat portrait generated with AI'}} />
-
-> 27/06/2023
-
-# First post
+<PostHead frontmatter={frontmatter}/>
 
 This is the very first post. 

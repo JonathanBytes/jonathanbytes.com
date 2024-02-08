@@ -14,7 +14,7 @@ export const yeseva = Yeseva_One({
 })
 export const montserrat = Montserrat({
   subsets: ['latin'],
-  weight: '400',
+  weight: ['400', '700'],
   display: 'swap',
   variable: '--font-montserrat'
 })

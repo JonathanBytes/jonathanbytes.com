@@ -7,17 +7,23 @@ date: '01/01/2024'
 title: 'Fourth post'
 description: 'This the fourth post for filling space'
 categories: [ 'astronomy' ]
+authors: { name: 'Jonathan Cardona Ramírez' }
 ---
-import PostBanner from '../../components/PostBanner/PostBanner'
-
-<PostBanner image={{
-  src : '/assets/skate.webp',
-  alt : 'Someone falling of a Skateboard'
+export async function generateMetadata(parent) {
+  const previousImages = (await parent).openGraph?.images || []
+  return {
+    title: frontmatter.title,
+    description: frontmatter.description,
+    category: frontmatter.categories,
+    authors: frontmatter.authors,
+    openGraph: {
+      images: [frontmatter.image.src, ...previousImages],
+    },
+  }
 }
-} />
 
-> 27/06/2023
+import PostHead from '../../components/PostHead.jsx'
 
-# Fourth post
+<PostHead frontmatter={frontmatter}/>
 
 Este es el cuarto post, la imágen es graciosa, lo sé, soy yo callendo al piso.  :D

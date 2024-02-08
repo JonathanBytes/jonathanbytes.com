@@ -1,34 +1,18 @@
-.container {
-  display: flex;
-  justify-content: flex-end;
-  width: 100%;
-  margin-bottom: 1rem;
-}
-
 .customSelect {
   max-width: 350px;
   position: relative;
 }
 
 .select {
-  appearance: none;
   /* safari */
   -webkit-appearance: none;
-  /* other styles for aesthetics */
-  width: 100%;
-  font-size: 1rem;
-  padding: 0.675em 6em 0.675em 1em;
-  background-color: var(--white);
-  border: 1px solid var(--white4);
-  border-radius: 0.5rem;
-  color: var(--black);
-  cursor: pointer;
-  position: relative;
+  /* padding: 0.5rem 2rem 0.5rem 0.5rem; */
+  /* @apply rounded-lg bg-secondary text-text appearance-none w-full text-sm cursor-pointer relative; */
 }
 
-.select:hover {
-  border: 1px solid var(--gray)
-}
+/* .select:hover { */
+/*   border: 1px solid var(--primary) */
+/* } */
 
 .customSelect::before,
 .customSelect::after {
@@ -42,7 +26,7 @@
 .customSelect::before {
   border-left: var(--size) solid transparent;
   border-right: var(--size) solid transparent;
-  border-bottom: var(--size) solid var(--black);
+  border-bottom: var(--size) solid var(--text);
   top: 40%;
   z-index: 10;
 }
@@ -50,7 +34,7 @@
 .customSelect::after {
   border-left: var(--size) solid transparent;
   border-right: var(--size) solid transparent;
-  border-top: var(--size) solid var(--black);
+  border-top: var(--size) solid var(--text);
   top: 55%;
   z-index: 10;
 }

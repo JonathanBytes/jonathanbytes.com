@@ -27,9 +27,10 @@ export default function AltText() {
       // Destroy Typed instance during cleanup to stop animation
       typed.destroy()
     };
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  // Rule disabled because options its constant and doesn't change in time to be included as dependency on useEffect :)
 
   return (
-    <p ref={el} className='alt-text' />
+    <p ref={el} className='alt-text m-0' />
   );
 }

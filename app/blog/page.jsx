@@ -3,42 +3,24 @@
 import Link from "next/link"
 import { useState } from 'react';
 import posts from '../../data/rawPosts.json'
-import {
-  sortedFilesByRecent,
-  sortedFilesByOld,
-  sortedFilesByTitleAscending,
-  sortedFilesByTitleDescending,
-  sortedFilesByCategoriesAscending,
-  sortedFilesByCategoriesDescending,
-  filteredPostsByCategory
-} from '@/lib/sortPosts';
+import * as sortFunctions from '@/lib/sortPosts'
 import SelectMenu from '../components/SelectMenu/SelectMenu';
 import BlogCard from '../components/BlogCard/BlogCard';
+import { Search } from "../components/Search/Search";
 
 const Blog = () => {
 
   const [sortBy, setSortBy] = useState('recent');
-
-  const sortedPosts =
-    sortBy === 'recent'
-      ? sortedFilesByRecent(posts)
-      : sortBy === 'old'
-        ? sortedFilesByOld(posts)
-        : sortBy === 'titleAscending'
-          ? sortedFilesByTitleAscending(posts)
-          : sortBy === 'titleDescending'
-            ? sortedFilesByTitleDescending(posts)
-            : sortBy === 'categoriesAscending'
-              ? sortedFilesByCategoriesAscending(posts)
-              : sortBy === 'categoriesDescending'
-                ? sortedFilesByCategoriesDescending(posts)
-                : [];
+  const sortedPosts = sortBy ? sortFunctions[sortBy](posts) : posts
 
   return (
     <>
       <h1>Posts del blog</h1>
-      <SelectMenu onSortingChange={setSortBy} />
-      <ul className="blog-list" style={{ paddingLeft: 0 }}>
+      <div className="w-full flex justify-end mb-4 gap-2 items-center" >
+        <Search />
+        <SelectMenu onSortingChange={setSortBy} />
+      </div>
+      <ul className="pl-0" >
         {sortedPosts.map((post) => (
           <BlogCard
             key={post.slug}
@@ -48,7 +30,9 @@ const Blog = () => {
             title={post.title}
             description={post.description}
             categories={post.categories}
+            readTime={post.readTime.text}
           />
+
         ))}
       </ul>
       <p />

@@ -1,0 +1,35 @@
+---
+image: {
+  src : '/assets/davincho.webp',
+  alt : 'This is a portrait of Davincho Style'
+}
+date: '30/01/2024'
+title: 'Davicho style post'
+description: 'This is a Davincho post for testing. Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.'
+categories: [ 'davincho', 'astronomy']
+authors: { name: 'Jonathan Cardona Ramírez' }
+---
+export async function generateMetadata(parent) {
+  const previousImages = (await parent).openGraph?.images || []
+  return {
+    title: frontmatter.title,
+    description: frontmatter.description,
+    category: frontmatter.categories,
+    authors: frontmatter.authors,
+    openGraph: {
+      images: [frontmatter.image.src, ...previousImages],
+    },
+  }
+}
+
+import PostHead from '../../components/PostHead.jsx'
+
+<PostHead frontmatter={frontmatter}/>
+
+Hoy quiero hablar de David, pero no es cualquier faseta de David, hablo de *Davincho Style* el David que más style tiene de todos
+
+## Contenido
+
+## ¿Quién es Davincho Style?
+
+Es un pelotudo.
