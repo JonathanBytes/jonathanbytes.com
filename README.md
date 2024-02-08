@@ -19,12 +19,12 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
     - [x] Implement it
     - [ ] Style it
 - [ ] Rework landing page, add latest post overview, latest project overview, etc...
-- [ ] Posts table of contents (TOC)
+- [x] Posts table of contents (TOC)
     - [x] Implement it
-    - [ ] Style it
+    - [x] Style it
 - [ ] Sitemap
 - [ ] Scroll up Arrow
-- [ ] Readtime for blog posts
+- [x] Readtime for blog posts
 - [ ] Refine the profile pic
 - [ ] Contact page
 - [ ] Projects page
