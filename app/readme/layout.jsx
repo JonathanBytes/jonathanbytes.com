@@ -1,3 +1,5 @@
+import '../prism-classes.css'
+
 export const metadata = () => {
   return {
     title: 'Readme',
