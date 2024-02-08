@@ -300,14 +300,6 @@ button {
 /* Footer Styles */
 footer {
   @apply flex flex-grow-[2] flex-wrap justify-between bg-text text-background dark:bg-[--base01] dark:text-text p-8 max-h-[305px] w-full;
-  /* flex-grow: 2; */
-  /* display: flex; */
-  /* flex-wrap: wrap; */
-  /* justify-content: space-between; */
-  /* background-color: var(--base01); */
-  /* padding: 2rem; */
-  /* max-height: 305px; */
-  /* width: 100%; */
 }
 
 footer .footer-links {
