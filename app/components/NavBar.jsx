@@ -23,7 +23,7 @@ export const NavBar = ({ onClick, className }) => {
             Otros <DownArrow />
           </div>
           <div className="absolute w-16 h-2 -bottom-2"></div>
-          <ul id='dropdown' className={`absolute top-8 left-0 rounded bg-background text-left pl-1 pr-6 pt-1 shadow-md w-[120px]`}>
+          <ul id='dropdown' className={`absolute top-8 left-0 rounded bg-[--base00] text-left pl-1 pr-6 pt-1 pb-1 shadow-md w-[120px]`}>
             <ListItemLink onClick={onClick} className='sideline' href='/blog'>Blog</ListItemLink
             >
             <ListItemLink onClick={onClick} className='sideline' href='/gallery'>Galería</ListItemLink>
