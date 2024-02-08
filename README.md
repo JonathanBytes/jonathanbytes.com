@@ -23,7 +23,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
     - [x] Implement it
     - [ ] Style it
 - [ ] Sitemap
-- [ ] Scroll app Arrow
+- [ ] Scroll up Arrow
 - [ ] Readtime for blog posts
 - [ ] Refine the profile pic
 - [ ] Contact page
