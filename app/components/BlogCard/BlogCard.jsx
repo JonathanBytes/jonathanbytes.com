@@ -2,6 +2,7 @@ import styles from './blogCard.module.css'
 import { PillCategories } from '../Pill/Pill'
 import Link from "next/link";
 import Image from 'next/image';
+import ReadTime from '../ReadTime';
 
 function BlogCard({ slug, title, description, image, date, categories }) {
   const currentCategory = categories === undefined ? [''] : categories
@@ -19,6 +20,7 @@ function BlogCard({ slug, title, description, image, date, categories }) {
         <div className={styles.blogCardContent}>
           <h2 className={styles.blogCardTitle}>{title}</h2>
           <p className={styles.blogCardDate}>{date}</p>
+          <ReadTime title={title} />
           <p className={styles.blogCardP}>{description}</p>
         </div>
       </Link>

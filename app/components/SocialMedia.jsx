@@ -12,7 +12,7 @@ const ListItem = ({ children, href }) => {
 
 const SocialMedia = () => {
   return (
-    <ul className=''>
+    <ul>
       <li>
         <h3>Redes sociales</h3>
       </li>

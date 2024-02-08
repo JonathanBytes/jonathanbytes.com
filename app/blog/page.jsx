@@ -30,7 +30,9 @@ const Blog = () => {
             title={post.title}
             description={post.description}
             categories={post.categories}
+            readTime={post.readTime.text}
           />
+
         ))}
       </ul>
       <p />

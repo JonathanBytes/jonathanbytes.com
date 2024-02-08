@@ -1,6 +1,6 @@
 const Icon = ({ viewBox, children }) => {
   return (
-    <svg className="fill-background mr-2" viewBox={viewBox} width="25px" height="25px" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg className="fill-background dark:fill-text mr-2" viewBox={viewBox} width="25px" height="25px" fill="none" xmlns="http://www.w3.org/2000/svg">
       {children}
     </svg>
   )
@@ -139,5 +139,22 @@ export const Pallette = () => {
     <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
       <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M12 7h0m3.5 1.5h0m-7 0h0M7 12h0m9 4h2.7a2 2 0 0 0 1.9-1.3 9 9 0 1 0-16 2.5A9.1 9.1 0 0 0 12 21a2 2 0 0 0 2-2v-.9a2 2 0 0 1 2-2.1Z" />
     </svg>
+  )
+}
+
+export const Book = ({ className }) => {
+  return (
+    <svg className={className} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+      <path fill-rule="evenodd" d="M11 4.7C8.7 4.1 6.8 4 4 4a2 2 0 0 0-2 2v11c0 1.1 1 2 2 2 2.8 0 4.5.2 7 .8v-15Zm2 15.1c2.5-.6 4.2-.8 7-.8a2 2 0 0 0 2-2V6c0-1-.9-2-2-2-2.8 0-4.7.1-7 .7v15.1Z" clip-rule="evenodd" />
+    </svg>
+  )
+}
+
+export const Clock = ({ className }) => {
+  return (
+    <svg className={className} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+    </svg>
+
   )
 }

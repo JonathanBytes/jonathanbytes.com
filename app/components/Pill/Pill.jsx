@@ -5,11 +5,11 @@ function Pill(props) {
   const categoryColor = categories[props.category]?.color
   return (
     <div
-      className='dark:text-background text-text text-xs font-sans shadow-md ml-2 px-2.5 py-1 w-fit rounded-full inline-flex'
+      className='shadow-md ml-2 px-2.5 py-1 w-fit rounded-full inline-flex'
       id='pill'
       style={{ backgroundColor: "var(--" + (categoryColor || 'default-color') + ")" }}
     >
-      <Link href={'/blog/category/' + props.category}>
+      <Link title={`Ir a la sección de ${categories[props.category]?.display}`} className='dark:text-background text-text text-xs font-sans' href={'/blog/category/' + props.category}>
         {categories[props.category]?.display}
       </ Link >
     </div >

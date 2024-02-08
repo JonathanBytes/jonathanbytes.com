@@ -1,12 +1,13 @@
 import nextMdx from '@next/mdx'
 import remarkFrontmatter from 'remark-frontmatter'
 import remarkMdxFrontmatter from 'remark-mdx-frontmatter'
-import remarkCodeTitle from 'remark-code-title'
 import rehypePrism from 'rehype-prism-plus'
 import remarkToc from 'remark-toc'
 import rehypeSlug from 'rehype-slug'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import remarkGfm from 'remark-gfm'
+import remarkGemoji from 'remark-gemoji'
+import rehypeCodeTitles from 'rehype-code-titles'
 
 const withMdx = nextMdx({
   extension: /\.mdx?$/,
@@ -16,7 +17,7 @@ const withMdx = nextMdx({
       remarkFrontmatter,
       remarkMdxFrontmatter,
       remarkGfm,
-      remarkCodeTitle,
+      remarkGemoji,
       [remarkToc,
         {
           heading: 'Contenido',
@@ -24,6 +25,7 @@ const withMdx = nextMdx({
         }],
     ],
     rehypePlugins: [
+      rehypeCodeTitles,
       rehypePrism,
       rehypeSlug,
       [
