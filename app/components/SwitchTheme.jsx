@@ -25,11 +25,12 @@ const Button = ({ children, onClick, isSelected }) => {
   )
 }
 
-const SwitchTheme = ({ className, onClick }) => {
+const SwitchTheme = ({ className, onClick, handleClick }) => {
   const [theme, setTheme] = useState(undefined)
   const [colorScheme, setColorScheme] = useState(undefined)
 
   const handleColorSchemeChange = (event) => {
+    handleClick()
     if (colorSchemes[colorScheme]) {
       if (localStorage.theme === 'light') {
         document.documentElement.classList.remove(colorSchemes[colorScheme].light)

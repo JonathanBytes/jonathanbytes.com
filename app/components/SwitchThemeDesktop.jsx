@@ -14,7 +14,7 @@ const SwitchThemeDesktop = ({ className }) => {
         <Pallette />
       </button>
       <div className="h-2 w-8 absolute top-8"></div>
-      <SwitchTheme onClick={handleClick} className={`${showSwitchMenu} absolute top-10 -translate-x-[3.75rem] bg-text p-2 rounded-lg z-10`} />
+      <SwitchTheme onClick={handleClick} handleClick={handleClick} className={`${showSwitchMenu} absolute top-10 -translate-x-[3.75rem] bg-text p-2 rounded-lg z-10`} />
     </div>
   )
 }
