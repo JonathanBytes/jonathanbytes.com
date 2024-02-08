@@ -29,7 +29,7 @@ export default function Header() {
         <SwitchThemeDesktop className='hidden md:flex relative ' />
         <a className='btn desktop h-8' href='mailto:contacto@jonathanbytes.com' target='_blank' rel='noreferrer'>Contáctame</a>
       </div>
-      <MobileNav />
+      <MobileNav onClick={ButtonToggle} />
       <button type='button' className='button-three' onClick={ButtonToggle} aria-controls='primary-navigation' aria-expanded='false'>
         < Hamburguer />
         <span className='sr-only'>Menu</span>
