@@ -4,10 +4,13 @@
 @tailwind components;
 @tailwind utilities;
 
-  .rehype-code-title {
-    @apply ml-[11%] sm:ml-[12%] lg:ml-[16%] mt-4 w-fit px-2 py-1 bg-[--base00] font-mono text-sm text-text font-semibold rounded-t-lg ;
-  }
+.rehype-code-title {
+  @apply ml-[11%] sm:ml-[12%] lg:ml-[16%] mt-4 w-fit px-2 py-1 bg-[--base00] font-mono text-sm text-text font-semibold rounded-t-lg ;
+}
 
+/* .DocSearch{ */
+/*   @apply bg-red-500 */
+/* } */
 @layer base {
   .gruvbox {
     --text: #3c3836;
@@ -76,10 +79,6 @@
   /* Bloques de código */
   pre {
     @apply m-auto w-[85%] max-w-[45rem] shadow-md rounded-lg mb-6 font-mono
-  }
-  
-  article div {
-    /* @apply ml-[11%] sm:ml-[12%] lg:ml-[16%] mt-4 w-fit px-2 py-1 bg-[--base00] font-mono text-sm text-text font-semibold rounded-t-lg ; */
   }
   
   table {
@@ -166,20 +165,15 @@
     @apply p-0 block h-[1px] w-full border-[0] border-t-[1px] border-neutral-300 dark:border-neutral-50/20;
   }
 
-  /* Centrar en la página el título principal */
   main {
     @apply w-full max-w-6xl px-[5vw] py-4 flex justify-center flex-col items-center;
   }
   article {
     @apply w-full
   }
+  
   p {
-    font-size: 1.1rem;
-    width: 100%;
-    max-width: 50rem;
-    word-spacing: -1px;
-    line-height: 1.7rem;
-    margin: 0.5rem;
+    @apply text-lg w-full max-w-[50rem] my-2;
   }
 
   a {
@@ -202,59 +196,33 @@
   #dropdownTrigger:hover {
     @apply [&_ul]:block ;
   }
+  
+  button {
+    @apply font-mono
+  }
+
 }
 
 @layer utilities {
-  .underlined::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: -4px;
-    left: 0;
-    background-color: var(--primary);
-    visibility: hidden;
-    transform: scaleX(0);
-    transition: transform var(--animation-duration) cubic-bezier(.06, .78, .39, .93) 0s;
-    border-radius: 6px;
+    .underlined::before {
+    @apply content-[""] absolute w-full h-0.5 bg-primary invisible transition-transform duration-300 rounded-md scale-x-0 left-0 -bottom-1;
   }
   .underlined:hover::before {
-    visibility: visible;
-    transform: scaleX(1);
+    @apply visible scale-x-100;
   }
-  
   .sideline:hover {
-    padding-left: 10px;
-    border-left: 3px solid var(--primary);
-    transition: padding 0.3s ease;
+    @apply border-l-primary transition-[padding] duration-300 pl-2.5 border-l-[3px] border-solid;
   }
   .sideline {
-    transition: padding 0.5s ease;
+    @apply transition-[padding] duration-500;
   }
-}
-
-
-.btn {
-  font-family: var(--font-ibm);
-  background-color: var(--text);
-  color: var(--background);
-  padding: 0.25rem 1rem;
-  border-radius: 0.5rem;
-}
-
-button {
-  font-family: var(--font-ibm);
+  .btn {
+    @apply font-mono bg-text text-background py-1 px-4 rounded-lg;
+  }
 }
 
 .button-three {
-  background: transparent;
-  padding: 0;
-  border: 0;
-  width: 40px;
-  aspect-ratio: 1;
-  display: none;
-  overflow: hidden;
-  cursor: pointer;
+  @apply bg-transparent p-0 border-0 w-10 aspect-square hidden overflow-hidden cursor-pointer;
 }
 
 .button-three .hamburger {
@@ -516,7 +484,7 @@ footer .footer-logo p {
   /* Navbar */
   .button-three {
     display: inline-block;
-    z-index: 9999;
+    z-index: 20;
   }
 
   .nav, header .desktop{

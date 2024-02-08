@@ -1,5 +1,5 @@
 import { DocSearch } from '@docsearch/react';
-import '@docsearch/css';
+import './css/style.css';
 
 import Head from 'next/head';
 
@@ -10,7 +10,6 @@ export function Search() {
   if (!SEARCH_APP_ID || !SEARCH_API_KEY) {
     return null;
   }
-
   return (
     <>
       <Head>
@@ -25,6 +24,7 @@ export function Search() {
         indexName={'jonathanbytes'}
         appId={SEARCH_APP_ID}
         placeholder='Buscar en el blog'
+        className='bg-red-500'
       />
     </>
   );
