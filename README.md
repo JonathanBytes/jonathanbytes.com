@@ -11,6 +11,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
         - [x] Desktop
     - [x] Save selection on localStorage
     - [ ] Fix bug when first open show UI before loading colors (defer or category='beforeInteract' doesn't work)
+    - [ ] 404 page image
 - [ ] OpenGraph protocol for the entire web (landing, projects, gallery, blog and posts)
 - [ ] Migrate all CSS to Tailwind
 - [ ] Rework landing page, add latest post overview, latest project overview, etc...
