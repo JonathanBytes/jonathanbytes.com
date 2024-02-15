@@ -18,7 +18,9 @@ const Button = ({ children, onClick, isSelected }) => {
   return (
     <button
       type="button"
-      className={`text-background p-1 w-8 h-8 aspect-square ${isSelected ? 'bg-primary text-text dark:text-background' : 'hover:bg-primary hover:text-text dark:hover:text-background bg-text'} rounded-lg transition-colors duration-300`}
+      className={`text-background p-1 w-8 h-8 aspect-square rounded-lg transition-colors duration-300
+                  ${isSelected ? 'bg-primary text-text dark:text-background' :
+          'hover:bg-primary hover:text-text dark:hover:text-background bg-text'} `}
       onClick={onClick}>
       {children}
     </button>
@@ -31,46 +33,41 @@ const SwitchTheme = ({ className, onClick, handleClick }) => {
 
   const handleColorSchemeChange = (event) => {
     handleClick()
-    if (colorSchemes[colorScheme]) {
-      if (localStorage.theme === 'light') {
-        document.documentElement.classList.remove(colorSchemes[colorScheme].light)
-      } else {
-        document.documentElement.classList.remove(colorSchemes[colorScheme].dark)
-      }
+    if (theme === 'dark' || (window.matchMedia('(prefers-color-scheme: dark)').matches && theme === 'system')) {
+      document.documentElement.classList.remove(colorSchemes[colorScheme].dark)
+    } else {
+      document.documentElement.classList.remove(colorSchemes[colorScheme].light)
     }
     setColorScheme(event.target.value);
   };
 
+  const setThemeClasses = (theme, colorScheme) => {
+    if (theme === 'light') {
+      document.documentElement.classList.remove(colorSchemes[colorScheme].dark)
+      document.documentElement.classList.remove('dark')
+      document.documentElement.classList.add(colorSchemes[colorScheme].light)
+    } else if (theme === 'dark') {
+      document.documentElement.classList.remove(colorSchemes[colorScheme].light)
+      document.documentElement.classList.add(colorSchemes[colorScheme].dark)
+      document.documentElement.classList.add('dark')
+    }
+  }
+
   useEffect(() => {
-    const storedTheme = localStorage.getItem('theme')
-    const storedColorScheme = localStorage.getItem('colorScheme')
-    setTheme(storedTheme || 'system')
-    setColorScheme(storedColorScheme || 'gruvbox')
+    // TODO: Get the theme from cookies
+    setTheme('system')
+    setColorScheme('gruvbox')
   }, [])
 
   useEffect(() => {
     if (theme === 'system') {
-      localStorage.removeItem('theme')
-    } else if (theme === 'dark') {
-      localStorage.theme = 'dark'
-    } else if (theme === 'light') {
-      localStorage.theme = 'light'
-    }
-
-    if (colorScheme === 'gruvbox') { localStorage.colorScheme = 'gruvbox' }
-    else if (colorScheme === 'catppuccin') { localStorage.colorScheme = 'catppuccin' }
-
-    if (colorSchemes[colorScheme]) {
-      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.documentElement.classList.remove(colorSchemes[colorScheme].light)
-        document.documentElement.classList.add(colorSchemes[colorScheme].dark)
-        document.documentElement.classList.add('dark')
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        setThemeClasses('dark', colorScheme)
       } else {
-        document.documentElement.classList.remove('dark')
-        document.documentElement.classList.remove(colorSchemes[colorScheme].dark)
-        document.documentElement.classList.add(colorSchemes[colorScheme].light)
+        setThemeClasses('light', colorScheme)
       }
-    }
+    } else { setThemeClasses(theme, colorScheme) }
+
   }, [theme, colorScheme])
 
   return (
