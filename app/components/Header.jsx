@@ -22,7 +22,7 @@ function handleClick() {
   return true
 }
 
-export default function Header() {
+export default function Header({ userColors }) {
   return (
     <header className='header'>
       <Link className='flex items-center' href='/'>
@@ -30,10 +30,10 @@ export default function Header() {
       </ Link>
       <NavBar />
       <div className="flex gap-2 items-center">
-        <SwitchThemeDesktop className='hidden md:flex relative ' />
+        <SwitchThemeDesktop userColors={userColors} className='hidden md:flex relative ' />
         <a className='btn desktop h-8' href='mailto:contacto@jonathanbytes.com' target='_blank' rel='noreferrer'>Contáctame</a>
       </div>
-      <MobileNav onClick={ButtonToggle} handleClick={handleClick} />
+      <MobileNav onClick={ButtonToggle} handleClick={handleClick} userColors={userColors} />
       <button type='button' className='button-three' onClick={ButtonToggle} aria-controls='primary-navigation' aria-expanded='false'>
         < Hamburguer />
         <span className='sr-only'>Menu</span>
