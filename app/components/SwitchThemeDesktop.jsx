@@ -1,10 +1,8 @@
-'use client'
-
 import { useState } from "react";
 import SwitchTheme from "./SwitchTheme";
 import { Pallette } from "./Icons";
 
-const SwitchThemeDesktop = ({ className, userColors }) => {
+const SwitchThemeDesktop = ({ className }) => {
   const [showSwitchMenu, setShowSwitchMenu] = useState('hidden')
   const handleClick = () => {
     if (showSwitchMenu === '') { setShowSwitchMenu('hidden') }
@@ -16,7 +14,7 @@ const SwitchThemeDesktop = ({ className, userColors }) => {
         <Pallette />
       </button>
       <div className="h-2 w-8 absolute top-8"></div>
-      <SwitchTheme onClick={handleClick} handleClick={handleClick} userColors={userColors} className={`${showSwitchMenu} absolute top-10 -translate-x-[3.75rem] bg-text p-2 rounded-lg z-10`} />
+      <SwitchTheme onClick={handleClick} handleClick={handleClick} className={`${showSwitchMenu} absolute top-10 -translate-x-[3.75rem] bg-text p-2 rounded-lg z-10`} />
     </div>
   )
 }
