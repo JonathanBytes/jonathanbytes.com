@@ -16,7 +16,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 - [ ] Migrate all CSS to Tailwind
 - [ ] Rework landing page, add latest post overview, latest project overview, etc...
 - [ ] Sitemap
-- [ ] Scroll up Arrow
+- [ ] Scroll to top Arrow
 - [ ] Noise/Paper texture background
 - [ ] Contact page
 - [ ] Projects page
