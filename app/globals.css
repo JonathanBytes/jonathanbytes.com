@@ -38,6 +38,12 @@
     --accent: #c6a0f6;
   }
   :root {
+    --text: #4b4e68;
+    --background: #EFF1F5;
+    --primary: #dc8a78;
+    --secondary: #f9e2af;
+    --accent: #cba6f7;
+  
     --black: #282828;
     --red: #fb4934;
     --altred: #cc241d;
@@ -61,6 +67,7 @@
     --gray2: #7C6F64;
     --animation-duration: 300ms
   }
+
   body { 
     @apply transition-colors duration-500
   }
@@ -192,7 +199,6 @@
   .mobile li ul {
     @apply shadow-none bg-transparent static p-0 pt-2 [&_li]:mt-2;
   }
-  
 
   #dropdownTrigger:hover {
     @apply [&_ul]:block ;

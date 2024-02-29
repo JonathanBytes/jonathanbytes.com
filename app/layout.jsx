@@ -10,12 +10,11 @@ export const metadata = {
 }
 
 export default async function RootLayout({ children }) {
-
-  const { theme, colorScheme } = await getColorCookies(true)
+  const userColorsClasses = await getColorCookies(true)
   const userColors = await getColorCookies(false)
 
   return (
-    <html lang="es" className={`${theme} ${colorScheme} ${montserrat.variable} ${ibm.variable} ${yeseva.variable}`}>
+    <html lang="es" className={`${userColorsClasses.theme} ${userColorsClasses.colorScheme} ${montserrat.variable} ${ibm.variable} ${yeseva.variable}`}>
       <body className='text-text bg-background font-sans m-0 flex flex-col items-center overflow-x-hidden'>
         <Header userColors={userColors} />
         {children}
