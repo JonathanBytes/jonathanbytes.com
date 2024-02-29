@@ -23,7 +23,7 @@ const SwitchTheme = ({ className, onClick, userColors, handleClick }) => {
         document.documentElement.classList.remove('dark');
       }
     }
-  }, [userColors.theme]);
+  }, [userColors.theme, userColors.colorScheme]);
 
   const changeTheme = (newTheme) => {
     setTheme(newTheme)
