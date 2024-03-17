@@ -1,13 +1,13 @@
-'use client'
+"use client";
 
 import Link from "next/link";
 import { NavBar, MobileNav } from "./NavBar";
 import { Hamburguer, MainLogo } from "./Icons";
-import SwitchThemeDesktop from "./SwitchThemeDesktop";
+import ThemeSwitchDesktop from "./theme/ThemeSwitchDesktop";
 
 function ButtonToggle() {
-  const button = document.querySelector(".button-three")
-  const mobileNav = document.querySelector(".mobile-nav")
+  const button = document.querySelector(".button-three");
+  const mobileNav = document.querySelector(".mobile-nav");
   const currentState = mobileNav.getAttribute("data-visible");
   if (!currentState || currentState === "false") {
     button.setAttribute("aria-expanded", "true");
@@ -19,24 +19,44 @@ function ButtonToggle() {
 }
 
 function handleClick() {
-  return true
+  return true;
 }
 
 export default function Header({ userColors }) {
   return (
-    <header className='header'>
-      <Link className='flex items-center' href='/'>
-        <MainLogo className='text-text text-xl' />
-      </ Link>
+    <header className="header">
+      <Link className="flex items-center" href="/">
+        <MainLogo className="text-foreground text-xl" />
+      </Link>
       <NavBar />
       <div className="flex gap-2 items-center">
-        <SwitchThemeDesktop userColors={userColors} className='hidden md:flex relative ' />
-        <a className='btn desktop h-8' href='mailto:contacto@jonathanbytes.com' target='_blank' rel='noreferrer'>Contáctame</a>
+        <ThemeSwitchDesktop
+          userColors={userColors}
+          className="hidden md:flex"
+        />
+        <a
+          className="btn desktop h-8"
+          href="mailto:contacto@jonathanbytes.com"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Contáctame
+        </a>
       </div>
-      <MobileNav onClick={ButtonToggle} handleClick={handleClick} userColors={userColors} />
-      <button type='button' className='button-three' onClick={ButtonToggle} aria-controls='primary-navigation' aria-expanded='false'>
-        < Hamburguer />
-        <span className='sr-only'>Menu</span>
+      <MobileNav
+        onClick={ButtonToggle}
+        handleClick={handleClick}
+        userColors={userColors}
+      />
+      <button
+        type="button"
+        className="button-three"
+        onClick={ButtonToggle}
+        aria-controls="primary-navigation"
+        aria-expanded="false"
+      >
+        <Hamburguer />
+        <span className="sr-only">Menu</span>
       </button>
     </header>
   );

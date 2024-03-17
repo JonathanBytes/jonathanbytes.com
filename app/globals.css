@@ -1,42 +1,14 @@
-@import url('prism-highlight-colors.css');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 .rehype-code-title {
-  @apply ml-[11%] sm:ml-[12%] lg:ml-[16%] mt-4 w-fit px-2 py-1 bg-[--base00] font-mono text-sm text-text font-semibold rounded-t-lg ;
+  @apply ml-[11%] sm:ml-[12%] lg:ml-[16%] mt-4 w-fit px-2 py-1 bg-[--base00] font-mono text-sm text-foreground font-semibold rounded-t-lg;
 }
 
 @layer base {
-  .gruvbox {
-    --text: #3c3836;
-    --background: #fdfbf2;
-    --primary: #548D8E;
-    --secondary: #b0cdcb;
-    --accent: #B16286;
-  }
-  .gruvbox-dark {
-    --text: #D7C9A4;
-    --background: #202020;
-    --primary: #bee0d9;
-    --secondary: #9db9b7;
-    --accent: #ee9bb2;
-  }
-  .catppuccin {
-    --text: #4b4e68;
-    --background: #EFF1F5;
-    --primary: #dc8a78;
-    --secondary: #f9e2af;
-    --accent: #cba6f7;
-  }
-  .catppuccin-dark {
-    --text: #cad3f5;
-    --background: #24273a;
-    --primary: #8aadf4;
-    --secondary: #b7bdf8;
-    --accent: #c6a0f6;
-  }
+  @import url("prism-highlight-colors.css");
+
   :root {
     --black: #282828;
     --red: #fb4934;
@@ -53,17 +25,101 @@
     --altorange: #d65d0e;
     --white: #fff;
     --white2: #f9f5d7;
-    --white3: #FBF1C7;
-    --white4: #D5C4A1;
+    --white3: #fbf1c7;
+    --white4: #d5c4a1;
     --purple: #d3869b;
     --altpurple: #b16286;
     --gray: #928374;
-    --gray2: #7C6F64;
-    --animation-duration: 300ms
+    --gray2: #7c6f64;
+    --animation-duration: 300ms;
+
+    --color-foreground: #333;
+    --color-background: #eee;
+    --color-primary: darkblue;
+    --color-secondary: lightblue;
+    --color-accent: purple;
   }
 
-  body { 
-    @apply transition-colors duration-500
+  .gruvbox {
+    --color-foreground: #3c3836;
+    --color-background: #fdfbf2;
+    --color-primary: #548d8e;
+    --color-secondary: #b0cdcb;
+    --color-accent: #b16286;
+  }
+  .catppuccin {
+    --color-foreground: #4b4e68;
+    --color-background: #eff1f5;
+    --color-primary: #dc8a78;
+    --color-secondary: #f9e2af;
+    --color-accent: #cba6f7;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-foreground: #ccc;
+      --color-background: #222;
+      --color-primary: darkblue;
+      --color-secondary: lightblue;
+      --color-accent: purple;
+    }
+    .gruvbox {
+      --color-foreground: #d7c9a4;
+      --color-background: #202020;
+      --color-primary: #bee0d9;
+      --color-secondary: #9db9b7;
+      --color-accent: #ee9bb2;
+    }
+    .catppuccin {
+      --color-foreground: #cad3f5;
+      --color-background: #24273a;
+      --color-primary: #8aadf4;
+      --color-secondary: #b7bdf8;
+      --color-accent: #c6a0f6;
+    }
+  }
+
+  html {
+    /* Correct colors to unstyled elements */
+    color-scheme: dark light;
+  }
+
+  [data-theme="dark"] {
+    color-scheme: dark;
+    .gruvbox {
+      --color-foreground: #d7c9a4;
+      --color-background: #202020;
+      --color-primary: #bee0d9;
+      --color-secondary: #9db9b7;
+      --color-accent: #ee9bb2;
+    }
+    .catppuccin {
+      --color-foreground: #cad3f5;
+      --color-background: #24273a;
+      --color-primary: #8aadf4;
+      --color-secondary: #b7bdf8;
+      --color-accent: #c6a0f6;
+    }
+  }
+  [data-theme="light"] {
+    color-scheme: light;
+    .gruvbox {
+      --color-foreground: #3c3836;
+      --color-background: #fdfbf2;
+      --color-primary: #548d8e;
+      --color-secondary: #b0cdcb;
+      --color-accent: #b16286;
+    }
+    .catppuccin {
+      --color-foreground: #4b4e68;
+      --color-background: #eff1f5;
+      --color-primary: #dc8a78;
+      --color-secondary: #f9e2af;
+      --color-accent: #cba6f7;
+    }
+  }
+  body {
+    @apply transition-colors duration-500;
   }
 
   img {
@@ -71,40 +127,40 @@
   }
 
   code {
-    @apply bg-[--base00] px-2 mx-0.5 rounded-full font-mono
+    @apply bg-[--base00] px-2 mx-0.5 rounded-full font-mono;
   }
 
   /* Bloques de código */
   pre {
-    @apply m-auto w-[85%] max-w-[45rem] shadow-md rounded-lg mb-6 font-mono
+    @apply m-auto w-[85%] max-w-[45rem] shadow-md rounded-lg mb-6 font-mono;
   }
-  
+
   table {
-    @apply mx-auto w-3/4 text-sm text-left rtl:text-right text-text
+    @apply mx-auto w-3/4 text-sm text-left rtl:text-right text-foreground;
   }
   thead {
-    @apply text-xs text-accent uppercase bg-[--base00]
+    @apply text-xs text-accent uppercase bg-[--base00];
   }
   tr {
-    @apply bg-[--base00] border-b dark:border-neutral-700
+    @apply bg-[--base00] border-b dark:border-neutral-700;
   }
   th {
-    @apply px-6 py-4 font-medium text-accent whitespace-nowrap
+    @apply px-6 py-4 font-medium text-accent whitespace-nowrap;
   }
   td {
-    @apply px-6 py-4
+    @apply px-6 py-4;
   }
 
   blockquote {
-    @apply text-sm opacity-50 italic relative text-text inline-flex my-2 ml-2;
+    @apply text-sm opacity-50 italic relative text-foreground inline-flex my-2 ml-2;
   }
 
-  blockquote p{
+  blockquote p {
     @apply m-0 text-left;
   }
 
   blockquote::before {
-    @apply block absolute top-0 -left-2 w-0.5 h-full bg-text rounded content-[''];
+    @apply block absolute top-0 -left-2 w-0.5 h-full bg-foreground rounded content-[''];
   }
 
   ol {
@@ -112,7 +168,7 @@
   }
 
   article ul {
-    @apply list-none [&_ul]:pl-6 pb-1 opacity-90 
+    @apply list-none [&_ul]:pl-6 pb-1 opacity-90;
   }
 
   /* Estilo para los títulos */
@@ -134,35 +190,39 @@
   }
 
   article h2 {
-    @apply text-left font-serif text-3xl
+    @apply text-left font-serif text-3xl;
   }
   article h3,
   article h4,
   article h5,
   article h6 {
-    @apply text-left after:content-[':_']
+    @apply text-left after:content-[':_'];
   }
   article h3 {
-    @apply text-2xl
+    @apply text-2xl;
   }
   article h4 {
-    @apply text-xl
+    @apply text-xl;
   }
   article a {
-    @apply font-sans text-primary font-bold after:content-['_↗']
+    @apply font-sans text-primary font-bold after:content-['_↗'];
   }
-  article h2 a, article h3 a, article h4 a, article h5 a, article h6 a{
+  article h2 a,
+  article h3 a,
+  article h4 a,
+  article h5 a,
+  article h6 a {
     @apply after:content-['#_'] font-normal;
   }
 
-  [id^=user-content] a {
-    @apply after:content-['']
+  [id^="user-content"] a {
+    @apply after:content-[''];
   }
 
   article #pill a {
-    @apply text-text after:content-[''] font-normal dark:text-background
+    @apply text-foreground after:content-[''] font-normal dark:text-background;
   }
-  
+
   hr {
     @apply p-0 block h-[1px] w-full border-[0] border-t-[1px] border-neutral-300 dark:border-neutral-50/20;
   }
@@ -171,15 +231,15 @@
     @apply w-full max-w-6xl px-[5vw] py-4 flex justify-center flex-col items-center;
   }
   article {
-    @apply w-full
+    @apply w-full;
   }
-  
+
   p {
     @apply text-lg w-full max-w-[50rem] my-2;
   }
 
   a {
-    @apply decoration-transparent text-text transition-opacity;
+    @apply decoration-transparent text-foreground transition-opacity;
   }
 
   a:hover {
@@ -195,17 +255,16 @@
   }
 
   #dropdownTrigger:hover {
-    @apply [&_ul]:block ;
-  }
-  
-  button {
-    @apply font-mono
+    @apply [&_ul]:block;
   }
 
+  button {
+    @apply font-mono;
+  }
 }
 
 @layer utilities {
-    .underlined::before {
+  .underlined::before {
     @apply content-[""] absolute w-full h-0.5 bg-primary invisible transition-transform duration-300 rounded-md scale-x-0 left-0 -bottom-1;
   }
   .underlined:hover::before {
@@ -218,7 +277,7 @@
     @apply transition-[padding] duration-500;
   }
   .btn {
-    @apply font-mono bg-text text-background py-1 px-4 rounded-lg;
+    @apply font-mono bg-foreground text-background py-1 px-4 rounded-lg;
   }
 }
 
@@ -227,7 +286,9 @@
 }
 
 .button-three .hamburger {
-  transition: translate .25s, rotate .5s;
+  transition:
+    translate 0.25s,
+    rotate 0.5s;
 }
 
 .button-three[aria-expanded="true"] .hamburger {
@@ -236,7 +297,7 @@
 }
 
 .button-three .line {
-  transition: .3s;
+  transition: 0.3s;
   stroke-dasharray: 60 31 60 300;
 }
 
@@ -263,16 +324,16 @@
 
 .btn:hover {
   background-color: var(--primary);
-  color: var(--text);
+  color: var(--color-foreground);
 }
 
 /* Footer Styles */
 footer {
-  @apply flex flex-grow-[2] flex-wrap justify-between bg-text text-background dark:bg-[--base01] dark:text-text p-8 max-h-[305px] w-full;
+  @apply flex flex-grow-[2] flex-wrap justify-between bg-foreground text-background dark:bg-[--base01] dark:text-foreground p-8 max-h-[305px] w-full;
 }
 
 footer .footer-links {
-  @apply flex p-0 text-background dark:text-text;
+  @apply flex p-0 text-background dark:text-foreground;
 }
 
 footer .footer-links h3 {
@@ -285,11 +346,11 @@ footer .footer-links ul {
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 1rem
+  gap: 1rem;
 }
 
 footer .footer-links ul li a {
-  @apply text-background dark:text-text;
+  @apply text-background dark:text-foreground;
 }
 
 footer .footer-links ul li a:hover {
@@ -297,7 +358,7 @@ footer .footer-links ul li a:hover {
 }
 
 footer .footer-logo p {
-  @apply text-background dark:text-text ml-0;
+  @apply text-background dark:text-foreground ml-0;
 }
 
 /* Hero Styles */
@@ -354,7 +415,7 @@ footer .footer-logo p {
   max-width: 25rem;
 }
 
-.main-text>* {
+.main-text > * {
   font-size: 3.35rem;
   text-align: left;
 }
@@ -390,7 +451,7 @@ footer .footer-logo p {
 }
 
 .aux-text i svg:hover {
-  fill: var(--accent)
+  fill: var(--accent);
 }
 
 .person img {
@@ -440,7 +501,7 @@ footer .footer-logo p {
 }
 
 @media only screen and (max-width: 525px) {
-  .main-text>* {
+  .main-text > * {
     text-align: center;
     font-size: 8vw;
   }
@@ -488,7 +549,8 @@ footer .footer-logo p {
     z-index: 20;
   }
 
-  .nav, header .desktop{
+  .nav,
+  header .desktop {
     display: none;
   }
 
@@ -517,7 +579,7 @@ footer .footer-logo p {
 
   .mobile-nav .btn {
     background: 0;
-    color: var(--text);
+    color: var(--color-foreground);
     font-family: var(--font-montserrat);
     padding: 0 1rem;
     margin: 0;

@@ -4,27 +4,27 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  darkMode: 'class',
+  darkMode: "selector",
   theme: {
     extend: {
       colors: {
-        'text': 'var(--text)',
-        'background': 'var(--background)',
-        'primary': 'var(--primary)',
-        'secondary': 'var(--secondary)',
-        'accent': 'var(--accent)',
+        foreground: "var(--color-foreground)",
+        background: "var(--color-background)",
+        primary: "var(--color-primary)",
+        secondary: "var(--color-secondary)",
+        accent: "var(--color-accent)",
       },
       fontFamily: {
-        mono: ['var(--font-ibm)'],
-        sans: ['var(--font-montserrat)'],
-        serif: ['var(--font-yeseva-one)'],
+        mono: ["var(--font-ibm)"],
+        sans: ["var(--font-montserrat)"],
+        serif: ["var(--font-yeseva-one)"],
       },
       screens: {
-        'md': '820px',
+        md: "820px",
       },
     },
   },
   plugins: [],
-}
-
+};

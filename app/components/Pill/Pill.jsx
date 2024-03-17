@@ -1,25 +1,29 @@
-import Link from 'next/link'
-import categories from '@/data/categories.json'
+import Link from "next/link";
+import categories from "@/data/categories.json";
 
 function Pill(props) {
-  const categoryColor = categories[props.category]?.color
+  const categoryColor = categories[props.category]?.color;
   return (
     <div
-      className='shadow-md ml-2 px-2.5 py-1 w-fit rounded-full inline-flex'
-      id='pill'
-      style={{ backgroundColor: "var(--" + (categoryColor || 'default-color') + ")" }}
+      className="shadow-md ml-2 px-2.5 py-1 w-fit rounded-full inline-flex"
+      id="pill"
+      style={{
+        backgroundColor: "var(--" + (categoryColor || "default-color") + ")",
+      }}
     >
-      <Link title={`Ir a la sección de ${categories[props.category]?.display}`} className='dark:text-background text-text text-xs font-sans' href={'/blog/category/' + props.category}>
+      <Link
+        title={`Ir a la sección de ${categories[props.category]?.display}`}
+        className="dark:text-background text-foreground text-xs font-sans"
+        href={"/blog/category/" + props.category}
+      >
         {categories[props.category]?.display}
-      </ Link >
-    </div >
-  )
+      </Link>
+    </div>
+  );
 }
 
 export const PillCategories = ({ categories }) => {
-  return (
-    categories.map((category) => (
-      <Pill key={category} category={category} />
-    ))
-  )
-}
+  return categories.map((category) => (
+    <Pill key={category} category={category} />
+  ));
+};

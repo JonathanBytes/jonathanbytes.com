@@ -1,7 +1,7 @@
-'use client'
+"use client";
 
-import React from 'react';
-import styles from './selectMenu.module.css';
+import React from "react";
+import styles from "./selectMenu.module.css";
 
 const SelectMenu = ({ onSortingChange }) => {
   const handleSortingSelectChange = (event) => {
@@ -11,7 +11,7 @@ const SelectMenu = ({ onSortingChange }) => {
   return (
     <div className={`${styles.customSelect} `}>
       <select
-        className={`${styles.select} py-2 pl-2 pr-8 rounded-lg bg-[--base00] text-text appearance-none w-full text-sm cursor-pointer relative`}
+        className={`${styles.select} py-2 pl-2 pr-8 rounded-lg bg-[--base00] text-foreground appearance-none w-full text-sm cursor-pointer relative`}
         defaultValue="placeholder"
         onChange={handleSortingSelectChange}
       >
