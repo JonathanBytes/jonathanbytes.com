@@ -17,6 +17,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 - [ ] Rework landing page, add latest post overview, latest project overview, etc...
 - [ ] Sitemap
 - [ ] Scroll to top Arrow
+- [ ] Comments section on blog posts (maybe using Disqus)
 - [ ] Noise/Paper texture background
 - [ ] Contact page
 - [ ] Projects page
