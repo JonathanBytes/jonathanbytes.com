@@ -323,7 +323,7 @@
 }
 
 .btn:hover {
-  background-color: var(--primary);
+  background-color: var(--color-primary);
   color: var(--color-foreground);
 }
 
@@ -451,7 +451,7 @@ footer .footer-logo p {
 }
 
 .aux-text i svg:hover {
-  fill: var(--accent);
+  fill: var(--color-accent);
 }
 
 .person img {

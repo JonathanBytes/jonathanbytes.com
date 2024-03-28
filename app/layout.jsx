@@ -21,6 +21,7 @@ export default async function RootLayout({ children }) {
       lang="es"
       data-theme={initialUserColors.theme}
       className={`${montserrat.variable} ${ibm.variable} ${yeseva.variable} scroll-smooth`}
+      suppressHydrationWarning
     >
       <body
         className={`${initialUserColors.colorScheme} text-foreground bg-background font-sans m-0 flex flex-col items-center overflow-x-hidden`}
