@@ -1,26 +1,27 @@
-import "./globals.css";
-import { ibm, yeseva, montserrat } from "./fonts";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import { getCookieColorScheme, getCookieTheme } from "@/lib/userColorsCookies";
+import './globals.css'
+import { ibm, yeseva, montserrat } from './fonts'
+import Header from './components/Header'
+import Footer from './components/Footer'
+import { SpeedInsights } from '@vercel/speed-insights/next'
+import { getCookieColorScheme, getCookieTheme } from '@/lib/userColorsCookies'
 
 export const metadata = {
-  metadataBase: new URL("https://jonathanbytes.com"),
-};
+  metadataBase: new URL('https://jonathanbytes.com'),
+  'theme-color': '#282828',
+}
 
 export default async function RootLayout({ children }) {
-  const initialTheme = await getCookieTheme();
-  const initialColorScheme = await getCookieColorScheme();
+  const initialTheme = await getCookieTheme()
+  const initialColorScheme = await getCookieColorScheme()
   const initialUserColors = {
     theme: initialTheme,
     colorScheme: initialColorScheme,
-  };
+  }
   return (
     <html
       lang="es"
       data-theme={initialUserColors.theme}
-      className={`${montserrat.variable} ${ibm.variable} ${yeseva.variable} scroll-smooth`}
+      className={`${initialUserColors.colorScheme} ${montserrat.variable} ${ibm.variable} ${yeseva.variable} scroll-smooth`}
       suppressHydrationWarning
     >
       <body
@@ -37,41 +38,41 @@ export default async function RootLayout({ children }) {
         <SpeedInsights />
       </body>
     </html>
-  );
+  )
 }
 
 function setInitialColorScheme(initialUserColors) {
   function getInitialTheme() {
-    const persistedTheme = initialUserColors;
-    const hasPersistedTheme = typeof persistedTheme === "string";
+    const persistedTheme = initialUserColors
+    const hasPersistedTheme = typeof persistedTheme === 'string'
     /**
      * If the user has explicitly chosen light or dark, use it
      */
     if (hasPersistedTheme) {
-      if (persistedTheme !== "system") {
-        return persistedTheme;
+      if (persistedTheme !== 'system') {
+        return persistedTheme
       }
     }
     /**
      * If they haven't been explicit, check the media query
      */
-    const mql = window.matchMedia("(prefers-color-scheme: dark)");
-    const hasSystemThemePreference = typeof mql.matches === "boolean";
+    const mql = window.matchMedia('(prefers-color-scheme: dark)')
+    const hasSystemThemePreference = typeof mql.matches === 'boolean'
 
     if (hasSystemThemePreference) {
-      return mql.matches ? "dark" : "light";
+      return mql.matches ? 'dark' : 'light'
     }
 
     /**
      * If they are using a browser/OS that doesn't support
      * color themes, default to 'light'.
      */
-    return "light";
+    return 'light'
   }
 
-  const theme = getInitialTheme();
-  if (theme === "dark") {
-    document.documentElement.classList.add("dark");
+  const theme = getInitialTheme()
+  if (theme === 'dark') {
+    document.documentElement.classList.add('dark')
   }
 }
 
@@ -80,5 +81,5 @@ function blockingSetInitialColorMode(initialUserColors) {
 		${setInitialColorScheme.toString()}
 		setInitialColorScheme(${JSON.stringify(initialUserColors)});
 })()
-`;
+`
 }

@@ -1,6 +1,4 @@
-@tailwind base;
-
-@layer base {
+:root {
   .gruvbox {
     --base00: #fff9e8;
     --base01: #ebdbb2;
@@ -76,7 +74,8 @@
       --base0F: #f2cdcd; /* flamingo */
     }
   }
-  [data-theme="dark"] {
+
+  [data-theme='dark'] {
     .gruvbox {
       --base00: #32302f; /* Default Background */
       --base01: #3c3836; /* Lighter Background (Used for status bars, line number and folding marks) */
@@ -115,7 +114,7 @@
     }
   }
 
-  [data-theme="light"] {
+  [data-theme='light'] {
     .gruvbox {
       --base00: #fff9e8;
       --base01: #ebdbb2;
