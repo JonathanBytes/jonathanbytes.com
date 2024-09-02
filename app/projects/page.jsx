@@ -23,7 +23,7 @@ export default function Projects() {
       <p />
       <div className="flex gap-4 flex-wrap items-center justify-center w-full">
         {projectsNames.map((name) => (
-          <GithubCard name={name} />
+          <GithubCard name={name} key={name} />
         ))}
       </div>
       <p />
