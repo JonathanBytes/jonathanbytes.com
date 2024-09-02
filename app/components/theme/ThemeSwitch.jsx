@@ -32,7 +32,7 @@ const ThemeSwitch = ({ className, initialUserColors, onClick }) => {
   // Remove the dark class from the html element (tailwind darkmode) if the user changes the theme to light
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
-    mediaQuery.addEventListener('change', (e) => {
+    const handleSystemThemeChange = (e) => {
       if (theme === 'system') {
         if (e.matches) {
           document.documentElement.classList.add('dark')
@@ -40,8 +40,15 @@ const ThemeSwitch = ({ className, initialUserColors, onClick }) => {
           document.documentElement.classList.remove('dark')
         }
       }
-    })
-  })
+    }
+
+    mediaQuery.addEventListener('change', handleSystemThemeChange)
+
+    // Clean up the event listener on component unmount
+    return () => {
+      mediaQuery.removeEventListener('change', handleSystemThemeChange)
+    }
+  }, [theme])
 
   useEffect(() => {
     if (theme === 'system') {
@@ -50,14 +57,14 @@ const ThemeSwitch = ({ className, initialUserColors, onClick }) => {
       } else {
         document.documentElement.classList.remove('dark')
       }
-      return document.documentElement.removeAttribute('data-theme')
-    }
-
-    document.documentElement.setAttribute('data-theme', theme)
-    if (theme === 'light') {
-      document.documentElement.classList.remove('dark')
-    } else if (theme === 'dark') {
-      document.documentElement.classList.add(theme)
+      document.documentElement.removeAttribute('data-theme')
+    } else {
+      document.documentElement.setAttribute('data-theme', theme)
+      if (theme === 'light') {
+        document.documentElement.classList.remove('dark')
+      } else if (theme === 'dark') {
+        document.documentElement.classList.add('dark')
+      }
     }
   }, [theme])
 
