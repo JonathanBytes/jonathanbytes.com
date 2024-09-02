@@ -13,7 +13,7 @@ function Pill(props) {
     >
       <Link
         title={`Ir a la sección de ${categories[props.category]?.display}`}
-        className="dark:text-background text-foreground text-xs font-sans"
+        className="text-foreground dark:text-background text-xs font-sans"
         href={'/blog/category/' + props.category}
       >
         {categories[props.category]?.display}

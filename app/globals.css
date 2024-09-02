@@ -16,7 +16,7 @@
   .gruvbox {
     --color-foreground: #3c3836;
     --color-background: #fdfbf2;
-    --color-altbg: #ebdbb2;
+    --color-altbg: #e8e0c9;
     --color-primary: #548d8e;
     --color-secondary: #b0cdcb;
     --color-accent: #b16286;
@@ -78,7 +78,7 @@
     .gruvbox {
       --color-foreground: #3c3836;
       --color-background: #fdfbf2;
-      --color-altbg: #ebdbb2;
+      --color-altbg: #f5edd6;
       --color-primary: #548d8e;
       --color-secondary: #b0cdcb;
       --color-accent: #b16286;
