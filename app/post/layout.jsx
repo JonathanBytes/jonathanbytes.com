@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import '../css/prism-classes.css'
+// import '../css/prism-classes.css'
 
 export const metadata = {
   title: 'Post del blog',

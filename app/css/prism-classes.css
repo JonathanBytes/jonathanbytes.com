@@ -1,6 +1,6 @@
 code[class*='language-'],
 pre[class*='language-'] {
-  color: var(--base05);
+  @apply text-base05;
   font-family: var(--font-ibm), Monaco, 'Andale Mono', monospace;
   direction: ltr;
   text-align: left;
@@ -21,16 +21,14 @@ pre[class*='language-']::-moz-selection,
 pre[class*='language-'] ::-moz-selection,
 code[class*='language-']::-moz-selection,
 code[class*='language-'] ::-moz-selection {
-  color: var(--base07);
-  background: var(--base01);
+  @apply bg-altbg text-base07;
 }
 
 pre[class*='language-']::selection,
 pre[class*='language-'] ::selection,
 code[class*='language-']::selection,
 code[class*='language-'] ::selection {
-  color: var(--base07);
-  background: var(--base01);
+  @apply bg-altbg text-base07;
 }
 
 /* Code blocks */
@@ -38,12 +36,12 @@ pre[class*='language-'] {
   padding: 1em;
   /* margin: 0.5em 0; */
   overflow: auto;
-  background: var(--base00);
+  @apply bg-altbg;
 }
 
 :not(pre) > code[class*='language-'],
 pre[class*='language-'] {
-  background: var(--base00);
+  @apply bg-altbg;
 }
 
 /* Inline code */
@@ -55,7 +53,8 @@ pre[class*='language-'] {
 .token.comment,
 .token.prolog,
 .token.cdata {
-  color: var(--base03);
+  /* color: var(--base03); */
+  @apply text-base03;
 }
 
 .token.delimiter,
@@ -63,63 +62,75 @@ pre[class*='language-'] {
 .token.selector,
 .token.important,
 .token.atrule {
-  color: var(--base08);
+  /* color: var(--base08); */
+  @apply text-base08;
 }
 
 .token.keyword {
-  color: var(--base0E);
+  /* color: var(--base0E); */
+  @apply text-base0E;
 }
 
 .token.operator,
 .token.punctuation,
 .token.attr-name {
-  color: var(--base03);
+  /* color: var(--base03); */
+  @apply text-base03;
 }
 
 .token.tag,
 .token.tag .punctuation,
 .token.doctype,
 .token.builtin {
-  color: var(--base0A);
+  /* color: var(--base0A); */
+  @apply text-base0A;
 }
 
 .token.entity,
 .token.number,
 .token.symbol {
-  color: var(--base0E);
+  /* color: var(--base0E); */
+  @apply text-base0E;
 }
 
 .token.property,
 .token.constant,
 .token.variable {
-  color: var(--base09);
+  /* color: var(--base09); */
+  @apply text-base09;
 }
 
 .token.string,
 .token.char {
-  color: var(--base0B);
+  /* color: var(--base0B); */
+  @apply text-base0B;
 }
 
 .token.attr-value,
 .token.attr-value .punctuation {
-  color: var(--base03);
+  /* color: var(--base03); */
+  @apply text-base03;
 }
 
 .token.url {
-  color: var(--base0B);
+  /* color: var(--base0B); */
+  @apply text-base0B;
   text-decoration: underline;
 }
 
 .token.function {
-  color: var(--base0D);
+  /* color: var(--base0D); */
+  @apply text-base0D;
 }
 
 .token.regex {
-  background: var(--base0B);
+  /* background: var(--base0B); */
+  @apply bg-base0B;
 }
 
 .token.console {
-  color: var(--base0C);
+  /* color: var(--base0C); */
+  @apply text-base0C;
 }
 
 .token.bold {
@@ -131,16 +142,17 @@ pre[class*='language-'] {
 }
 
 .token.inserted {
-  background: var(--base03);
+  /* background: var(--base03); */
+  @apply bg-base03;
 }
 
 .token.deleted {
-  background: var(--base08);
+  /* background: var(--base08); */
+  @apply bg-base08;
 }
 
 pre {
   overflow-x: auto;
-  background: var(--base01);
 }
 /** * Inspired by gatsby remark prism - https://www.gatsbyjs.com/plugins/gatsby-remark-prismjs/ * 1. Make the element just wide enough to fit its content. * 2. Always fill the visible space in .code-highlight. */
 .code-highlight {

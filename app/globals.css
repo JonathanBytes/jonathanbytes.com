@@ -7,8 +7,9 @@
 }
 
 @layer base {
-  @import url('./css/prism-highlight-colors.css');
   @import url('./css/pillColors.css');
+  @import url('./css/prism-highlight-colors.css');
+  @import url('./css/prism-classes.css');
   :root {
     --animation-duration: 300ms;
   }
@@ -101,7 +102,7 @@
   }
 
   code {
-    @apply px-3 py-1 mx-0.5 rounded-full font-mono text-foreground dark:text-foreground text-sm;
+    @apply px-3 py-1 mx-0.5 rounded-full font-mono text-sm bg-altbg;
   }
 
   /* Bloques de código */

@@ -1,4 +1,4 @@
-import '../css/prism-classes.css'
+// import '../css/prism-classes.css'
 
 export const metadata = () => {
   return {
