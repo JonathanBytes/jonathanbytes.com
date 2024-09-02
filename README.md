@@ -13,6 +13,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
   - [ ] Fix bug when first open show UI before loading colors (defer or category='beforeInteract' doesn't work)
   - [ ] 404 page image
 - [ ] Fix codeblocks changing wrong colors when switching themes
+- [ ] Fix bad colors on footer
 - [ ] OpenGraph protocol for the entire web (landing, projects, gallery, blog and posts)
 - [ ] Migrate all CSS to Tailwind
 - [ ] Rework landing page, add latest post overview, latest project overview, etc...
