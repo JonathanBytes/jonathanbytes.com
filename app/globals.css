@@ -3,39 +3,20 @@
 @tailwind utilities;
 
 .rehype-code-title {
-  @apply ml-[11%] sm:ml-[12%] lg:ml-[16%] mt-4 w-fit px-2 py-1 bg-[--base00] font-mono text-sm text-foreground font-semibold rounded-t-lg;
+  @apply ml-[11%] sm:ml-[12%] lg:ml-[16%] mt-4 w-fit px-2 py-1 bg-altbg font-mono text-sm text-foreground font-semibold rounded-t-lg;
 }
 
 @layer base {
-  @import url('./prism-highlight-colors.css');
+  @import url('./css/prism-highlight-colors.css');
+  @import url('./css/pillColors.css');
   :root {
-    --black: #282828;
-    --red: #fb4934;
-    --altred: #cc241d;
-    --yellow: #fabd2f;
-    --altyellow: #d79921;
-    --blue: #83a598;
-    --altblue: #458588;
-    --green: #b8bb26;
-    --altgreen: #98971a;
-    --aqua: #8ec07c;
-    --altaqua: #689d6a;
-    --orange: #fe8019;
-    --altorange: #d65d0e;
-    --white: #fff;
-    --white2: #f9f5d7;
-    --white3: #fbf1c7;
-    --white4: #d5c4a1;
-    --purple: #d3869b;
-    --altpurple: #b16286;
-    --gray: #928374;
-    --gray2: #7c6f64;
     --animation-duration: 300ms;
   }
 
   .gruvbox {
     --color-foreground: #3c3836;
     --color-background: #fdfbf2;
+    --color-altbg: #ebdbb2;
     --color-primary: #548d8e;
     --color-secondary: #b0cdcb;
     --color-accent: #b16286;
@@ -43,6 +24,7 @@
   .catppuccin {
     --color-foreground: #4b4e68;
     --color-background: #eff1f5;
+    --color-altbg: #e6e9ef;
     --color-primary: #dc8a78;
     --color-secondary: #f9e2af;
     --color-accent: #cba6f7;
@@ -52,29 +34,15 @@
     .gruvbox {
       --color-foreground: #d7c9a4;
       --color-background: #202020;
+      --color-altbg: #32302f;
       --color-primary: #bee0d9;
       --color-secondary: #9db9b7;
       --color-accent: #ee9bb2;
-      --base00: #32302f; /* Default Background */
-      --base01: #3c3836; /* Lighter Background (Used for status bars, line number and folding marks) */
-      --base02: #504945; /* Selection Background */
-      --base03: #665c54; /* Comments, Invisibles, Line Highlighting */
-      --base04: #bdae93; /* Dark Foreground (Used for status bars) */
-      --base05: #d5c4a1; /* Default Foreground, Caret, Delimiters, Operators */
-      --base06: #ebdbb2; /* Light Foreground (Not often used) */
-      --base07: #fbf1c7; /* Light Background (Not often used) */
-      --base08: #fb4934; /* Variables, XML Tags, Markup Link Text, Markup Lists, Diff Deleted */
-      --base09: #fe8019; /* Integers, Boolean, Constants, XML Attributes, Markup Link Url */
-      --base0A: #fabd2f; /* Classes, Markup Bold, Search Text Background */
-      --base0B: #b8bb26; /* Strings, Inherited Class, Markup Code, Diff Inserted */
-      --base0C: #8ec07c; /* Support, Regular Expressions, Escape Characters, Markup Quotes */
-      --base0D: #83a598; /* Functions, Methods, Attribute IDs, Headings */
-      --base0E: #d3869b; /* Keywords, Storage, Selector, Markup Italic, Diff Changed */
-      --base0F: #d65d0e; /* Deprecated, Opening/Closing Embedded Language Tags, e.g. <?php ?> */
     }
     .catppuccin {
       --color-foreground: #cad3f5;
       --color-background: #24273a;
+      --color-altbg: #303446;
       --color-primary: #8aadf4;
       --color-secondary: #b7bdf8;
       --color-accent: #c6a0f6;
@@ -91,29 +59,15 @@
     .gruvbox {
       --color-foreground: #d7c9a4;
       --color-background: #202020;
+      --color-altbg: #32302f;
       --color-primary: #bee0d9;
       --color-secondary: #9db9b7;
       --color-accent: #ee9bb2;
-      --base00: #32302f; /* Default Background */
-      --base01: #3c3836; /* Lighter Background (Used for status bars, line number and folding marks) */
-      --base02: #504945; /* Selection Background */
-      --base03: #665c54; /* Comments, Invisibles, Line Highlighting */
-      --base04: #bdae93; /* Dark Foreground (Used for status bars) */
-      --base05: #d5c4a1; /* Default Foreground, Caret, Delimiters, Operators */
-      --base06: #ebdbb2; /* Light Foreground (Not often used) */
-      --base07: #fbf1c7; /* Light Background (Not often used) */
-      --base08: #fb4934; /* Variables, XML Tags, Markup Link Text, Markup Lists, Diff Deleted */
-      --base09: #fe8019; /* Integers, Boolean, Constants, XML Attributes, Markup Link Url */
-      --base0A: #fabd2f; /* Classes, Markup Bold, Search Text Background */
-      --base0B: #b8bb26; /* Strings, Inherited Class, Markup Code, Diff Inserted */
-      --base0C: #8ec07c; /* Support, Regular Expressions, Escape Characters, Markup Quotes */
-      --base0D: #83a598; /* Functions, Methods, Attribute IDs, Headings */
-      --base0E: #d3869b; /* Keywords, Storage, Selector, Markup Italic, Diff Changed */
-      --base0F: #d65d0e; /* Deprecated, Opening/Closing Embedded Language Tags, e.g. <?php ?> */
     }
     .catppuccin {
       --color-foreground: #cad3f5;
       --color-background: #24273a;
+      --color-altbg: #303446;
       --color-primary: #8aadf4;
       --color-secondary: #b7bdf8;
       --color-accent: #c6a0f6;
@@ -124,6 +78,7 @@
     .gruvbox {
       --color-foreground: #3c3836;
       --color-background: #fdfbf2;
+      --color-altbg: #ebdbb2;
       --color-primary: #548d8e;
       --color-secondary: #b0cdcb;
       --color-accent: #b16286;
@@ -131,6 +86,7 @@
     .catppuccin {
       --color-foreground: #4b4e68;
       --color-background: #eff1f5;
+      --color-altbg: #e6e9ef;
       --color-primary: #dc8a78;
       --color-secondary: #f9e2af;
       --color-accent: #cba6f7;
@@ -145,7 +101,7 @@
   }
 
   code {
-    @apply bg-[--base00] px-2 mx-0.5 rounded-full font-mono;
+    @apply px-3 py-1 mx-0.5 rounded-full font-mono text-foreground dark:text-foreground text-sm;
   }
 
   /* Bloques de código */
@@ -157,10 +113,10 @@
     @apply mx-auto w-3/4 text-sm text-left rtl:text-right text-foreground;
   }
   thead {
-    @apply text-xs text-accent uppercase bg-[--base00];
+    @apply text-xs text-accent uppercase bg-[--color-altbg];
   }
   tr {
-    @apply bg-[--base00] border-b dark:border-neutral-700;
+    @apply bg-[--color-altbg] border-b dark:border-neutral-700;
   }
   th {
     @apply px-6 py-4 font-medium text-accent whitespace-nowrap;

@@ -11,6 +11,7 @@ module.exports = {
       colors: {
         foreground: 'var(--color-foreground)',
         background: 'var(--color-background)',
+        altbg: 'var(--color-altbg)',
         primary: 'var(--color-primary)',
         secondary: 'var(--color-secondary)',
         accent: 'var(--color-accent)',

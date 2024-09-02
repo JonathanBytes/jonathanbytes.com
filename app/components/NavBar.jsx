@@ -1,6 +1,6 @@
-import Link from "next/link";
-import { DownArrow } from "./Icons";
-import ThemeSwitch from "./theme/ThemeSwitch";
+import Link from 'next/link'
+import { DownArrow } from './Icons'
+import ThemeSwitch from './theme/ThemeSwitch'
 
 const ListItemLink = ({ children, onClick, href, className }) => {
   return (
@@ -9,8 +9,8 @@ const ListItemLink = ({ children, onClick, href, className }) => {
         {children}
       </Link>
     </li>
-  );
-};
+  )
+}
 
 export const NavBar = ({ onClick, className }) => {
   return (
@@ -38,7 +38,7 @@ export const NavBar = ({ onClick, className }) => {
           <div className="absolute w-16 h-2 -bottom-2"></div>
           <ul
             id="dropdown"
-            className={`absolute top-8 left-0 rounded bg-[--base00] text-left pl-1 pr-6 pt-1 pb-1 shadow-md w-[120px]`}
+            className={`absolute top-8 left-0 rounded bg-altbg text-left pl-1 pr-6 pt-1 pb-1 shadow-md w-[120px]`}
           >
             <ListItemLink onClick={onClick} className="sideline" href="/blog">
               Blog
@@ -54,8 +54,8 @@ export const NavBar = ({ onClick, className }) => {
         </li>
       </ul>
     </nav>
-  );
-};
+  )
+}
 
 export const MobileNav = ({ onClick, handleClick, userColors }) => {
   return (
@@ -78,5 +78,5 @@ export const MobileNav = ({ onClick, handleClick, userColors }) => {
         <ThemeSwitch onClick={onClick} initialUserColors={userColors} />
       </div>
     </div>
-  );
-};
+  )
+}

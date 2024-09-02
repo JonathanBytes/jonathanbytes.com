@@ -1,18 +1,16 @@
-import '../prism-classes.css'
+import '../css/prism-classes.css'
 
 export const metadata = () => {
   return {
     title: 'Readme',
-    description: 'JonathanBytes\'s website'
+    description: "JonathanBytes's website",
   }
 }
 
 export default function Layout({ children }) {
   return (
     <main>
-      <article>
-        {children}
-      </article>
-    </ main >
+      <article>{children}</article>
+    </main>
   )
 }
