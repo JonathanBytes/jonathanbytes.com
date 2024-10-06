@@ -304,7 +304,7 @@
 
 /* Footer Styles */
 footer {
-  @apply flex flex-grow-[2] flex-wrap justify-between bg-foreground text-background dark:bg-[--base01] dark:text-foreground p-8 max-h-[305px] w-full;
+  @apply flex flex-grow-[2] flex-wrap justify-between bg-foreground text-background dark:bg-[--color-altbg] dark:text-foreground p-8 max-h-[305px] w-full;
 }
 
 footer .footer-links {
