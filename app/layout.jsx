@@ -2,24 +2,37 @@ import './globals.css'
 import { ibm, yeseva, montserrat } from './fonts'
 import Header from './components/Header'
 import Footer from './components/Footer'
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SpeedInsights } from '@vercel/speed-insights/next'
+import { getCookieColorScheme, getCookieTheme } from '@/lib/userColorsCookies'
 
 export const metadata = {
   metadataBase: new URL('https://jonathanbytes.com'),
+  'theme-color': '#282828',
 }
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  const initialTheme = await getCookieTheme()
+  const initialColorScheme = await getCookieColorScheme()
+  const initialUserColors = {
+    theme: initialTheme,
+    colorScheme: initialColorScheme,
+  }
   return (
-    <html lang="es" className={`${montserrat.variable} ${ibm.variable} ${yeseva.variable}`}>
-      <body className='text-text bg-background font-sans m-0 flex flex-col items-center overflow-x-hidden'>
+    <html
+      lang="es"
+      data-theme={initialUserColors.theme}
+      className={`${initialUserColors.colorScheme} ${montserrat.variable} ${ibm.variable} ${yeseva.variable} scroll-smooth`}
+      suppressHydrationWarning
+    >
+      <body
+        className={`${initialUserColors.colorScheme} text-foreground bg-background font-sans m-0 flex flex-col items-center overflow-x-hidden`}
+      >
         <script
-          id='blockingScript'
           dangerouslySetInnerHTML={{
-            __html: blockingSetInitialColorMode,
+            __html: blockingSetInitialColorMode(initialUserColors.theme),
           }}
-        >
-        </script>
-        <Header />
+        ></script>
+        <Header userColors={initialUserColors} />
         {children}
         <Footer />
         <SpeedInsights />
@@ -28,53 +41,45 @@ export default function RootLayout({ children }) {
   )
 }
 
-const blockingSetInitialColorMode = `(function() {
-    ${setInitialColorMode.toString()}
-    setInitialColorMode();
+function setInitialColorScheme(initialUserColors) {
+  function getInitialTheme() {
+    const persistedTheme = initialUserColors
+    const hasPersistedTheme = typeof persistedTheme === 'string'
+    /**
+     * If the user has explicitly chosen light or dark, use it
+     */
+    if (hasPersistedTheme) {
+      if (persistedTheme !== 'system') {
+        return persistedTheme
+      }
+    }
+    /**
+     * If they haven't been explicit, check the media query
+     */
+    const mql = window.matchMedia('(prefers-color-scheme: dark)')
+    const hasSystemThemePreference = typeof mql.matches === 'boolean'
+
+    if (hasSystemThemePreference) {
+      return mql.matches ? 'dark' : 'light'
+    }
+
+    /**
+     * If they are using a browser/OS that doesn't support
+     * color themes, default to 'light'.
+     */
+    return 'light'
+  }
+
+  const theme = getInitialTheme()
+  if (theme === 'dark') {
+    document.documentElement.classList.add('dark')
+  }
+}
+
+function blockingSetInitialColorMode(initialUserColors) {
+  return `(function() {
+		${setInitialColorScheme.toString()}
+		setInitialColorScheme(${JSON.stringify(initialUserColors)});
 })()
-`;
-
-function setInitialColorMode() {
-  const colorSchemes = {
-    gruvbox: {
-      light: 'gruvbox',
-      dark: 'gruvbox-dark'
-    },
-    catppuccin: {
-      light: 'catppuccin',
-      dark: 'catppuccin-dark'
-    }
-  }
-  function getInitialColorMode() {
-    const preference = window.localStorage.getItem("theme");
-    const hasExplicitPreference = typeof preference === "string";
-    //
-    // If the user has explicitly chosen light or dark,
-    // use it. Otherwise, this value will be null.
-    // 
-    if (hasExplicitPreference) {
-      return preference;
-    }
-    // If there is no saved preference, use a media query
-    const mediaQuery = "(prefers-color-scheme: dark)";
-    const mql = window.matchMedia(mediaQuery);
-    const hasImplicitPreference = typeof mql.matches === "boolean";
-    if (hasImplicitPreference) {
-      return mql.matches ? "dark" : "light";
-    }
-    // default to 'light'.
-    return "light";
-  }
-  function getInitialColorScheme() {
-    const preference = window.localStorage.getItem("colorScheme");
-    const hasExplicitPreference = typeof preference === "string";
-    if (hasExplicitPreference) { return preference }
-    return 'gruvbox'
-  }
-  const colorMode = getInitialColorMode();
-  const colorScheme = getInitialColorScheme();
-  const root = document.documentElement;
-
-  if (colorMode === 'dark') { root.classList.add('dark'); root.classList.add(colorSchemes[colorScheme].dark); console.log("Cambiando la clase: " + colorMode) }
-  else if (colorMode === 'light') { root.classList.add(colorSchemes[colorScheme].light); console.log("Cambiando la clase: " + colorMode) }
+`
 }

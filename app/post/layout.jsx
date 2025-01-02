@@ -1,6 +1,5 @@
-import Link from "next/link"
-import '../prism-classes.css'
-
+import Link from 'next/link'
+// import '../css/prism-classes.css'
 
 export const metadata = {
   title: 'Post del blog',
@@ -11,12 +10,13 @@ export const metadata = {
 export default function PostLayout({ children }) {
   return (
     <main>
-      <article>
-        {children}
-      </article>
+      <article>{children}</article>
       <p />
-      < Link href="/blog" className='btn' > Volver</Link >
+      <Link href="/blog" className="btn">
+        {' '}
+        Volver
+      </Link>
       <p />
-    </ main >
+    </main>
   )
 }
