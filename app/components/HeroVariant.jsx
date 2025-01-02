@@ -8,5 +8,23 @@ export default function HeroVariant() {
         <p>It’s story time!</p>
       </div>
     </div>
-  );
+  )
+}
+
+export function HeroCustom({ title, content, heroBGSrc }) {
+  return (
+    <div
+      className="hero variation"
+      style={{
+        backgroundImage: `url(${heroBGSrc})`,
+      }}
+    >
+      <div className="text-foreground main-text ">
+        <h1>
+          <span>{title}</span>
+        </h1>
+        <p>{content}</p>
+      </div>
+    </div>
+  )
 }
