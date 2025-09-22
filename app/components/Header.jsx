@@ -36,7 +36,7 @@ export default function Header() {
       </div>
 
       <MobileNavBar
-        className="mobile-nav md:hidden text-xl font-bold fixed top-0 right-0 h-screen min-w-48 bg-white/90 backdrop-blur-sm z-10 pt-20 translate-x-full "
+        className="mobile-nav md:hidden text-xl font-bold fixed top-0 right-0 h-svh min-w-40 bg-white/90 backdrop-blur-sm z-10 pt-20 translate-x-full "
         data-visible={isMobileNavVisible}
       />
       <button

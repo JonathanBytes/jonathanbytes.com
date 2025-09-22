@@ -44,7 +44,7 @@ export const MobileNavBar = ({ onClick, className, ...props }) => {
           </a>
         </li>
       </ul>
-      <span className="font-mono flex-end">Theme selector placeholder</span>
+      <span className="font-mono flex-end px-4">Theme selector </span>
     </nav>
   )
 }
