@@ -26,7 +26,7 @@ const Blog = ({ params }) => {
   return (
     <>
       <h1>Posts sobre {categories[selectedCategory].display.toLowerCase()}</h1>
-      <div className="w-full flex justify-end mb-4 gap-2 items-center" >
+      <div>
         <Search />
         <SelectMenu onSortingChange={setSortBy} />
       </div>

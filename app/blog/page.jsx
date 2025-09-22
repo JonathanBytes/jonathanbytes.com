@@ -16,11 +16,11 @@ const Blog = () => {
   return (
     <>
       <h1>Posts del blog</h1>
-      <div className="w-full flex justify-end mb-4 gap-2 items-center" >
+      <div>
         <Search />
         <SelectMenu onSortingChange={setSortBy} />
       </div>
-      <ul className="pl-0" >
+      <ul>
         {sortedPosts.map((post) => (
           <BlogCard
             key={post.slug}

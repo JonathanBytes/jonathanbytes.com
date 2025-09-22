@@ -3,7 +3,7 @@ import { LinkedIn, GitHub, YouTube, Instagram } from "./Icons";
 const ListItem = ({ children, href }) => {
   return (
     <li>
-      <a className="flex justify-start items-center" href={href} target="_blank" rel="noreferrer">
+      <a href={href} target="_blank" rel="noreferrer">
         {children}
       </a>
     </li>

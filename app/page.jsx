@@ -17,8 +17,8 @@ export default function Index() {
           <i>
             <Hearth />
           </i>
-          <h2 className='mb-2'>¡Saludos, cibernauta!</h2>
-          <p className='text-sm text-center'>Bienvenido a mi pequeño rincón en línea. Un pedacito de mi mundo en la web.</p>
+          <h2>¡Saludos, cibernauta!</h2>
+          <p>Bienvenido a mi pequeño rincón en línea. Un pedacito de mi mundo en la web.</p>
         </div>
         <p />
       </main>

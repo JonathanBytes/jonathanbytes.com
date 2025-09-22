@@ -25,17 +25,17 @@ function handleClick() {
 export default function Header({ userColors }) {
   return (
     <header className="header">
-      <Link className="flex items-center" href="/">
-        <MainLogo className="text-foreground text-xl" />
+      <Link href="/">
+        <MainLogo />
       </Link>
       <NavBar />
-      <div className="flex gap-2 items-center">
+      <div>
         <ThemeSwitchDesktop
           userColors={userColors}
-          className="hidden md:flex"
+          className="desktop"
         />
         <a
-          className="btn desktop h-8"
+          className="btn desktop"
           href="mailto:contacto@jonathanbytes.com"
           target="_blank"
           rel="noreferrer"
@@ -56,7 +56,7 @@ export default function Header({ userColors }) {
         aria-expanded="false"
       >
         <Hamburguer />
-        <span className="sr-only">Menu</span>
+        <span>Menu</span>
       </button>
     </header>
   );

@@ -17,7 +17,7 @@ const ThemeSwitchDesktop = ({ className, userColors }) => {
     <div className={`${className} relative`}>
       <button
         onClick={handleClick}
-        className="rounded-lg w-6 h-6 text-accent transform active:scale-75 transition-transform"
+        className="theme-switch"
       >
         <Pallette />
       </button>

@@ -1,7 +1,9 @@
 'use client'
 
 import React from 'react'
-import styles from './selectMenu.module.css'
+import { useState } from 'react'
+import Link from 'next/link'
+import { DownArrow } from '../Icons'
 
 const SelectMenu = ({ onSortingChange }) => {
   const handleSortingSelectChange = (event) => {
@@ -9,31 +11,30 @@ const SelectMenu = ({ onSortingChange }) => {
   }
 
   return (
-    <div className={`${styles.customSelect} `}>
+    <div>
       <select
-        className={`${styles.select} py-2 pl-2 pr-8 rounded-lg bg-foreground text-background appearance-none w-full text-sm cursor-pointer relative`}
         defaultValue="placeholder"
         onChange={handleSortingSelectChange}
       >
-        <option value="placeholder" disabled hidden className={styles.li}>
+        <option value="placeholder" disabled hidden>
           Ordenar por
         </option>
-        <option value="recent" className={styles.li}>
+        <option value="recent">
           Más reciente primero
         </option>
-        <option value="old" className={styles.li}>
+        <option value="old">
           Más antiguo primero
         </option>
-        <option value="titleAscending" className={styles.li}>
+        <option value="titleAscending">
           Título (A-Z)
         </option>
-        <option value="titleDescending" className={styles.li}>
+        <option value="titleDescending">
           Título (Z-A)
         </option>
-        <option value="categoriesAscending" className={styles.li}>
+        <option value="categoriesAscending">
           Categorías (A-Z)
         </option>
-        <option value="categoriesDescending" className={styles.li}>
+        <option value="categoriesDescending">
           Categorías (Z-A)
         </option>
       </select>

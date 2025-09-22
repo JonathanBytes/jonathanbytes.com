@@ -72,7 +72,7 @@ const ThemeSwitch = ({ className, initialUserColors, onClick }) => {
     <div
       className={`${className} mb-2 flex w-fit flex-col items-center justify-center gap-2`}
     >
-      <div className="flex w-fit justify-center gap-1" onClick={onClick}>
+      <div onClick={onClick}>
         <ThemeSwitchButton
           icon={<Sun />}
           isSelected={theme === 'light'}

@@ -3,7 +3,7 @@ const SelectThemeBox = ({ value, onChange }) => {
     <select
       value={value}
       onChange={onChange}
-      className="text-center h-8 cursor-pointer rounded-lg bg-foreground px-2 py-1 text-background transition-opacity hover:opacity-80"
+      className="theme-box"
     >
       <option value="gruvbox">Gruvbox &#x1F39E;</option>
       <option value="catppuccin">Catppuccin &#x1F431;</option>

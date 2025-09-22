@@ -7,8 +7,8 @@ const ReadTime = ({ title }) => {
   const words = post.readTime.words
   return (
     <>
-      <p className='text-sm opacity-50 m-0 inline-flex items-center gap-1 text-left h-4' title={`${words} palabras`}>
-        <Clock className='w-4' />
+      <p title={`${words} palabras`}>
+        <Clock />
         {readTime}
       </p >
     </>

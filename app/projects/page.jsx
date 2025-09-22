@@ -21,7 +21,7 @@ export default function Projects() {
     <main>
       <h1>Proyectos</h1>
       <p />
-      <div className="flex gap-4 flex-wrap items-center justify-center w-full">
+      <div>
         {projectsNames.map((name) => (
           <GithubCard name={name} key={name} />
         ))}

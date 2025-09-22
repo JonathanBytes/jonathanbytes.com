@@ -4,7 +4,7 @@ import ThemeSwitch from './theme/ThemeSwitch'
 
 const ListItemLink = ({ children, onClick, href, className }) => {
   return (
-    <li className="text-center relative">
+    <li>
       <Link onClick={onClick} className={className} href={href}>
         {children}
       </Link>
@@ -16,12 +16,12 @@ export const NavBar = ({ onClick, className }) => {
   return (
     <nav>
       <ul
-        className={`nav list-none p-0 flex justify-between flex-wrap gap-5 ${className}`}
+        className={`nav ${className}`}
       >
         <ListItemLink
           onClick={onClick}
           href="/projects"
-          className="underlined "
+          className="underlined"
         >
           Proyectos
         </ListItemLink>
@@ -30,15 +30,13 @@ export const NavBar = ({ onClick, className }) => {
         </ListItemLink>
         <li
           id="dropdownTrigger"
-          className="relative flex flex-col items-center gap-0"
         >
-          <div className="flex gap-1 relative cursor-default">
+          <div>
             Otros <DownArrow />
           </div>
-          <div className="absolute w-16 h-2 -bottom-2"></div>
+          <div></div>
           <ul
             id="dropdown"
-            className={`absolute top-8 left-0 rounded bg-altbg text-left pl-1 pr-6 pt-1 pb-1 shadow-md w-[120px]`}
           >
             <ListItemLink onClick={onClick} className="sideline" href="/blog">
               Blog
@@ -62,19 +60,19 @@ export const MobileNav = ({ onClick, handleClick, userColors }) => {
     <div
       data-visible="false"
       id="primary-navigation"
-      className="mobile-nav hidden transition-transform duration-300 inset-y-0 right-0 fixed z-20 justify-start items-center flex-col opacity-95 bg-background px-4 h-full pt-16 gap-4 font-bold"
+      className="mobile-nav"
     >
       <NavBar onClick={onClick} className="mobile" />
       <a
         onClick={onClick}
-        className="underlined relative"
+        className="underlined"
         href="mailto:contacto@jonathanbytes.com"
         target="_blank"
         rel="noreferrer"
       >
         Contáctame
       </a>
-      <div className="flex flex-col flex-grow justify-end items-center">
+      <div>
         <ThemeSwitch onClick={onClick} initialUserColors={userColors} />
       </div>
     </div>

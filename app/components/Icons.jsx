@@ -1,7 +1,6 @@
 const Icon = ({ viewBox, children }) => {
   return (
     <svg
-      className="fill-background dark:fill-foreground mr-2"
       viewBox={viewBox}
       width="25px"
       height="25px"
@@ -97,13 +96,11 @@ export const DownArrow = () => {
 export const Hamburguer = () => {
   return (
     <svg
-      className="hamburger stroke-foreground"
       fill="none"
       viewBox="-10 -10 120 120"
       width="40"
     >
       <path
-        className="line"
         strokeWidth="6"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -116,8 +113,8 @@ export const Hamburguer = () => {
 export const MainLogo = ({ className }) => {
   return (
     <p className={`${className}`}>
-      <span className="font-serif">Jonathan</span>
-      <span className="font-mono">Bytes</span>
+      <span>Jonathan</span>
+      <span>Bytes</span>
     </p>
   );
 };
@@ -136,7 +133,6 @@ export const Hearth = () => {
           <path
             id="Vector"
             d="M12 7.69431C10 2.99988 3 3.49988 3 9.49991C3 15.4999 12 20.5001 12 20.5001C12 20.5001 21 15.4999 21 9.49991C21 3.49988 14 2.99988 12 7.69431Z"
-            className="stroke-foreground"
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"

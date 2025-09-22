@@ -1,5 +1,4 @@
 import { DocSearch } from '@docsearch/react'
-import './style.css'
 
 import Head from 'next/head'
 
