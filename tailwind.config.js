@@ -4,7 +4,13 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        mono: ['var(--font-ibm)'],
+        sans: ['var(--font-montserrat)'],
+        serif: ['var(--font-yeseva-one)'],
+      },
+    },
   },
   plugins: [],
 }
