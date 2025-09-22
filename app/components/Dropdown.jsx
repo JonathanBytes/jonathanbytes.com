@@ -15,10 +15,18 @@ const Dropdown = ({ onClick }) => {
         id="dropdown"
         className={`absolute top-8 left-0 rounded text-left border pl-2 pr-6 py-1`}
       >
-        <ListItemLink onClick={onClick} className="text-left" href="/blog">
+        <ListItemLink
+          onClick={onClick}
+          className="sideline text-left"
+          href="/blog"
+        >
           Blog
         </ListItemLink>
-        <ListItemLink onClick={onClick} className="text-left" href="/gallery">
+        <ListItemLink
+          onClick={onClick}
+          className="sideline text-left"
+          href="/gallery"
+        >
           Galería
         </ListItemLink>
       </ul>

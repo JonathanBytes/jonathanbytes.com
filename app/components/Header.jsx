@@ -20,7 +20,7 @@ function ButtonToggle() {
 
 export default function Header() {
   return (
-    <header className="flex justify-between align-center flex-wrap w-full max-w-5xl p-4">
+    <header className="flex justify-between align-center flex-wrap w-full max-w-4xl px-4 py-6">
       <Link href="/" className="flex items-center flex-start">
         <MainLogo className="text-xl" />
       </Link>
@@ -32,6 +32,7 @@ export default function Header() {
           className="hidden md:flex"
         /> */}
         <a
+          className="bg-black text-white font-mono px-3 py-1 rounded-md"
           href="mailto:contacto@jonathanbytes.com"
           target="_blank"
           rel="noreferrer"

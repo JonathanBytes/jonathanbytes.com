@@ -6,7 +6,7 @@ export const DesktopNavBar = ({ className }) => {
   return (
     <nav className={className}>
       <ul className={`list-none flex flex-wrap gap-6`}>
-        <ListItemLink href="/projects" className="underlined ">
+        <ListItemLink href="/projects" className="underlined">
           Proyectos
         </ListItemLink>
         <ListItemLink href="/about" className="underlined">
