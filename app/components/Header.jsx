@@ -1,26 +1,20 @@
 'use client'
 
 import Link from 'next/link'
+import { useState } from 'react'
 import { DesktopNavBar, MobileNavBar } from './NavBar'
 import { Hamburguer, MainLogo } from './Icons'
 import ThemeSwitchDesktop from './theme/ThemeSwitchDesktop'
 
-function ButtonToggle() {
-  const button = document.querySelector('.button-three')
-  const mobileNav = document.querySelector('.mobile-nav')
-  const currentState = mobileNav.getAttribute('data-visible')
-  if (!currentState || currentState === 'false') {
-    button.setAttribute('aria-expanded', 'true')
-    mobileNav.setAttribute('data-visible', 'true')
-  } else {
-    button.setAttribute('aria-expanded', 'false')
-    mobileNav.setAttribute('data-visible', 'false')
-  }
-}
-
 export default function Header() {
+  const [isMobileNavVisible, setIsMobileNavVisible] = useState(false)
+
+  const handleToggle = () => {
+    setIsMobileNavVisible(!isMobileNavVisible)
+  }
+
   return (
-    <header className="flex justify-between align-center flex-wrap w-full max-w-4xl px-4 py-6">
+    <header className="flex justify-between align-center items-center flex-wrap w-full max-w-4xl px-4 py-4 min-h-20">
       <Link href="/" className="flex items-center flex-start">
         <MainLogo className="text-xl" />
       </Link>
@@ -41,17 +35,22 @@ export default function Header() {
         </a>
       </div>
 
-      {/* <MobileNavBar className="md:hidden block" />
+      <MobileNavBar
+        className="mobile-nav md:hidden text-xl font-bold fixed top-0 right-0 h-screen min-w-48 bg-white/90 backdrop-blur-sm z-10 pt-20 translate-x-full "
+        data-visible={isMobileNavVisible}
+      />
       <button
         type="button"
-        className="button-three md:hidden block"
-        onClick={ButtonToggle}
+        className={`hamburger-menu-btn bg-transparent p-0 border-0 w-10 aspect-square md:hidden overflow-hidden cursor-pointer flex items-center justify-center z-20 ${
+          isMobileNavVisible ? 'fixed top-5 right-4' : ''
+        }`}
+        onClick={handleToggle}
         aria-controls="primary-navigation"
-        aria-expanded="false"
+        aria-expanded={isMobileNavVisible}
       >
         <Hamburguer />
-        <span>Menu</span>
-      </button> */}
+        <span className="sr-only">Menu</span>
+      </button>
     </header>
   )
 }

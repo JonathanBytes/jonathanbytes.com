@@ -1,11 +1,13 @@
 import { DownArrow } from './Icons'
 import ListItemLink from './ListItemLink'
 
-const Dropdown = ({ onClick }) => {
+const Dropdown = ({ type, onClick }) => {
   return (
     <li
       id="dropdownTrigger"
-      className="relative flex flex-col items-center gap-0"
+      className={`relative flex flex-col items-center ${
+        type === 'mobile' ? 'gap-4' : 'gap-0'
+      }`}
     >
       <div className="flex gap-1 relative cursor-default">
         Otros <DownArrow />
@@ -13,18 +15,22 @@ const Dropdown = ({ onClick }) => {
       <div className="absolute w-16 h-2 -bottom-2"></div>
       <ul
         id="dropdown"
-        className={`absolute top-8 left-0 rounded text-left border pl-2 pr-6 py-1`}
+        className={`top-8 rounded pl-2 pr-6 py-1 ${
+          type === 'mobile'
+            ? 'mobile-dropdown text-center flex flex-col gap-2'
+            : 'desktop-dropdown absolute border left-0'
+        }`}
       >
         <ListItemLink
           onClick={onClick}
-          className="sideline text-left"
+          className={type === 'mobile' ? 'underlined' : 'sideline'}
           href="/blog"
         >
           Blog
         </ListItemLink>
         <ListItemLink
           onClick={onClick}
-          className="sideline text-left"
+          className={type === 'mobile' ? 'underlined' : 'sideline'}
           href="/gallery"
         >
           Galería
