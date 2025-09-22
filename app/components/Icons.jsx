@@ -113,8 +113,8 @@ export const Hamburguer = () => {
 export const MainLogo = ({ className }) => {
   return (
     <p className={`${className}`}>
-      <span>Jonathan</span>
-      <span>Bytes</span>
+      <span className="font-serif">Jonathan</span>
+      <span className="font-mono">Bytes</span>
     </p>
   );
 };

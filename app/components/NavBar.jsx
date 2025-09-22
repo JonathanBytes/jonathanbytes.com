@@ -1,80 +1,23 @@
-import Link from 'next/link'
-import { DownArrow } from './Icons'
 import ThemeSwitch from './theme/ThemeSwitch'
+import Dropdown from './Dropdown'
+import ListItemLink from './ListItemLink'
 
-const ListItemLink = ({ children, onClick, href, className }) => {
+export const DesktopNavBar = ({ className }) => {
   return (
-    <li>
-      <Link onClick={onClick} className={className} href={href}>
-        {children}
-      </Link>
-    </li>
-  )
-}
-
-export const NavBar = ({ onClick, className }) => {
-  return (
-    <nav>
-      <ul
-        className={`nav ${className}`}
-      >
-        <ListItemLink
-          onClick={onClick}
-          href="/projects"
-          className="underlined"
-        >
+    <nav className={className}>
+      <ul className={`list-none flex flex-wrap gap-6`}>
+        <ListItemLink href="/projects" className="underlined ">
           Proyectos
         </ListItemLink>
-        <ListItemLink onClick={onClick} href="/about" className="underlined">
+        <ListItemLink href="/about" className="underlined">
           Sobre mí
         </ListItemLink>
-        <li
-          id="dropdownTrigger"
-        >
-          <div>
-            Otros <DownArrow />
-          </div>
-          <div></div>
-          <ul
-            id="dropdown"
-          >
-            <ListItemLink onClick={onClick} className="sideline" href="/blog">
-              Blog
-            </ListItemLink>
-            <ListItemLink
-              onClick={onClick}
-              className="sideline"
-              href="/gallery"
-            >
-              Galería
-            </ListItemLink>
-          </ul>
-        </li>
+        <Dropdown />
       </ul>
     </nav>
   )
 }
 
-export const MobileNav = ({ onClick, handleClick, userColors }) => {
-  return (
-    <div
-      data-visible="false"
-      id="primary-navigation"
-      className="mobile-nav"
-    >
-      <NavBar onClick={onClick} className="mobile" />
-      <a
-        onClick={onClick}
-        className="underlined"
-        href="mailto:contacto@jonathanbytes.com"
-        target="_blank"
-        rel="noreferrer"
-      >
-        Contáctame
-      </a>
-      <div>
-        <ThemeSwitch onClick={onClick} initialUserColors={userColors} />
-      </div>
-    </div>
-  )
+export const MobileNavBar = ({ onClick, className }) => {
+  return <nav className={className}>Mobile</nav>
 }
