@@ -398,7 +398,7 @@
   }
 
   a:hover {
-    opacity: 0.6;
+    opacity: 0.8;
   }
 
   button {
@@ -459,9 +459,10 @@
 @utility mobile-nav {
   /* Mobile Navigation Animation - minimal custom CSS */
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateX(100%);
 
   &[data-visible='true'] {
-    transform: translateX(0);
+    transform: translateX(0) !important;
   }
 }
 
