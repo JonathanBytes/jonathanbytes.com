@@ -18,7 +18,12 @@ export const DesktopNavBar = ({ className }) => {
   )
 }
 
-export const MobileNavBar = ({ onClick, className, ...props }) => {
+export const MobileNavBar = ({
+  onClick,
+  className,
+  initialUserColors,
+  ...props
+}) => {
   return (
     <nav
       className={`${className} flex flex-col justify-between`}
@@ -26,13 +31,13 @@ export const MobileNavBar = ({ onClick, className, ...props }) => {
       {...props}
     >
       <ul className={`list-none flex flex-col gap-6 items-center`}>
-        <ListItemLink href="/projects" className="underlined">
+        <ListItemLink href="/projects" className="underlined" onClick={onClick}>
           Proyectos
         </ListItemLink>
-        <ListItemLink href="/about" className="underlined">
+        <ListItemLink href="/about" className="underlined" onClick={onClick}>
           Sobre mí
         </ListItemLink>
-        <Dropdown type="mobile" />
+        <Dropdown type="mobile" onClick={onClick} />
         <li>
           <a
             className="underlined"
@@ -44,7 +49,10 @@ export const MobileNavBar = ({ onClick, className, ...props }) => {
           </a>
         </li>
       </ul>
-      <span className="font-mono flex-end px-4">Theme selector </span>
+      <ThemeSwitch
+        className="px-4 font-normal"
+        initialUserColors={initialUserColors}
+      />
     </nav>
   )
 }

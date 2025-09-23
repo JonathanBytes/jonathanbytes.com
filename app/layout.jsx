@@ -32,7 +32,7 @@ export default async function RootLayout({ children }) {
             __html: blockingSetInitialColorMode(initialUserColors.theme),
           }}
         ></script>
-        <Header userColors={initialUserColors} />
+        <Header initialUserColors={initialUserColors} />
         {children}
         <Footer />
         <SpeedInsights />

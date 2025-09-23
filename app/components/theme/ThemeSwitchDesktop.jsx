@@ -1,23 +1,23 @@
-"use client";
+'use client'
 
-import { useState } from "react";
-import { Pallette } from "../Icons";
-import ThemeSwitch from "./ThemeSwitch";
+import { useState } from 'react'
+import { Pallette } from '../Icons'
+import ThemeSwitch from './ThemeSwitch'
 
 const ThemeSwitchDesktop = ({ className, userColors }) => {
-  const [showSwitchMenu, setShowSwitchMenu] = useState("hidden");
+  const [showSwitchMenu, setShowSwitchMenu] = useState('hidden')
   const handleClick = () => {
-    if (showSwitchMenu === "") {
-      setShowSwitchMenu("hidden");
+    if (showSwitchMenu === '') {
+      setShowSwitchMenu('hidden')
     } else {
-      setShowSwitchMenu("");
+      setShowSwitchMenu('')
     }
-  };
+  }
   return (
-    <div className={`${className} relative`}>
+    <div className={`${className} relative flex items-center`}>
       <button
         onClick={handleClick}
-        className="theme-switch"
+        className="rounded-lg w-6 h-6 text-accent transform active:scale-75 transition-transform"
       >
         <Pallette />
       </button>
@@ -28,7 +28,7 @@ const ThemeSwitchDesktop = ({ className, userColors }) => {
         className={`${showSwitchMenu} absolute top-10 -translate-x-[3.75rem] bg-foreground p-2 rounded-lg z-10`}
       />
     </div>
-  );
-};
+  )
+}
 
-export default ThemeSwitchDesktop;
+export default ThemeSwitchDesktop
