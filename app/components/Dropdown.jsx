@@ -9,7 +9,7 @@ const Dropdown = ({ type, onClick }) => {
         type === 'mobile' ? 'gap-4' : 'gap-0'
       }`}
     >
-      <div className="flex gap-1 relative cursor-default">
+      <div className="flex gap-1 relative cursor-default text-foreground">
         Otros <DownArrow />
       </div>
       <div className="absolute w-16 h-2 -bottom-2"></div>
