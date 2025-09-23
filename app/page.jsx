@@ -4,7 +4,7 @@ import { Hearth } from './components/Icons'
 export const metadata = () => {
   return {
     title: 'JonathanBytes',
-    description: 'Landing page of JonathanBytes personal website'
+    description: 'Landing page of JonathanBytes personal website',
   }
 }
 
@@ -13,12 +13,15 @@ export default function Index() {
     <>
       <Hero />
       <main>
-        <div className='aux-text'>
+        <div className="aux-text flex flex-col justify-center items-center text-center max-w-sm mx-auto px-4 mb-16 gap-4">
           <i>
-            <Hearth />
+            <Hearth className="w-12 overflow-hidden align-bottom" />
           </i>
           <h2>¡Saludos, cibernauta!</h2>
-          <p>Bienvenido a mi pequeño rincón en línea. Un pedacito de mi mundo en la web.</p>
+          <p>
+            Bienvenido a mi pequeño rincón en línea. Un pedacito de mi mundo en
+            la web.
+          </p>
         </div>
         <p />
       </main>
