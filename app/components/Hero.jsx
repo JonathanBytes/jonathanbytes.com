@@ -3,13 +3,13 @@ import Image from 'next/image'
 
 export default function Hero() {
   return (
-    <div className="hero w-full max-w-5xl md:grid md:grid-cols-[2fr_1fr] justify-center items-center md:justify-items-stretch mx-auto mb-16 pt-4 flex flex-col">
-      <div className="p-8 md:text-left text-center text-[9vw] md:text-[3.35rem]">
+    <div className="w-full max-w-5xl md:grid md:grid-cols-[2fr_1fr] justify-center items-center md:justify-items-stretch mx-auto mb-16 pt-4 flex flex-col">
+      <div className="p-8 md:text-left text-center text-[9vw] md:text-[3.3rem]">
         <h1 className="m-0 font-serif break-words leading-none">
           <span className="block text-[16vw] md:text-[6rem]">Jonathan</span>
           Cardona Ramírez
         </h1>
-        <div className="flex items-start">
+        <div className="flex items-start text-[8vw] md:text-4xl">
           <AltText classname="m-0 inline" />
         </div>
       </div>

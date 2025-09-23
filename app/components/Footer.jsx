@@ -13,7 +13,7 @@ export default function Footer() {
           Apasionado por <strong>aprender y crear.</strong>
         </p>
       </div>
-      <div className="footer-links flex p-0 ">
+      <div className=" flex p-0">
         <SocialMedia />
       </div>
     </footer>
