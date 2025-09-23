@@ -1,6 +1,6 @@
 import { DocSearch } from '@docsearch/react'
 import './style.css'
-
+//import '@docsearch/css'
 import Head from 'next/head'
 
 export const SEARCH_API_KEY = process.env.NEXT_PUBLIC_ALGOLIA_KEY
@@ -21,9 +21,9 @@ export function Search() {
       </Head>
       <DocSearch
         apiKey={SEARCH_API_KEY}
-        indexName={'jonathanbytes'}
         appId={SEARCH_APP_ID}
         placeholder="Buscar en el blog"
+        indices={['jonathanbytes']}
       />
     </>
   )
