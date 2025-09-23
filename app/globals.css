@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@import url('./css/prism-classes.css');
 
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -49,8 +50,6 @@
 }
 
 @layer base {
-  @import url('./css/prism-classes.css');
-
   :root {
     --animation-duration: 300ms;
     /* Pill colors - global scope */
