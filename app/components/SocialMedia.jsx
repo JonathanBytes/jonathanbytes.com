@@ -4,7 +4,7 @@ const ListItem = ({ children, href }) => {
   return (
     <li>
       <a
-        className="flex justify-start items-center gap-2"
+        className="flex justify-start items-center gap-2 "
         href={href}
         target="_blank"
         rel="noreferrer"
@@ -19,7 +19,7 @@ const SocialMedia = () => {
   return (
     <ul className="flex flex-col gap-4">
       <li>
-        <h3>Redes sociales</h3>
+        <h3 className="font-bold">Redes</h3>
       </li>
       <ListItem href="https://www.linkedin.com/in/jonathan-cardona-ram%C3%ADrez-614773186">
         <LinkedIn />

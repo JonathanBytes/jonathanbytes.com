@@ -18,7 +18,7 @@ const Dropdown = ({ type, onClick }) => {
         className={`top-8 rounded pl-2 pr-6 py-1 ${
           type === 'mobile'
             ? 'mobile-dropdown text-center flex flex-col gap-2'
-            : 'desktop-dropdown absolute border left-0'
+            : 'desktop-dropdown absolute bg-background left-0 shadow-sm'
         }`}
       >
         <ListItemLink

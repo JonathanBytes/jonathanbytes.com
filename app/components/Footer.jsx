@@ -4,7 +4,7 @@ import { MainLogo } from './Icons'
 
 export default function Footer() {
   return (
-    <footer className="flex grow-2 flex-wrap justify-between p-6 max-h-[305px] w-full">
+    <footer className="flex grow-2 flex-wrap justify-between p-6 max-h-[305px] w-full bg-altbg ">
       <div className="footer-logo">
         <Link href="/">
           <MainLogo className="text-3xl sm:text-5xl mb-0" />

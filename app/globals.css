@@ -12,6 +12,7 @@
   --color-primary: rgb(from var(--color-primary) r g b);
   --color-secondary: rgb(from var(--color-secondary) r g b);
   --color-accent: rgb(from var(--color-accent) r g b);
+  --color-altbg: rgb(from var(--color-altbg) r g b);
 }
 
 /*
@@ -400,26 +401,6 @@
     opacity: 0.6;
   }
 
-  #dropdown {
-    display: none;
-  }
-
-  .mobile li ul {
-    box-shadow: none;
-    background-color: transparent;
-    position: static;
-    padding: 0;
-    padding-top: 0.5rem;
-  }
-
-  .mobile li ul li {
-    margin-top: 0.5rem;
-  }
-
-  #dropdownTrigger:hover ul {
-    display: block;
-  }
-
   button {
     font-family: var(--font-ibm);
   }
@@ -476,54 +457,70 @@
 }
 
 @utility mobile-nav {
-  display: flex;
-  transform: translateX(100%);
+  /* Mobile Navigation Animation - minimal custom CSS */
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
   &[data-visible='true'] {
     transform: translateX(0);
   }
-
-  .btn {
-    background: 0;
-    color: var(--color-foreground);
-    font-family: var(--font-montserrat);
-    padding: 0 1rem;
-    margin: 0;
-  }
 }
 
-.button-three {
-  background-color: transparent;
-  padding: 0;
-  border: 0;
-  width: 2.5rem;
-  aspect-ratio: 1 / 1;
-  display: none;
+
+/* Desktop dropdown - overlay, doesn't affect layout */
+#dropdown.desktop-dropdown {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+
+#dropdownTrigger:hover #dropdown.desktop-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Mobile dropdown - affects layout when visible with enter/exit animations */
+#dropdown.mobile-dropdown {
+  max-height: 0;
+  opacity: 0;
   overflow: hidden;
-  cursor: pointer;
+  transform: translateY(-10px);
+  transition: max-height 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
 }
 
-.button-three .hamburger {
+#dropdownTrigger:hover #dropdown.mobile-dropdown {
+  max-height: 200px;
+  /* Adjust based on your content height */
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hamburger-menu-btn {
+  --button-color: var(--color-foreground);
+}
+
+.hamburger-menu-btn .hamburger {
   transition:
     translate 0.25s,
     rotate 0.5s;
 }
 
-.button-three[aria-expanded='true'] .hamburger {
+.hamburger-menu-btn[aria-expanded='true'] .hamburger {
   translate: 2px -2px;
   rotate: 0.125turn;
 }
 
-.button-three .line {
+.hamburger-menu-btn .line {
   transition: 0.3s;
-  stroke-dasharray: 60 31 60 300;
+  stroke-dasharray: 60 31 60 300
 }
 
-.button-three[aria-expanded='true'] .line {
+.hamburger-menu-btn[aria-expanded='true'] .line {
   stroke-dasharray: 60 105 60 300;
   stroke-dashoffset: -90;
 }
+
 
 /* Hero Styles */
 .hero {
