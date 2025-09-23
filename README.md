@@ -24,6 +24,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 - [ ] Contact page
 - [ ] Projects page
 - [ ] Gallery page
+- [ ] Sync the mobile and desktop ThemeSwitchs
 - [x] Refine the profile pic
 - [x] Posts table of contents (TOC)
   - [x] Implement it
