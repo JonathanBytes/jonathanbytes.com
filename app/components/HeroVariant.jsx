@@ -1,7 +1,7 @@
 export default function HeroVariant() {
   return (
     <div className="hero variation">
-      <div className="main-text variant">
+      <div className="dark:text-foreground text-background main-text variant">
         <h1>
           <span>Sobre mí</span>
         </h1>
@@ -19,7 +19,7 @@ export function HeroCustom({ title, content, heroBGSrc }) {
         backgroundImage: `url(${heroBGSrc})`,
       }}
     >
-      <div className="main-text">
+      <div className="text-foreground main-text ">
         <h1>
           <span>{title}</span>
         </h1>

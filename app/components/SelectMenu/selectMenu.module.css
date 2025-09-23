@@ -1,0 +1,40 @@
+.customSelect {
+  max-width: 350px;
+  position: relative;
+}
+
+.select {
+  /* safari */
+  -webkit-appearance: none;
+  /* padding: 0.5rem 2rem 0.5rem 0.5rem; */
+  /* @apply rounded-lg bg-secondary text-text appearance-none w-full text-sm cursor-pointer relative; */
+}
+
+/* .select:hover { */
+/*   border: 1px solid var(--primary) */
+/* } */
+
+.customSelect::before,
+.customSelect::after {
+  content: '';
+  --size: 0.3rem;
+  position: absolute;
+  right: 1rem;
+  pointer-events: none;
+}
+
+.customSelect::before {
+  border-left: var(--size) solid transparent;
+  border-right: var(--size) solid transparent;
+  border-bottom: var(--size) solid var(--color-background);
+  top: 40%;
+  z-index: 10;
+}
+
+.customSelect::after {
+  border-left: var(--size) solid transparent;
+  border-right: var(--size) solid transparent;
+  border-top: var(--size) solid var(--color-background);
+  top: 55%;
+  z-index: 10;
+}

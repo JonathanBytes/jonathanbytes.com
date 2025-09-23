@@ -6,14 +6,12 @@ const PostHead = ({ frontmatter }) => {
   return (
     <>
       <PostBanner image={frontmatter.image} />
-      <div>
-        <div>
-          <blockquote>
-            {frontmatter.date}
-          </blockquote>
+      <div className="flex justify-between items-center flex-wrap">
+        <div className="flex items-center">
+          <blockquote>{frontmatter.date}</blockquote>
           <PillCategories categories={frontmatter.categories} />
         </div>
-        <div className='flex items-center'>
+        <div className="flex items-center">
           <ReadTime title={frontmatter.title} />
         </div>
       </div>

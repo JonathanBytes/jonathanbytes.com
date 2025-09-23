@@ -4,10 +4,10 @@ const ListItem = ({ children, href }) => {
   return (
     <li>
       <a
+        className="flex justify-start items-center"
         href={href}
         target="_blank"
         rel="noreferrer"
-        className="flex items-center gap-2"
       >
         {children}
       </a>
@@ -17,24 +17,24 @@ const ListItem = ({ children, href }) => {
 
 const SocialMedia = () => {
   return (
-    <ul className="list-none m-0 flex flex-col gap-4">
+    <ul>
       <li>
-        <h3 className="m-0 p-0">Redes sociales</h3>
+        <h3>Redes sociales</h3>
       </li>
       <ListItem href="https://www.linkedin.com/in/jonathan-cardona-ram%C3%ADrez-614773186">
-        <LinkedIn className="text-background dark:text-foreground" />
+        <LinkedIn />
         LinkedIn
       </ListItem>
       <ListItem href="https://github.com/JonathanBytes">
-        <GitHub className="text-background dark:text-foreground" />
+        <GitHub />
         GitHub
       </ListItem>
       <ListItem href="https://www.youtube.com/@JonathanCTutoriales">
-        <YouTube className="text-background dark:text-foreground" />
+        <YouTube />
         YouTube
       </ListItem>
       <ListItem href="https://www.instagram.com/jonathancard10/">
-        <Instagram className="text-background dark:text-foreground" />
+        <Instagram />
         Instagram
       </ListItem>
     </ul>

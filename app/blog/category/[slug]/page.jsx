@@ -1,32 +1,30 @@
 'use client'
 
-import { useState } from 'react';
+import { useState } from 'react'
 import rawPosts from '@/data/rawPosts.json'
 import categories from '@/data/categories.json'
 import * as sortFunctions from '@/lib/sortPosts'
-import SelectMenu from '@/app/components/SelectMenu/SelectMenu';
-import { Search } from '@/app/components/Search/Search';
-import BlogCard from '@/app/components/BlogCard/BlogCard';
-
+import SelectMenu from '@/app/components/SelectMenu/SelectMenu'
+import { Search } from '@/app/components/Search/Search'
+import BlogCard from '@/app/components/BlogCard/BlogCard'
 
 const Blog = ({ params }) => {
-
   const selectedCategory = params.slug
-  let posts;
+  let posts
 
   if (selectedCategory) {
-    posts = sortFunctions.filteredPostsByCategory(selectedCategory, rawPosts);
+    posts = sortFunctions.filteredPostsByCategory(selectedCategory, rawPosts)
   } else {
-    posts = sortedPosts;
+    posts = sortedPosts
   }
 
-  const [sortBy, setSortBy] = useState('recent');
+  const [sortBy, setSortBy] = useState('recent')
   const sortedPosts = sortBy ? sortFunctions[sortBy](posts) : posts
 
   return (
     <>
       <h1>Posts sobre {categories[selectedCategory].display.toLowerCase()}</h1>
-      <div>
+      <div className="w-full flex justify-end mb-4 gap-2 items-center">
         <Search />
         <SelectMenu onSortingChange={setSortBy} />
       </div>
@@ -44,7 +42,7 @@ const Blog = ({ params }) => {
         ))}
       </ul>
     </>
-  );
-};
+  )
+}
 
-export default Blog;
+export default Blog
