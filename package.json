@@ -36,12 +36,12 @@
   "devDependencies": {
     "@types/node": "20.11.30",
     "@types/react": "18.2.73",
-    "autoprefixer": "^10.4.21",
+    "autoprefixer": "^10.4.20",
     "eslint": "8.57.0",
     "eslint-config-next": "14.1.4",
     "gray-matter": "4.0.3",
-    "postcss": "^8.5.6",
-    "tailwindcss": "^4.1.13"
+    "postcss": "^8.4.43",
+    "tailwindcss": "^3.4.10"
   },
   "prettier": {
     "semi": false,

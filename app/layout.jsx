@@ -29,7 +29,7 @@ export default async function RootLayout({ children }) {
       >
         <script
           dangerouslySetInnerHTML={{
-            __html: blockingSetInitialColorMode(initialUserColors.theme),
+            __html: blockingSetInitialColorMode(initialUserColors),
           }}
         ></script>
         <Header initialUserColors={initialUserColors} />
@@ -41,45 +41,34 @@ export default async function RootLayout({ children }) {
   )
 }
 
-function setInitialColorScheme(initialUserColors) {
-  function getInitialTheme() {
-    const persistedTheme = initialUserColors
-    const hasPersistedTheme = typeof persistedTheme === 'string'
-    /**
-     * If the user has explicitly chosen light or dark, use it
-     */
-    if (hasPersistedTheme) {
-      if (persistedTheme !== 'system') {
-        return persistedTheme
-      }
-    }
-    /**
-     * If they haven't been explicit, check the media query
-     */
-    const mql = window.matchMedia('(prefers-color-scheme: dark)')
-    const hasSystemThemePreference = typeof mql.matches === 'boolean'
-
-    if (hasSystemThemePreference) {
-      return mql.matches ? 'dark' : 'light'
-    }
-
-    /**
-     * If they are using a browser/OS that doesn't support
-     * color themes, default to 'light'.
-     */
-    return 'light'
-  }
-
-  const theme = getInitialTheme()
-  if (theme === 'dark') {
-    document.documentElement.classList.add('dark')
-  }
-}
-
 function blockingSetInitialColorMode(initialUserColors) {
   return `(function() {
-		${setInitialColorScheme.toString()}
-		setInitialColorScheme(${JSON.stringify(initialUserColors)});
-})()
-`
+    function getInitialTheme() {
+      const persistedTheme = ${JSON.stringify(initialUserColors.theme)};
+      const hasPersistedTheme = typeof persistedTheme === 'string';
+      
+      // If the user has explicitly chosen light or dark, use it
+      if (hasPersistedTheme && persistedTheme !== 'system') {
+        return persistedTheme;
+      }
+      
+      // If they haven't been explicit, check the media query
+      if (typeof window !== 'undefined') {
+        const mql = window.matchMedia('(prefers-color-scheme: dark)');
+        const hasSystemThemePreference = typeof mql.matches === 'boolean';
+        
+        if (hasSystemThemePreference) {
+          return mql.matches ? 'dark' : 'light';
+        }
+      }
+      
+      // Default to 'light' if no preference can be determined
+      return 'light';
+    }
+
+    const theme = getInitialTheme();
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    }
+  })();`
 }
