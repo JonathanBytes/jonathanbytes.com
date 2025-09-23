@@ -1,6 +1,110 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-mono: var(--font-ibm);
+  --font-sans: var(--font-montserrat);
+  --font-serif: var(--font-yeseva-one);
+
+  --color-foreground: rgb(from var(--color-foreground) r g b);
+  --color-background: rgb(from var(--color-background) r g b);
+  --color-primary: rgb(from var(--color-primary) r g b);
+  --color-secondary: rgb(from var(--color-secondary) r g b);
+  --color-accent: rgb(from var(--color-accent) r g b);
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@utility sideline {
+  position: relative;
+  padding-left: 0;
+  border-left: 2px solid transparent;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    background: teal;
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 0 2px 0 2px;
+  }
+
+  &:hover {
+    padding-left: 9px;
+  }
+
+  &:hover::before {
+    width: 3px;
+  }
+
+  &:active {
+    transform: translateX(1px);
+    transition-duration: 0.1s;
+  }
+}
+
+@utility underlined {
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: teal;
+    visibility: hidden;
+    transition:
+      transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+      visibility 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 6px;
+    transform: scaleX(0);
+    left: 0;
+    bottom: -1px;
+  }
+
+  &:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
+  }
+
+  &:active {
+    transform: translateY(1px);
+    transition-duration: 0.1s;
+  }
+}
+
+@utility mobile-nav {
+  /* Mobile Navigation Animation - minimal custom CSS */
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &[data-visible='true'] {
+    transform: translateX(0);
+  }
+}
 
 @layer base {
   :root {
@@ -260,79 +364,5 @@
 
   .person:hover {
     transform: scale(1.02);
-  }
-}
-
-@layer utilities {
-  .sideline {
-    position: relative;
-    padding-left: 0;
-    border-left: 2px solid transparent;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    cursor: pointer;
-  }
-
-  .sideline::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 0;
-    background: teal;
-    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    border-radius: 0 2px 0 2px;
-  }
-
-  .sideline:hover {
-    padding-left: 9px;
-  }
-
-  .sideline:hover::before {
-    width: 3px;
-  }
-
-  .sideline:active {
-    transform: translateX(1px);
-    transition-duration: 0.1s;
-  }
-
-  .underlined {
-    position: relative;
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .underlined::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background: teal;
-    visibility: hidden;
-    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    border-radius: 6px;
-    transform: scaleX(0);
-    left: 0;
-    bottom: -1px;
-  }
-
-  .underlined:hover::before {
-    visibility: visible;
-    transform: scaleX(1);
-  }
-
-  .underlined:active {
-    transform: translateY(1px);
-    transition-duration: 0.1s;
-  }
-
-  /* Mobile Navigation Animation - minimal custom CSS */
-  .mobile-nav {
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .mobile-nav[data-visible="true"] {
-    transform: translateX(0);
   }
 }
