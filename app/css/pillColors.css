@@ -21,3 +21,8 @@
   --gray: #928374;
   --gray2: #7c6f64;
 }
+
+/* Debug: Test if pill colors are loading */
+#pill {
+  border: 2px solid red !important;
+}

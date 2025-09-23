@@ -49,12 +49,45 @@
 }
 
 @layer base {
-  @import url('./css/pillColors.css');
-  @import url('./css/prism-highlight-colors.css');
   @import url('./css/prism-classes.css');
 
   :root {
     --animation-duration: 300ms;
+    /* Pill colors - global scope */
+    --black: #282828;
+    --red: #fb4934;
+    --altred: #cc241d;
+    --yellow: #fabd2f;
+    --altyellow: #d79921;
+    --blue: #83a598;
+    --altblue: #458588;
+    --green: #b8bb26;
+    --altgreen: #98971a;
+    --aqua: #8ec07c;
+    --altaqua: #689d6a;
+    --orange: #fe8019;
+    --altorange: #d65d0e;
+    --white: #fff;
+    --white2: #f9f5d7;
+    --white3: #fbf1c7;
+    --white4: #d5c4a1;
+    --purple: #d3869b;
+    --altpurple: #b16286;
+    --gray: #928374;
+    --gray2: #7c6f64;
+  }
+
+  /* Utility classes for colors */
+  .text-foreground {
+    color: var(--color-foreground);
+  }
+
+  .text-background {
+    color: var(--color-background);
+  }
+
+  .bg-background {
+    background-color: var(--color-background);
   }
 
   .gruvbox {
@@ -64,6 +97,45 @@
     --color-primary: #548d8e;
     --color-secondary: #b0cdcb;
     --color-accent: #b16286;
+    /* Base colors for syntax highlighting */
+    --color-base00: #fff9e8;
+    --color-base01: #ebdbb2;
+    --color-base02: #d5c4a1;
+    --color-base03: #bdae93;
+    --color-base04: #665c54;
+    --color-base05: #504945;
+    --color-base06: #3c3836;
+    --color-base07: #282828;
+    --color-base08: #9d0006;
+    --color-base09: #af3a03;
+    --color-base0A: #b57614;
+    --color-base0B: #79740e;
+    --color-base0C: #427b58;
+    --color-base0D: #076678;
+    --color-base0E: #8f3f71;
+    --color-base0F: #d65d0e;
+    /* Pill colors */
+    --black: #282828;
+    --red: #fb4934;
+    --altred: #cc241d;
+    --yellow: #fabd2f;
+    --altyellow: #d79921;
+    --blue: #83a598;
+    --altblue: #458588;
+    --green: #b8bb26;
+    --altgreen: #98971a;
+    --aqua: #8ec07c;
+    --altaqua: #689d6a;
+    --orange: #fe8019;
+    --altorange: #d65d0e;
+    --white: #fff;
+    --white2: #f9f5d7;
+    --white3: #fbf1c7;
+    --white4: #d5c4a1;
+    --purple: #d3869b;
+    --altpurple: #b16286;
+    --gray: #928374;
+    --gray2: #7c6f64;
   }
 
   .catppuccin {
@@ -73,6 +145,45 @@
     --color-primary: #dc8a78;
     --color-secondary: #f9e2af;
     --color-accent: #cba6f7;
+    /* Base colors for syntax highlighting */
+    --color-base00: #eff1f5;
+    --color-base01: #e6e9ef;
+    --color-base02: #ccd0da;
+    --color-base03: #bcc0cc;
+    --color-base04: #acb0be;
+    --color-base05: #4c4f69;
+    --color-base06: #dc8a78;
+    --color-base07: #7287fd;
+    --color-base08: #d20f39;
+    --color-base09: #fe640b;
+    --color-base0A: #df8e1d;
+    --color-base0B: #40a02b;
+    --color-base0C: #179299;
+    --color-base0D: #1e66f5;
+    --color-base0E: #8839ef;
+    --color-base0F: #dd7878;
+    /* Pill colors - using catppuccin base colors */
+    --black: var(--color-base00);
+    --red: var(--color-base08);
+    --altred: var(--color-base08);
+    --yellow: var(--color-base0A);
+    --altyellow: var(--color-base0A);
+    --blue: var(--color-base0D);
+    --altblue: var(--color-base0C);
+    --green: var(--color-base0B);
+    --altgreen: var(--color-base0B);
+    --aqua: var(--color-base0C);
+    --altaqua: var(--color-base0C);
+    --orange: var(--color-base09);
+    --altorange: var(--color-base09);
+    --white: #fff;
+    --white2: var(--color-base01);
+    --white3: var(--color-base02);
+    --white4: var(--color-base03);
+    --purple: var(--color-base0E);
+    --altpurple: var(--color-base0E);
+    --gray: var(--color-base03);
+    --gray2: var(--color-base04);
   }
 
   @media (prefers-color-scheme: dark) {
@@ -83,6 +194,23 @@
       --color-primary: #bee0d9;
       --color-secondary: #9db9b7;
       --color-accent: #ee9bb2;
+      /* Base colors for syntax highlighting */
+      --color-base00: #32302f;
+      --color-base01: #3c3836;
+      --color-base02: #504945;
+      --color-base03: #665c54;
+      --color-base04: #bdae93;
+      --color-base05: #d5c4a1;
+      --color-base06: #ebdbb2;
+      --color-base07: #fbf1c7;
+      --color-base08: #fb4934;
+      --color-base09: #fe8019;
+      --color-base0A: #fabd2f;
+      --color-base0B: #b8bb26;
+      --color-base0C: #8ec07c;
+      --color-base0D: #83a598;
+      --color-base0E: #d3869b;
+      --color-base0F: #d65d0e;
     }
 
     .catppuccin {
@@ -92,6 +220,45 @@
       --color-primary: #8aadf4;
       --color-secondary: #b7bdf8;
       --color-accent: #c6a0f6;
+      /* Base colors for syntax highlighting */
+      --color-base00: #303446;
+      --color-base01: #292c3c;
+      --color-base02: #414559;
+      --color-base03: #51576d;
+      --color-base04: #626880;
+      --color-base05: #cdd6f4;
+      --color-base06: #f5e0dc;
+      --color-base07: #b4befe;
+      --color-base08: #f38ba8;
+      --color-base09: #fab387;
+      --color-base0A: #f9e2af;
+      --color-base0B: #a6e3a1;
+      --color-base0C: #94e2d5;
+      --color-base0D: #89b4fa;
+      --color-base0E: #cba6f7;
+      --color-base0F: #f2cdcd;
+      /* Pill colors - using catppuccin dark base colors */
+      --black: var(--color-base00);
+      --red: var(--color-base08);
+      --altred: var(--color-base08);
+      --yellow: var(--color-base0A);
+      --altyellow: var(--color-base0A);
+      --blue: var(--color-base0D);
+      --altblue: var(--color-base0C);
+      --green: var(--color-base0B);
+      --altgreen: var(--color-base0B);
+      --aqua: var(--color-base0C);
+      --altaqua: var(--color-base0C);
+      --orange: var(--color-base09);
+      --altorange: var(--color-base09);
+      --white: #fff;
+      --white2: var(--color-base01);
+      --white3: var(--color-base02);
+      --white4: var(--color-base03);
+      --purple: var(--color-base0E);
+      --altpurple: var(--color-base0E);
+      --gray: var(--color-base03);
+      --gray2: var(--color-base04);
     }
   }
 
@@ -110,6 +277,23 @@
       --color-primary: #bee0d9;
       --color-secondary: #9db9b7;
       --color-accent: #ee9bb2;
+      /* Base colors for syntax highlighting */
+      --color-base00: #32302f;
+      --color-base01: #3c3836;
+      --color-base02: #504945;
+      --color-base03: #665c54;
+      --color-base04: #bdae93;
+      --color-base05: #d5c4a1;
+      --color-base06: #ebdbb2;
+      --color-base07: #fbf1c7;
+      --color-base08: #fb4934;
+      --color-base09: #fe8019;
+      --color-base0A: #fabd2f;
+      --color-base0B: #b8bb26;
+      --color-base0C: #8ec07c;
+      --color-base0D: #83a598;
+      --color-base0E: #d3869b;
+      --color-base0F: #d65d0e;
     }
 
     .catppuccin {
@@ -119,6 +303,45 @@
       --color-primary: #8aadf4;
       --color-secondary: #b7bdf8;
       --color-accent: #c6a0f6;
+      /* Base colors for syntax highlighting */
+      --color-base00: #303446;
+      --color-base01: #292c3c;
+      --color-base02: #414559;
+      --color-base03: #51576d;
+      --color-base04: #626880;
+      --color-base05: #cdd6f4;
+      --color-base06: #f5e0dc;
+      --color-base07: #b4befe;
+      --color-base08: #f38ba8;
+      --color-base09: #fab387;
+      --color-base0A: #f9e2af;
+      --color-base0B: #a6e3a1;
+      --color-base0C: #94e2d5;
+      --color-base0D: #89b4fa;
+      --color-base0E: #cba6f7;
+      --color-base0F: #f2cdcd;
+      /* Pill colors - using catppuccin dark base colors */
+      --black: var(--color-base00);
+      --red: var(--color-base08);
+      --altred: var(--color-base08);
+      --yellow: var(--color-base0A);
+      --altyellow: var(--color-base0A);
+      --blue: var(--color-base0D);
+      --altblue: var(--color-base0C);
+      --green: var(--color-base0B);
+      --altgreen: var(--color-base0B);
+      --aqua: var(--color-base0C);
+      --altaqua: var(--color-base0C);
+      --orange: var(--color-base09);
+      --altorange: var(--color-base09);
+      --white: #fff;
+      --white2: var(--color-base01);
+      --white3: var(--color-base02);
+      --white4: var(--color-base03);
+      --purple: var(--color-base0E);
+      --altpurple: var(--color-base0E);
+      --gray: var(--color-base03);
+      --gray2: var(--color-base04);
     }
   }
 
@@ -132,6 +355,23 @@
       --color-primary: #548d8e;
       --color-secondary: #b0cdcb;
       --color-accent: #b16286;
+      /* Base colors for syntax highlighting */
+      --color-base00: #fff9e8;
+      --color-base01: #ebdbb2;
+      --color-base02: #d5c4a1;
+      --color-base03: #bdae93;
+      --color-base04: #665c54;
+      --color-base05: #504945;
+      --color-base06: #3c3836;
+      --color-base07: #282828;
+      --color-base08: #9d0006;
+      --color-base09: #af3a03;
+      --color-base0A: #b57614;
+      --color-base0B: #79740e;
+      --color-base0C: #427b58;
+      --color-base0D: #076678;
+      --color-base0E: #8f3f71;
+      --color-base0F: #d65d0e;
     }
 
     .catppuccin {
@@ -141,6 +381,45 @@
       --color-primary: #dc8a78;
       --color-secondary: #f9e2af;
       --color-accent: #cba6f7;
+      /* Base colors for syntax highlighting */
+      --color-base00: #e6e9ef;
+      --color-base01: #e6e9ef;
+      --color-base02: #ccd0da;
+      --color-base03: #bcc0cc;
+      --color-base04: #acb0be;
+      --color-base05: #4c4f69;
+      --color-base06: #dc8a78;
+      --color-base07: #7287fd;
+      --color-base08: #d20f39;
+      --color-base09: #fe640b;
+      --color-base0A: #df8e1d;
+      --color-base0B: #40a02b;
+      --color-base0C: #179299;
+      --color-base0D: #1e66f5;
+      --color-base0E: #8839ef;
+      --color-base0F: #dd7878;
+      /* Pill colors - using catppuccin light base colors */
+      --black: var(--color-base00);
+      --red: var(--color-base08);
+      --altred: var(--color-base08);
+      --yellow: var(--color-base0A);
+      --altyellow: var(--color-base0A);
+      --blue: var(--color-base0D);
+      --altblue: var(--color-base0C);
+      --green: var(--color-base0B);
+      --altgreen: var(--color-base0B);
+      --aqua: var(--color-base0C);
+      --altaqua: var(--color-base0C);
+      --orange: var(--color-base09);
+      --altorange: var(--color-base09);
+      --white: #fff;
+      --white2: var(--color-base01);
+      --white3: var(--color-base02);
+      --white4: var(--color-base03);
+      --purple: var(--color-base0E);
+      --altpurple: var(--color-base0E);
+      --gray: var(--color-base03);
+      --gray2: var(--color-base04);
     }
   }
 
@@ -155,16 +434,18 @@
     height: auto;
   }
 
-  code {
+  /* Inline code (not in code blocks) */
+  :not(pre)>code:not([class*='language-']) {
     padding: 0.25rem 0.75rem;
     margin: 0 0.125rem;
     border-radius: 9999px;
     font-family: var(--font-ibm);
     font-size: 0.875rem;
     background-color: var(--color-altbg);
+    color: var(--color-foreground);
   }
 
-  /* Bloques de código */
+  /* Basic styling for all pre elements (including Prism) */
   pre {
     margin: auto;
     width: 85%;
@@ -173,6 +454,14 @@
     border-radius: 0.5rem;
     margin-bottom: 1.5rem;
     font-family: var(--font-ibm);
+    overflow-x: auto;
+  }
+
+  /* Background for non-Prism code blocks only */
+  pre:not([class*='language-']) {
+    background-color: var(--color-altbg);
+    color: var(--color-foreground);
+    padding: 1rem;
   }
 
   table {
@@ -257,6 +546,10 @@
     padding-left: 1.5rem;
   }
 
+  article a {
+    color: var(--color-primary);
+  }
+
   /* Estilo para los títulos */
   main h1,
   h2,
@@ -338,17 +631,21 @@
     content: '';
   }
 
-  article #pill a {
-    color: var(--color-foreground);
+  #pill a {
+    color: var(--color-background);
     font-weight: 400;
   }
 
-  article #pill a::after {
+  #pill a::after {
     content: '';
   }
 
+  [data-theme='dark'] #pill a {
+    color: var(--color-background);
+  }
+
   @media (prefers-color-scheme: dark) {
-    article #pill a {
+    a {
       color: var(--color-background);
     }
   }
@@ -390,8 +687,8 @@
   }
 
   a {
-    text-decoration-color: transparent;
     color: var(--color-foreground);
+    text-decoration-color: transparent;
     transition-property: opacity;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 150ms;
