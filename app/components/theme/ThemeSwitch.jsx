@@ -67,7 +67,7 @@ const ThemeSwitch = ({ className, initialUserColors }) => {
 
   return (
     <div
-      className={`${className} mx-auto mb-2 flex w-fit flex-col items-center justify-center gap-2`}
+      className={`mx-auto mb-2 flex w-fit flex-col items-center justify-center gap-2 ${className}`}
     >
       <div className="flex w-fit justify-center gap-1">
         <ThemeSwitchButton
