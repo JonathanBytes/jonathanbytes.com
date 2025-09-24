@@ -30,13 +30,21 @@ const ThemeSwitch = ({ className, initialUserColors }) => {
   // Remove the dark class from the html element (tailwind darkmode) if the user changes the theme to light
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
-    mediaQuery.addEventListener('change', (e) => {
+
+    const handleChange = (e) => {
       if (e.matches) {
         document.documentElement.classList.add('dark')
       } else {
         document.documentElement.classList.remove('dark')
       }
-    })
+    }
+
+    mediaQuery.addEventListener('change', handleChange)
+
+    // Cleanup function to remove the event listener when component unmounts
+    return () => {
+      mediaQuery.removeEventListener('change', handleChange)
+    }
   }, [])
 
   useEffect(() => {
