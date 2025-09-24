@@ -1,7 +1,7 @@
 export default function HeroCustom({ title, content, heroBGSrc, className }) {
   return (
     <div
-      className={`w-full h-[60dvh] bg-cover bg-center flex items-center justify-center mb-8 ${className}`}
+      className={`w-full h-[60vh] bg-cover bg-center flex items-center justify-center mb-8 ${className}`}
       style={{
         backgroundImage: `url(${heroBGSrc})`,
       }}
