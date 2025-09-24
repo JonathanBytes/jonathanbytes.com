@@ -3,12 +3,12 @@
 import Sun from '../icons/Sun'
 import Moon from '../icons/Moon'
 import Computer from '../icons/Computer'
-import ThemeSwitchButton from './ThemeSwitchButton'
+import ThemeSwitchButton from '../theme/ThemeSwitchButton'
 import SelectThemeBox from './SelectThemeBox'
 import { useEffect, useState } from 'react'
 import { setCookieTheme, setCookieColorScheme } from '@/lib/userColorsCookies'
 
-const ThemeSwitch = ({ className, initialUserColors, onClick }) => {
+const ThemeSwitch = ({ className, initialUserColors }) => {
   const [theme, setTheme] = useState(initialUserColors.theme)
   const [colorScheme, setColorScheme] = useState(initialUserColors.colorScheme)
 
@@ -18,37 +18,34 @@ const ThemeSwitch = ({ className, initialUserColors, onClick }) => {
   }
 
   const handleColorSchemeChange = (e) => {
-    onClick()
     const newColorScheme = e.target.value
     setColorScheme(newColorScheme)
     setCookieColorScheme(newColorScheme) // Save the color scheme to cookies
   }
 
   useEffect(() => {
-    document.documentElement.classList.add(colorScheme)
     document.body.classList.add(colorScheme)
   }, [colorScheme])
 
   // Remove the dark class from the html element (tailwind darkmode) if the user changes the theme to light
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
-    const handleSystemThemeChange = (e) => {
-      if (theme === 'system') {
-        if (e.matches) {
-          document.documentElement.classList.add('dark')
-        } else {
-          document.documentElement.classList.remove('dark')
-        }
+
+    const handleChange = (e) => {
+      if (e.matches) {
+        document.documentElement.classList.add('dark')
+      } else {
+        document.documentElement.classList.remove('dark')
       }
     }
 
-    mediaQuery.addEventListener('change', handleSystemThemeChange)
+    mediaQuery.addEventListener('change', handleChange)
 
-    // Clean up the event listener on component unmount
+    // Cleanup function to remove the event listener when component unmounts
     return () => {
-      mediaQuery.removeEventListener('change', handleSystemThemeChange)
+      mediaQuery.removeEventListener('change', handleChange)
     }
-  }, [theme])
+  }, [])
 
   useEffect(() => {
     if (theme === 'system') {
@@ -57,22 +54,22 @@ const ThemeSwitch = ({ className, initialUserColors, onClick }) => {
       } else {
         document.documentElement.classList.remove('dark')
       }
-      document.documentElement.removeAttribute('data-theme')
-    } else {
-      document.documentElement.setAttribute('data-theme', theme)
-      if (theme === 'light') {
-        document.documentElement.classList.remove('dark')
-      } else if (theme === 'dark') {
-        document.documentElement.classList.add('dark')
-      }
+      return document.documentElement.removeAttribute('data-theme')
+    }
+
+    document.documentElement.setAttribute('data-theme', theme)
+    if (theme === 'light') {
+      document.documentElement.classList.remove('dark')
+    } else if (theme === 'dark') {
+      document.documentElement.classList.add(theme)
     }
   }, [theme])
 
   return (
     <div
-      className={`${className} mb-2 flex w-fit flex-col items-center justify-center gap-2`}
+      className={`mx-auto mb-2 flex w-fit flex-col items-center justify-center gap-2 ${className}`}
     >
-      <div className="flex w-fit justify-center gap-1" onClick={onClick}>
+      <div className="flex w-fit justify-center gap-1">
         <ThemeSwitchButton
           icon={<Sun />}
           isSelected={theme === 'light'}

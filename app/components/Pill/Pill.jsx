@@ -8,12 +8,12 @@ function Pill(props) {
       className="shadow-md ml-2 px-2.5 py-1 w-fit rounded-full inline-flex"
       id="pill"
       style={{
-        backgroundColor: 'var(--' + (categoryColor || 'default-color') + ')',
+        backgroundColor: 'var(--' + (categoryColor || 'green') + ')',
       }}
     >
       <Link
         title={`Ir a la sección de ${categories[props.category]?.display}`}
-        className="text-foreground dark:text-background text-xs font-sans"
+        className="text-xs font-sans"
         href={'/blog/category/' + props.category}
       >
         {categories[props.category]?.display}

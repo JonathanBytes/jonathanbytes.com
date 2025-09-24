@@ -1,82 +1,59 @@
-import Link from 'next/link'
-import { DownArrow } from './Icons'
 import ThemeSwitch from './theme/ThemeSwitch'
+import Dropdown from './Dropdown'
+import ListItemLink from './ListItemLink'
 
-const ListItemLink = ({ children, onClick, href, className }) => {
+export const DesktopNavBar = ({ className }) => {
   return (
-    <li className="text-center relative">
-      <Link onClick={onClick} className={className} href={href}>
-        {children}
-      </Link>
-    </li>
-  )
-}
-
-export const NavBar = ({ onClick, className }) => {
-  return (
-    <nav>
-      <ul
-        className={`nav list-none p-0 flex justify-between flex-wrap gap-5 ${className}`}
-      >
-        <ListItemLink
-          onClick={onClick}
-          href="/projects"
-          className="underlined "
-        >
+    <nav className={className}>
+      <ul className={`list-none flex flex-wrap gap-6`}>
+        <ListItemLink href="/projects" className="underlined">
           Proyectos
         </ListItemLink>
-        <ListItemLink onClick={onClick} href="/about" className="underlined">
+        <ListItemLink href="/about" className="underlined">
           Sobre mí
         </ListItemLink>
-        <li
-          id="dropdownTrigger"
-          className="relative flex flex-col items-center gap-0"
-        >
-          <div className="flex gap-1 relative cursor-default">
-            Otros <DownArrow />
-          </div>
-          <div className="absolute w-16 h-2 -bottom-2"></div>
-          <ul
-            id="dropdown"
-            className={`absolute top-8 left-0 rounded bg-altbg text-left pl-1 pr-6 pt-1 pb-1 shadow-md w-[120px]`}
-          >
-            <ListItemLink onClick={onClick} className="sideline" href="/blog">
-              Blog
-            </ListItemLink>
-            <ListItemLink
-              onClick={onClick}
-              className="sideline"
-              href="/gallery"
-            >
-              Galería
-            </ListItemLink>
-          </ul>
-        </li>
+        <Dropdown type="desktop" />
       </ul>
     </nav>
   )
 }
 
-export const MobileNav = ({ onClick, handleClick, userColors }) => {
+export const MobileNavBar = ({
+  onClick,
+  className,
+  initialUserColors,
+  ...props
+}) => {
   return (
-    <div
-      data-visible="false"
+    <nav
+      className={`${className} flex flex-col justify-between`}
       id="primary-navigation"
-      className="mobile-nav hidden transition-transform duration-300 inset-y-0 right-0 fixed z-20 justify-start items-center flex-col opacity-95 bg-background px-4 h-full pt-16 gap-4 font-bold"
+      style={{ height: '100%' }}
+      {...props}
     >
-      <NavBar onClick={onClick} className="mobile" />
-      <a
-        onClick={onClick}
-        className="underlined relative"
-        href="mailto:contacto@jonathanbytes.com"
-        target="_blank"
-        rel="noreferrer"
-      >
-        Contáctame
-      </a>
-      <div className="flex flex-col flex-grow justify-end items-center">
-        <ThemeSwitch onClick={onClick} initialUserColors={userColors} />
-      </div>
-    </div>
+      <ul className={`list-none flex flex-col gap-6 items-center`}>
+        <ListItemLink href="/projects" className="underlined" onClick={onClick}>
+          Proyectos
+        </ListItemLink>
+        <ListItemLink href="/about" className="underlined" onClick={onClick}>
+          Sobre mí
+        </ListItemLink>
+        <Dropdown type="mobile" onClick={onClick} />
+        <li>
+          <a
+            className="underlined"
+            href="mailto:contacto@jonathanbytes.com"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Contáctame
+          </a>
+        </li>
+      </ul>
+      <ThemeSwitch
+        className="px-4 font-normal"
+        initialUserColors={initialUserColors}
+      />
+    </nav>
   )
 }

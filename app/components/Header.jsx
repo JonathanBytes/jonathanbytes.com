@@ -1,41 +1,29 @@
-"use client";
+'use client'
 
-import Link from "next/link";
-import { NavBar, MobileNav } from "./NavBar";
-import { Hamburguer, MainLogo } from "./Icons";
-import ThemeSwitchDesktop from "./theme/ThemeSwitchDesktop";
+import Link from 'next/link'
+import { useState } from 'react'
+import { DesktopNavBar, MobileNavBar } from './NavBar'
+import { Hamburguer, MainLogo } from './Icons'
+import ThemeSwitchDesktop from './theme/ThemeSwitchDesktop'
 
-function ButtonToggle() {
-  const button = document.querySelector(".button-three");
-  const mobileNav = document.querySelector(".mobile-nav");
-  const currentState = mobileNav.getAttribute("data-visible");
-  if (!currentState || currentState === "false") {
-    button.setAttribute("aria-expanded", "true");
-    mobileNav.setAttribute("data-visible", "true");
-  } else {
-    button.setAttribute("aria-expanded", "false");
-    mobileNav.setAttribute("data-visible", "false");
+export default function Header({ initialUserColors }) {
+  const [isMobileNavVisible, setIsMobileNavVisible] = useState(false)
+
+  const handleToggle = () => {
+    setIsMobileNavVisible(!isMobileNavVisible)
   }
-}
 
-function handleClick() {
-  return true;
-}
-
-export default function Header({ userColors }) {
   return (
-    <header className="header">
-      <Link className="flex items-center" href="/">
-        <MainLogo className="text-foreground text-xl" />
+    <header className="flex justify-between align-center items-center flex-wrap w-full max-w-4xl px-4 py-4 min-h-20">
+      <Link href="/" className="flex items-center flex-start">
+        <MainLogo className="text-xl" />
       </Link>
-      <NavBar />
-      <div className="flex gap-2 items-center">
-        <ThemeSwitchDesktop
-          userColors={userColors}
-          className="hidden md:flex"
-        />
+
+      <DesktopNavBar className="hidden md:flex items-center" />
+      <div className="hidden md:flex gap-2 items-center">
+        <ThemeSwitchDesktop userColors={initialUserColors} />
         <a
-          className="btn desktop h-8"
+          className="bg-foreground text-background font-mono px-3 py-1 rounded-md"
           href="mailto:contacto@jonathanbytes.com"
           target="_blank"
           rel="noreferrer"
@@ -43,21 +31,34 @@ export default function Header({ userColors }) {
           Contáctame
         </a>
       </div>
-      <MobileNav
-        onClick={ButtonToggle}
-        handleClick={handleClick}
-        userColors={userColors}
+
+      {/* Mobile nav backdrop */}
+      {isMobileNavVisible && (
+        <div
+          className="fixed inset-0 bg-black/40 z-10 md:hidden"
+          onClick={handleToggle}
+          aria-hidden="true"
+        />
+      )}
+
+      <MobileNavBar
+        className="mobile-nav md:hidden text-xl font-bold fixed top-0 right-0 min-w-40 bg-background/95 backdrop-blur-xs z-20 pt-20"
+        data-visible={isMobileNavVisible}
+        initialUserColors={initialUserColors}
+        onClick={handleToggle}
       />
       <button
         type="button"
-        className="button-three"
-        onClick={ButtonToggle}
+        className={`hamburger-menu-btn bg-transparent p-0 border-0 w-10 aspect-square md:hidden overflow-hidden cursor-pointer flex items-center justify-center z-30 ${
+          isMobileNavVisible ? 'fixed top-5 right-4' : ''
+        }`}
+        onClick={handleToggle}
         aria-controls="primary-navigation"
-        aria-expanded="false"
+        aria-expanded={isMobileNavVisible}
       >
         <Hamburguer />
         <span className="sr-only">Menu</span>
       </button>
     </header>
-  );
+  )
 }
