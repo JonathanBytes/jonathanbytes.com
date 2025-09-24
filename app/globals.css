@@ -752,11 +752,20 @@
 }
 
 @utility mobile-nav {
-  /* Mobile Navigation Animation - minimal custom CSS */
-  height: 100vh;
-  height: 100dvh;
+  /* Mobile Navigation Animation with improved height handling */
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  /* Explicitly set bottom to 0 */
+  width: 100%;
+  /* Full width on small screens */
+  max-width: fit-content;
+  /* Limit width on larger screens */
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   transform: translateX(100%);
+  overflow-y: auto;
+  /* Allow scrolling if content is too tall */
 
   &[data-visible='true'] {
     transform: translateX(0) !important;

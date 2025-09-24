@@ -28,6 +28,7 @@ export const MobileNavBar = ({
     <nav
       className={`${className} flex flex-col justify-between`}
       id="primary-navigation"
+      style={{ height: '100%' }}
       {...props}
     >
       <ul className={`list-none flex flex-col gap-6 items-center`}>
