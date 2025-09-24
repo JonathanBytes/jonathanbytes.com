@@ -5,7 +5,7 @@ import { MainLogo } from './Icons'
 export default function Footer() {
   return (
     <footer className="flex grow-2 flex-wrap justify-between p-6 max-h-[305px] w-full bg-altbg ">
-      <div className="footer-logo">
+      <div className="pr-4 pb-2">
         <Link href="/">
           <MainLogo className="text-3xl sm:text-5xl mb-0" />
         </Link>
@@ -13,7 +13,7 @@ export default function Footer() {
           Apasionado por <strong>aprender y crear.</strong>
         </p>
       </div>
-      <div className=" flex p-0">
+      <div className="flex p-0">
         <SocialMedia />
       </div>
     </footer>

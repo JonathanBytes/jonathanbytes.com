@@ -17,7 +17,7 @@ const ListItem = ({ children, href }) => {
 
 const SocialMedia = () => {
   return (
-    <ul className="flex flex-col gap-4">
+    <ul className="flex flex-col gap-3">
       <li>
         <h3 className="font-bold m-0 text-left">Redes</h3>
       </li>
