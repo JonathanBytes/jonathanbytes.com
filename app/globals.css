@@ -51,7 +51,7 @@
 
 @layer base {
   :root {
-    --animation-duration: 300ms;
+    --animation-duration: 200ms;
     /* Pill colors - global scope */
     --black: #282828;
     --red: #fb4934;
@@ -748,7 +748,6 @@
 
   &:hover {
     background-color: var(--color-primary);
-    color: var(--color-foreground);
   }
 }
 

@@ -1,26 +1,29 @@
 import Link from 'next/link'
-import { HeroCustom } from '../components/HeroVariant'
+import HeroCustom from '../components/HeroVariant'
 
 export const metadata = {
   title: 'Política de privacidad',
   description:
-    'Políticas de privacidad de los servicios relacionados al AmbientSensorESP desarrollado por JonathanBytes',
+    'Políticas de privacidad de los servicios relacionados a los dispositivos Climaware desarrollados por JonathanBytes',
 }
 
 export default function About() {
   return (
     <>
-      <HeroCustom title={'Política de privacidad'} />
+      <HeroCustom
+        title={'Política de privacidad'}
+        className="text-foreground h-[150px]"
+      />
       <main>
         <article>
           <section>
             <h2>1. Introducción</h2>
             <p>
-              En AmbientSensorESP, nos comprometemos a proteger su privacidad.
-              Esta política de privacidad describe cómo recopilamos, utilizamos
-              y protegemos los datos personales relacionados con el uso de
-              nuestros dispositivos. Al utilizar AmbientSensorESP, usted acepta
-              los términos de esta política.
+              En Climaware, nos comprometemos a proteger su privacidad. Esta
+              política de privacidad describe cómo recopilamos, utilizamos y
+              protegemos los datos personales relacionados con el uso de
+              nuestros dispositivos. Al utilizar Climaware, usted acepta los
+              términos de esta política.
             </p>
           </section>
 
@@ -61,8 +64,8 @@ export default function About() {
             <h2>4. Compartición de Datos</h2>
             <p>
               No compartimos ningún dato recopilado con terceros. Todos los
-              datos son utilizados únicamente por AmbientSensorESP para los
-              fines mencionados anteriormente.
+              datos son utilizados únicamente por Climaware para los fines
+              mencionados anteriormente.
             </p>
           </section>
 
@@ -79,7 +82,7 @@ export default function About() {
 
           <section>
             <h2>6. Derechos del Usuario</h2>
-            <p>Como usuario de AmbientSensorESP, tiene derecho a:</p>
+            <p>Como usuario de Climaware, tiene derecho a:</p>
             <ul>
               <li>
                 <strong>Acceder:</strong> a la información que recopilamos sobre

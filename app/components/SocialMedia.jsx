@@ -19,7 +19,7 @@ const SocialMedia = () => {
   return (
     <ul className="flex flex-col gap-4">
       <li>
-        <h3 className="font-bold">Redes</h3>
+        <h3 className="font-bold m-0 text-left">Redes</h3>
       </li>
       <ListItem href="https://www.linkedin.com/in/jonathan-cardona-ram%C3%ADrez-614773186">
         <LinkedIn />

@@ -1,29 +1,16 @@
-export default function HeroVariant() {
-  return (
-    <div className="hero variation">
-      <div className="dark:text-foreground text-background main-text variant">
-        <h1>
-          <span>Sobre mí</span>
-        </h1>
-        <p>It’s story time!</p>
-      </div>
-    </div>
-  )
-}
-
-export function HeroCustom({ title, content, heroBGSrc }) {
+export default function HeroCustom({ title, content, heroBGSrc, className }) {
   return (
     <div
-      className="hero variation"
+      className={`w-full h-[60dvh] bg-cover bg-center flex items-center justify-center mb-8 ${className}`}
       style={{
         backgroundImage: `url(${heroBGSrc})`,
       }}
     >
-      <div className="text-foreground main-text ">
+      <div className="leading-none text-[12vw] md:text-8xl font-serif w-2/3 text-center">
         <h1>
           <span>{title}</span>
         </h1>
-        <p>{content}</p>
+        <p className="text-[6vw] md:text-3xl font-sans">{content}</p>
       </div>
     </div>
   )
