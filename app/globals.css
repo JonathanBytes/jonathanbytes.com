@@ -753,6 +753,7 @@
 
 @utility mobile-nav {
   /* Mobile Navigation Animation - minimal custom CSS */
+  height: 100vh;
   height: 100dvh;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   transform: translateX(100%);
