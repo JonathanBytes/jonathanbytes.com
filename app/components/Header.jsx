@@ -42,7 +42,7 @@ export default function Header({ initialUserColors }) {
       )}
 
       <MobileNavBar
-        className="mobile-nav md:hidden text-xl font-bold fixed top-0 right-0 h-screen min-h-dvh min-w-40 bg-background/95 backdrop-blur-xs z-20 pt-20"
+        className="mobile-nav md:hidden text-xl font-bold fixed top-0 right-0 min-w-40 bg-background/95 backdrop-blur-xs z-20 pt-20"
         data-visible={isMobileNavVisible}
         initialUserColors={initialUserColors}
         onClick={handleToggle}

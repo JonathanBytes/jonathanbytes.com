@@ -755,6 +755,7 @@
   /* Mobile Navigation Animation - minimal custom CSS */
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   transform: translateX(100%);
+  height: 100vh;
 
   &[data-visible='true'] {
     transform: translateX(0) !important;
