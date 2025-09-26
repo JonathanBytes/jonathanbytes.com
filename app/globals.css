@@ -1,7 +1,7 @@
 @import 'tailwindcss';
-@import './css/prism-classes.css';
 @import './css/theme-colors.css';
 @import './css/themes.css';
+@import './css/prism-classes.css';
 
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -26,30 +26,7 @@
   If we ever want to remove these styles, we need to add an explicit border
   color utility to any element that depends on these defaults.
 */
-.rehype-code-title {
-  margin-left: 11%;
-  margin-top: 1rem;
-  width: fit-content;
-  padding: 0.25rem 0.5rem;
-  background-color: var(--color-altbg);
-  font-family: var(--font-ibm);
-  font-size: 0.875rem;
-  color: var(--color-foreground);
-  font-weight: 600;
-  border-radius: 0.5rem 0.5rem 0 0;
-}
 
-@media (min-width: 640px) {
-  .rehype-code-title {
-    margin-left: 12%;
-  }
-}
-
-@media (min-width: 1024px) {
-  .rehype-code-title {
-    margin-left: 16%;
-  }
-}
 
 @layer base {
   :root {
@@ -497,6 +474,31 @@
 
     .variant {
       margin: 0;
+    }
+  }
+
+  .rehype-code-title {
+    margin-left: 11%;
+    margin-top: 1rem;
+    width: fit-content;
+    padding: 0.25rem 0.5rem;
+    background-color: var(--color-altbg);
+    font-family: var(--font-ibm);
+    font-size: 0.875rem;
+    color: var(--color-foreground);
+    font-weight: 600;
+    border-radius: 0.5rem 0.5rem 0 0;
+  }
+
+  @media (min-width: 640px) {
+    .rehype-code-title {
+      margin-left: 12%;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .rehype-code-title {
+      margin-left: 16%;
     }
   }
 }
