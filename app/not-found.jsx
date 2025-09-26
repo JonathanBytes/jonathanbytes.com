@@ -1,19 +1,21 @@
-import Image from "next/image"
+import Image from 'next/image'
 import banner404 from '../public/assets/404.webp'
 
 export const metadata = {
   title: 'Not found (404)',
-  description: 'Not found page, error 404'
+  description: 'Not found page, error 404',
 }
 
 export default function RootLayout() {
   return (
     <main>
-      <Image width='80%' src={banner404} alt="404 JonathanBytes image" />
-      <h1> ¡Lochentoooo! 😭</h1>
-      <p>
-        La página que intentas acceder no existe...
-      </p>
+      <h1 className="text-[40vw] md:text-[24rem] flex justify-center items-center gap-4 font-bold leading-none">
+        <span className="font-serif">4</span>
+        <span className="font-mono text-primary">0</span>
+        <span className="font-sans">4</span>
+      </h1>
+      <h2 className="font-serif text-4xl font-bold"> ¡Lo sientoooo! 😭</h2>
+      <p>La página que intentas acceder no existe...</p>
     </main>
   )
 }

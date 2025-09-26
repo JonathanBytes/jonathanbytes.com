@@ -12,7 +12,7 @@ const projectsNames = [
   'dotfiles',
   'LearningDB',
   'ESPMidi-Footswitch',
-  'jonathanbytes.com',
+  'totally-biased',
   'nextjs-colorscheme-switch',
 ]
 

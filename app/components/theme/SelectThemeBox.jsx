@@ -8,7 +8,7 @@ const SelectThemeBox = ({ value, onChange }) => {
       <option value="gruvbox">Gruvbox &#x1F39E;</option>
       <option value="catppuccin">Catppuccin &#x1F431;</option>
     </select>
-  );
-};
+  )
+}
 
-export default SelectThemeBox;
+export default SelectThemeBox
