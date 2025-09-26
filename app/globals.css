@@ -772,6 +772,30 @@
   }
 }
 
+@utility text-primary {
+  color: var(--color-primary);
+}
+
+@utility text-secondary {
+  color: var(--color-secondary);
+}
+
+@utility text-accent {
+  color: var(--color-accent);
+}
+
+@utility bg-primary {
+  background-color: var(--color-primary);
+}
+
+@utility bg-secondary {
+  background-color: var(--color-secondary);
+}
+
+@utility bg-accent {
+  background-color: var(--color-accent);
+}
+
 
 /* Desktop dropdown - overlay, doesn't affect layout */
 #dropdown.desktop-dropdown {
