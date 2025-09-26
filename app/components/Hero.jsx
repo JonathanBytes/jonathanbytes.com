@@ -6,7 +6,7 @@ export default function Hero() {
     <div className="w-full max-w-5xl md:grid md:grid-cols-[2fr_1fr] justify-center items-center md:justify-items-stretch mx-auto mb-16 pt-4 flex flex-col">
       <div className="p-8 md:text-left text-center text-[9vw] md:text-[3.3rem]">
         <h1 className="m-0 font-serif break-words leading-none">
-          <span className="block text-[16vw] md:text-[6rem] text-primary !text-[color:var(--color-primary)]">
+          <span className="block text-[16vw] md:text-[6rem] text-[var(--color-primary)]">
             Jonathan
           </span>
           Cardona Ramírez
