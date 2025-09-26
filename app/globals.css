@@ -1,5 +1,7 @@
 @import 'tailwindcss';
 @import './css/prism-classes.css';
+@source inline("{hover:,}text-{primary,secondary,accent}");
+@source inline("{hover:,}bg-{primary,secondary,accent}");
 
 @custom-variant dark (&:where(.dark, .dark *));
 
