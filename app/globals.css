@@ -308,31 +308,6 @@
     content: '';
   }
 
-  [data-theme='dark'] #pill a {
-    color: var(--color-background);
-  }
-
-  @media (prefers-color-scheme: dark) {
-    a {
-      color: var(--color-background);
-    }
-  }
-
-  hr {
-    padding: 0;
-    display: block;
-    height: 1px;
-    width: 100%;
-    border: 0;
-    border-top: 1px solid rgb(212 212 212);
-  }
-
-  @media (prefers-color-scheme: dark) {
-    hr {
-      border-top-color: rgb(255 255 255 / 0.2);
-    }
-  }
-
   main {
     width: 100%;
     max-width: 72rem;
@@ -368,6 +343,161 @@
 
   button {
     font-family: var(--font-ibm);
+  }
+
+  /* Desktop dropdown - overlay, doesn't affect layout */
+  #dropdown.desktop-dropdown {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  }
+
+  #dropdownTrigger:hover #dropdown.desktop-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  /* Mobile dropdown - affects layout when visible with enter/exit animations */
+  #dropdown.mobile-dropdown {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transform: translateY(-10px);
+    transition: max-height 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  #dropdownTrigger:hover #dropdown.mobile-dropdown {
+    max-height: 200px;
+    /* Adjust based on your content height */
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .hamburger-menu-btn {
+    --button-color: var(--color-foreground);
+  }
+
+  .hamburger-menu-btn .hamburger {
+    transition:
+      translate 0.25s,
+      rotate 0.5s;
+  }
+
+  .hamburger-menu-btn[aria-expanded='true'] .hamburger {
+    translate: 2px -2px;
+    rotate: 0.125turn;
+  }
+
+  .hamburger-menu-btn .line {
+    transition: 0.3s;
+    stroke-dasharray: 60 31 60 300
+  }
+
+  .hamburger-menu-btn[aria-expanded='true'] .line {
+    stroke-dasharray: 60 105 60 300;
+    stroke-dashoffset: -90;
+  }
+
+
+  /* Hero Styles */
+  .hero {
+    width: 100%;
+    max-width: 1100px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
+    justify-items: stretch;
+    margin: auto auto 4rem auto;
+    padding-top: 1rem;
+  }
+
+  .variation {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    color: var(--white);
+    background-image: url(/assets/interior.webp);
+    object-fit: cover;
+    background-size: cover;
+    height: 60vh;
+    background-position: center;
+    max-width: none;
+    padding-top: 0;
+  }
+
+  .variation p {
+    text-align: center;
+    margin: 0;
+    font-size: 2rem;
+  }
+
+  .variant {
+    margin: 0;
+    padding: 0;
+  }
+
+  .person img {
+    width: 100%;
+  }
+
+  .person {
+    transition: transform 800ms cubic-bezier(0.075, 0.82, 0.165, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .person-container {
+    width: 85%;
+    aspect-ratio: 1 / 1.45;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0 0 100vw 100vw;
+  }
+
+  .person-img {
+    position: absolute;
+    width: 60%;
+    bottom: -70px;
+    z-index: 2;
+    transition: transform 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+
+  .person-circle {
+    rotate: -30deg;
+    opacity: 90%;
+    position: absolute;
+    aspect-ratio: 1;
+    bottom: 0;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .person-img:hover {
+    transform: scale(1.06) translateY(-1.5vw);
+  }
+
+  .person:hover {
+    transform: scale(1.02);
+  }
+
+  @media only screen and (max-width: 820px) {
+    .hero {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .variation {
+      height: 40vh;
+    }
+
+    .variant {
+      margin: 0;
+    }
   }
 }
 
@@ -438,160 +568,5 @@
 
   &[data-visible='true'] {
     transform: translateX(0) !important;
-  }
-}
-
-/* Desktop dropdown - overlay, doesn't affect layout */
-#dropdown.desktop-dropdown {
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-10px);
-  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
-}
-
-#dropdownTrigger:hover #dropdown.desktop-dropdown {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-/* Mobile dropdown - affects layout when visible with enter/exit animations */
-#dropdown.mobile-dropdown {
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  transform: translateY(-10px);
-  transition: max-height 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
-}
-
-#dropdownTrigger:hover #dropdown.mobile-dropdown {
-  max-height: 200px;
-  /* Adjust based on your content height */
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.hamburger-menu-btn {
-  --button-color: var(--color-foreground);
-}
-
-.hamburger-menu-btn .hamburger {
-  transition:
-    translate 0.25s,
-    rotate 0.5s;
-}
-
-.hamburger-menu-btn[aria-expanded='true'] .hamburger {
-  translate: 2px -2px;
-  rotate: 0.125turn;
-}
-
-.hamburger-menu-btn .line {
-  transition: 0.3s;
-  stroke-dasharray: 60 31 60 300
-}
-
-.hamburger-menu-btn[aria-expanded='true'] .line {
-  stroke-dasharray: 60 105 60 300;
-  stroke-dashoffset: -90;
-}
-
-
-/* Hero Styles */
-.hero {
-  width: 100%;
-  max-width: 1100px;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  align-items: center;
-  justify-items: stretch;
-  margin: auto auto 4rem auto;
-  padding-top: 1rem;
-}
-
-.variation {
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  color: var(--white);
-  background-image: url(/assets/interior.webp);
-  object-fit: cover;
-  background-size: cover;
-  height: 60vh;
-  background-position: center;
-  max-width: none;
-  padding-top: 0;
-}
-
-.variation p {
-  text-align: center;
-  margin: 0;
-  font-size: 2rem;
-}
-
-.variant {
-  margin: 0;
-  padding: 0;
-}
-
-.person img {
-  width: 100%;
-}
-
-.person {
-  transition: transform 800ms cubic-bezier(0.075, 0.82, 0.165, 1);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.person-container {
-  width: 85%;
-  aspect-ratio: 1 / 1.45;
-  position: relative;
-  overflow: hidden;
-  border-radius: 0 0 100vw 100vw;
-}
-
-.person-img {
-  position: absolute;
-  width: 60%;
-  bottom: -70px;
-  z-index: 2;
-  transition: transform 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
-}
-
-.person-circle {
-  rotate: -30deg;
-  opacity: 90%;
-  position: absolute;
-  aspect-ratio: 1;
-  bottom: 0;
-  object-fit: cover;
-  border-radius: 50%;
-}
-
-.person-img:hover {
-  transform: scale(1.06) translateY(-1.5vw);
-}
-
-.person:hover {
-  transform: scale(1.02);
-}
-
-@media only screen and (max-width: 820px) {
-  .hero {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  .variation {
-    height: 40vh;
-  }
-
-  .variant {
-    margin: 0;
   }
 }
