@@ -1,6 +1,3 @@
-import Image from 'next/image'
-import banner404 from '../public/assets/404.webp'
-
 export const metadata = {
   title: 'Not found (404)',
   description: 'Not found page, error 404',
