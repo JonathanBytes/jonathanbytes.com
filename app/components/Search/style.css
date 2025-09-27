@@ -197,11 +197,11 @@ html[data-theme="dark"] {
 }
 
 .DocSearch-Button-Placeholder {
-  display: none !important;
+  display: none;
 }
 
 .DocSearch-Button-Keys {
-  display: none !important;
+  display: none;
 }
 
 .DocSearch-Button-Key {
@@ -211,7 +211,7 @@ html[data-theme="dark"] {
   border: 1px solid
     color-mix(in srgb, var(--docsearch-subtle-color) 20%, transparent);
   border-radius: 4px;
-  box-shadow: none !important;
+  box-shadow: none;
   color: var(--docsearch-key-color);
   display: flex;
   font-size: 14px;
@@ -239,7 +239,7 @@ html[data-theme="dark"] {
 }
 
 .DocSearch-Button-Key--pressed {
-  box-shadow: var(--docsearch-key-pressed-shadow) !important;
+  box-shadow: var(--docsearch-key-pressed-shadow);
   transform: translateY(1px);
 }
 
@@ -255,7 +255,7 @@ html[data-theme="dark"] {
 }
 
 .DocSearch--active {
-  overflow: hidden !important;
+  overflow: hidden;
 }
 
 .DocSearch-Container,
@@ -690,7 +690,7 @@ html[data-theme="dark"] {
 
 .DocSearch-Hit[aria-selected="true"] .DocSearch-Hit--AskAI,
 .DocSearch-Hit[aria-selected="true"] a {
-  background-color: var(--docsearch-hit-highlight-color) !important;
+  background-color: var(--docsearch-hit-highlight-color);
 }
 
 .DocSearch-Hit mark {
@@ -941,7 +941,7 @@ svg.DocSearch-Hit-Select-Icon {
   background-color: var(--docsearch-background-color);
   border: 0;
   border-radius: 2px;
-  box-shadow: none !important;
+  box-shadow: none;
   color: var(--docsearch-icon-color);
   height: 24px;
   justify-content: center;

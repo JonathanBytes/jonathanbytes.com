@@ -577,6 +577,6 @@
   /* Allow scrolling if content is too tall */
 
   &[data-visible="true"] {
-    transform: translateX(0) !important;
+    transform: translateX(0);
   }
 }
