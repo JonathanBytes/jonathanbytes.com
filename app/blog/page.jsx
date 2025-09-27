@@ -1,19 +1,19 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useMemo } from "react";
-import posts from "../../data/rawPosts.json";
+import { useMemo, useState } from "react";
 import {
-  recent,
-  old,
-  titleAscending,
-  titleDescending,
   categoriesAscending,
   categoriesDescending,
+  old,
+  recent,
+  titleAscending,
+  titleDescending,
 } from "@/lib/sortPosts";
-import SelectMenu from "../components/SelectMenu/SelectMenu";
+import posts from "../../data/rawPosts.json";
 import BlogCard from "../components/BlogCard/BlogCard";
 import { Search } from "../components/Search/Search";
+import SelectMenu from "../components/SelectMenu/SelectMenu";
 
 const sortOptions = {
   recent,

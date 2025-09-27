@@ -1,4 +1,4 @@
-import { IBM_Plex_Mono, Yeseva_One, Montserrat } from "next/font/google";
+import { IBM_Plex_Mono, Montserrat, Yeseva_One } from "next/font/google";
 
 export const ibm = IBM_Plex_Mono({
   subsets: ["latin"],

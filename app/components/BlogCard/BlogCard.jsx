@@ -1,8 +1,8 @@
-import styles from "./blogCard.module.css";
-import { PillCategories } from "../Pill/Pill";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
+import { PillCategories } from "../Pill/Pill";
 import ReadTime from "../ReadTime";
+import styles from "./blogCard.module.css";
 
 function BlogCard({ slug, title, description, image, date, categories }) {
   const currentCategory = categories === undefined ? [""] : categories;

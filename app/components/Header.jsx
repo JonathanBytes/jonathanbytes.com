@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { DesktopNavBar, MobileNavBar } from "./NavBar";
 import { Hamburguer, MainLogo } from "./Icons";
+import { DesktopNavBar, MobileNavBar } from "./NavBar";
 import ThemeSwitchDesktop from "./theme/ThemeSwitchDesktop";
 
 export default function Header({ initialUserColors }) {

@@ -1,7 +1,7 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import Typed from "typed.js";
-import { useRef, useEffect } from "react";
 
 export default function AltText({ classname }) {
   // Create reference to store the DOM element containing the animation

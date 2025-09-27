@@ -1,5 +1,5 @@
-import PostBanner from "./PostBanner/PostBanner.jsx";
 import { PillCategories } from "./Pill/Pill.jsx";
+import PostBanner from "./PostBanner/PostBanner.jsx";
 import ReadTime from "./ReadTime.jsx";
 
 const PostHead = ({ frontmatter }) => {

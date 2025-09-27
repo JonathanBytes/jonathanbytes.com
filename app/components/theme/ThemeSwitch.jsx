@@ -1,12 +1,12 @@
 "use client";
 
-import Sun from "../icons/Sun";
-import Moon from "../icons/Moon";
+import { useEffect, useState } from "react";
+import { setCookieColorScheme, setCookieTheme } from "@/lib/userColorsCookies";
 import Computer from "../icons/Computer";
+import Moon from "../icons/Moon";
+import Sun from "../icons/Sun";
 import ThemeSwitchButton from "../theme/ThemeSwitchButton";
 import SelectThemeBox from "./SelectThemeBox";
-import { useEffect, useState } from "react";
-import { setCookieTheme, setCookieColorScheme } from "@/lib/userColorsCookies";
 
 const ThemeSwitch = ({ className, initialUserColors }) => {
   const [theme, setTheme] = useState(initialUserColors.theme);

@@ -1,5 +1,5 @@
-import AltText from "../components/AltText";
 import Image from "next/image";
+import AltText from "../components/AltText";
 
 export default function Hero() {
   return (

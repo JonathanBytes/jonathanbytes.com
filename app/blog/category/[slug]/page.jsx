@@ -1,20 +1,20 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import rawPosts from "@/data/rawPosts.json";
+import BlogCard from "@/app/components/BlogCard/BlogCard";
+import { Search } from "@/app/components/Search/Search";
+import SelectMenu from "@/app/components/SelectMenu/SelectMenu";
 import categories from "@/data/categories.json";
+import rawPosts from "@/data/rawPosts.json";
 import {
-  filteredPostsByCategory,
-  recent,
-  old,
-  titleAscending,
-  titleDescending,
   categoriesAscending,
   categoriesDescending,
+  filteredPostsByCategory,
+  old,
+  recent,
+  titleAscending,
+  titleDescending,
 } from "@/lib/sortPosts";
-import SelectMenu from "@/app/components/SelectMenu/SelectMenu";
-import { Search } from "@/app/components/Search/Search";
-import BlogCard from "@/app/components/BlogCard/BlogCard";
 
 const sortOptions = {
   recent,

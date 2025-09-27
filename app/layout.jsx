@@ -1,9 +1,9 @@
 import "./globals.css";
-import { ibm, yeseva, montserrat } from "./fonts";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { getCookieColorScheme, getCookieTheme } from "@/lib/userColorsCookies";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import { ibm, montserrat, yeseva } from "./fonts";
 
 export const metadata = {
   metadataBase: new URL("https://jonathanbytes.com"),

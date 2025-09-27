@@ -1,6 +1,6 @@
-import ThemeSwitch from "./theme/ThemeSwitch";
 import Dropdown from "./Dropdown";
 import ListItemLink from "./ListItemLink";
+import ThemeSwitch from "./theme/ThemeSwitch";
 
 export const DesktopNavBar = ({ className }) => {
   return (
