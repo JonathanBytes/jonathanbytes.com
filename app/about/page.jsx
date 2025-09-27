@@ -1,19 +1,19 @@
-import Link from 'next/link'
-import HeroCustom from '../components/HeroVariant'
+import Link from "next/link";
+import HeroCustom from "../components/HeroVariant";
 
 export const metadata = {
-  title: 'About',
-  description: 'About JonathanBytes',
-}
+  title: "About",
+  description: "About JonathanBytes",
+};
 
 export default function About() {
   return (
     <>
       <HeroCustom
-        title={'Sobre mí'}
+        title={"Sobre mí"}
         content={"It's story time!"}
         className="text-background dark:text-foreground"
-        heroBGSrc={'/assets/interior.webp'}
+        heroBGSrc={"/assets/interior.webp"}
       />
       <main>
         <p>
@@ -50,5 +50,5 @@ export default function About() {
         <p />
       </main>
     </>
-  )
+  );
 }

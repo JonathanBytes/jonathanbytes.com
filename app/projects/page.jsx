@@ -1,20 +1,20 @@
-import Link from 'next/link'
-import GithubCard from '../components/GithubCard/GithubCard'
+import Link from "next/link";
+import GithubCard from "../components/GithubCard/GithubCard";
 
 export const metadata = () => {
   return {
-    title: 'Projects',
-    description: 'Projects of JonathanBytes website',
-  }
-}
+    title: "Projects",
+    description: "Projects of JonathanBytes website",
+  };
+};
 
 const projectsNames = [
-  'dotfiles',
-  'LearningDB',
-  'ESPMidi-Footswitch',
-  'totally-biased',
-  'nextjs-colorscheme-switch',
-]
+  "dotfiles",
+  "LearningDB",
+  "ESPMidi-Footswitch",
+  "totally-biased",
+  "nextjs-colorscheme-switch",
+];
 
 export default function Projects() {
   return (
@@ -32,5 +32,5 @@ export default function Projects() {
       </Link>
       <p />
     </main>
-  )
+  );
 }

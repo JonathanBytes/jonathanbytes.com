@@ -1,7 +1,7 @@
-@import 'tailwindcss';
-@import './css/theme-colors.css';
-@import './css/themes.css';
-@import './css/prism-classes.css';
+@import "tailwindcss";
+@import "./css/theme-colors.css";
+@import "./css/themes.css";
+@import "./css/prism-classes.css";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -26,7 +26,6 @@
   If we ever want to remove these styles, we need to add an explicit border
   color utility to any element that depends on these defaults.
 */
-
 
 @layer base {
   :root {
@@ -60,16 +59,17 @@
     color-scheme: dark light;
   }
 
-  [data-theme='dark'] {
+  [data-theme="dark"] {
     color-scheme: dark;
   }
 
-  [data-theme='light'] {
+  [data-theme="light"] {
     color-scheme: light;
   }
 
   body {
-    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-property:
+      color, background-color, border-color, text-decoration-color, fill, stroke;
     transition-duration: 500ms;
   }
 
@@ -80,7 +80,7 @@
   }
 
   /* Inline code (not in code blocks) */
-  :not(pre)>code:not([class*='language-']) {
+  :not(pre) > code:not([class*="language-"]) {
     padding: 0.25rem 0.75rem;
     margin: 0 0.125rem;
     border-radius: 9999px;
@@ -95,7 +95,9 @@
     margin: auto;
     width: 85%;
     max-width: 45rem;
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    box-shadow:
+      0 4px 6px -1px rgb(0 0 0 / 0.1),
+      0 2px 4px -2px rgb(0 0 0 / 0.1);
     border-radius: 0.5rem;
     margin-bottom: 1.5rem;
     font-family: var(--font-ibm);
@@ -103,7 +105,7 @@
   }
 
   /* Background for non-Prism code blocks only */
-  pre:not([class*='language-']) {
+  pre:not([class*="language-"]) {
     background-color: var(--color-altbg);
     color: var(--color-foreground);
     padding: 1rem;
@@ -165,7 +167,7 @@
   }
 
   blockquote::before {
-    content: '';
+    content: "";
     display: block;
     position: absolute;
     top: 0;
@@ -242,7 +244,7 @@
   article h4::after,
   article h5::after,
   article h6::after {
-    content: ': ';
+    content: ": ";
   }
 
   article h3 {
@@ -260,7 +262,7 @@
   }
 
   article a::after {
-    content: ' ↗';
+    content: " ↗";
   }
 
   article h2 a::after,
@@ -268,12 +270,12 @@
   article h4 a::after,
   article h5 a::after,
   article h6 a::after {
-    content: '# ';
+    content: "# ";
     font-weight: 400;
   }
 
-  [id^='user-content'] a::after {
-    content: '';
+  [id^="user-content"] a::after {
+    content: "";
   }
 
   #pill a {
@@ -282,7 +284,7 @@
   }
 
   #pill a::after {
-    content: '';
+    content: "";
   }
 
   main {
@@ -327,7 +329,10 @@
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
-    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    transition:
+      opacity 0.3s ease,
+      visibility 0.3s ease,
+      transform 0.3s ease;
   }
 
   #dropdownTrigger:hover #dropdown.desktop-dropdown {
@@ -342,7 +347,10 @@
     opacity: 0;
     overflow: hidden;
     transform: translateY(-10px);
-    transition: max-height 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+    transition:
+      max-height 0.3s ease,
+      opacity 0.3s ease,
+      transform 0.3s ease;
   }
 
   #dropdownTrigger:hover #dropdown.mobile-dropdown {
@@ -362,21 +370,20 @@
       rotate 0.5s;
   }
 
-  .hamburger-menu-btn[aria-expanded='true'] .hamburger {
+  .hamburger-menu-btn[aria-expanded="true"] .hamburger {
     translate: 2px -2px;
     rotate: 0.125turn;
   }
 
   .hamburger-menu-btn .line {
     transition: 0.3s;
-    stroke-dasharray: 60 31 60 300
+    stroke-dasharray: 60 31 60 300;
   }
 
-  .hamburger-menu-btn[aria-expanded='true'] .line {
+  .hamburger-menu-btn[aria-expanded="true"] .line {
     stroke-dasharray: 60 105 60 300;
     stroke-dashoffset: -90;
   }
-
 
   /* Hero Styles */
   .hero {
@@ -544,7 +551,8 @@
   color: var(--color-background);
   padding: 0.25rem 1rem;
   border-radius: 0.5rem;
-  transition: color var(--animation-duration) ease-in-out,
+  transition:
+    color var(--animation-duration) ease-in-out,
     background-color var(--animation-duration) ease-in-out;
 
   &:hover {
@@ -568,7 +576,7 @@
   overflow-y: auto;
   /* Allow scrolling if content is too tall */
 
-  &[data-visible='true'] {
+  &[data-visible="true"] {
     transform: translateX(0) !important;
   }
 }

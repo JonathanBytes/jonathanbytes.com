@@ -1,25 +1,56 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import rawPosts from '@/data/rawPosts.json'
-import categories from '@/data/categories.json'
-import * as sortFunctions from '@/lib/sortPosts'
-import SelectMenu from '@/app/components/SelectMenu/SelectMenu'
-import { Search } from '@/app/components/Search/Search'
-import BlogCard from '@/app/components/BlogCard/BlogCard'
+import { useEffect, useMemo, useState } from "react";
+import rawPosts from "@/data/rawPosts.json";
+import categories from "@/data/categories.json";
+import {
+  filteredPostsByCategory,
+  recent,
+  old,
+  titleAscending,
+  titleDescending,
+  categoriesAscending,
+  categoriesDescending,
+} from "@/lib/sortPosts";
+import SelectMenu from "@/app/components/SelectMenu/SelectMenu";
+import { Search } from "@/app/components/Search/Search";
+import BlogCard from "@/app/components/BlogCard/BlogCard";
+
+const sortOptions = {
+  recent,
+  old,
+  titleAscending,
+  titleDescending,
+  categoriesAscending,
+  categoriesDescending,
+};
 
 const Blog = ({ params }) => {
-  const selectedCategory = params.slug
-  let posts
+  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [sortBy, setSortBy] = useState("recent");
 
-  if (selectedCategory) {
-    posts = sortFunctions.filteredPostsByCategory(selectedCategory, rawPosts)
-  } else {
-    posts = sortedPosts
+  useEffect(() => {
+    params.then((resolvedParams) => {
+      setSelectedCategory(resolvedParams.slug);
+    });
+  }, [params]);
+
+  const initialPosts = useMemo(
+    () =>
+      selectedCategory
+        ? filteredPostsByCategory(selectedCategory, rawPosts)
+        : rawPosts,
+    [selectedCategory],
+  );
+
+  const sortedPosts = useMemo(
+    () => (sortBy ? sortOptions[sortBy](initialPosts) : initialPosts),
+    [sortBy, initialPosts],
+  );
+
+  if (!selectedCategory) {
+    return <p>Loading...</p>;
   }
-
-  const [sortBy, setSortBy] = useState('recent')
-  const sortedPosts = sortBy ? sortFunctions[sortBy](posts) : posts
 
   return (
     <>
@@ -32,7 +63,7 @@ const Blog = ({ params }) => {
         {sortedPosts.map((post) => (
           <BlogCard
             key={post.slug}
-            slug={'/post/' + post.slug}
+            slug={`/post/${post.slug}`}
             image={post.image}
             date={post.date}
             title={post.title}
@@ -42,7 +73,7 @@ const Blog = ({ params }) => {
         ))}
       </ul>
     </>
-  )
-}
+  );
+};
 
-export default Blog
+export default Blog;

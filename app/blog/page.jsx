@@ -1,16 +1,35 @@
-'use client'
+"use client";
 
-import Link from 'next/link'
-import { useState } from 'react'
-import posts from '../../data/rawPosts.json'
-import * as sortFunctions from '@/lib/sortPosts'
-import SelectMenu from '../components/SelectMenu/SelectMenu'
-import BlogCard from '../components/BlogCard/BlogCard'
-import { Search } from '../components/Search/Search'
+import Link from "next/link";
+import { useState, useMemo } from "react";
+import posts from "../../data/rawPosts.json";
+import {
+  recent,
+  old,
+  titleAscending,
+  titleDescending,
+  categoriesAscending,
+  categoriesDescending,
+} from "@/lib/sortPosts";
+import SelectMenu from "../components/SelectMenu/SelectMenu";
+import BlogCard from "../components/BlogCard/BlogCard";
+import { Search } from "../components/Search/Search";
+
+const sortOptions = {
+  recent,
+  old,
+  titleAscending,
+  titleDescending,
+  categoriesAscending,
+  categoriesDescending,
+};
 
 const Blog = () => {
-  const [sortBy, setSortBy] = useState('recent')
-  const sortedPosts = sortBy ? sortFunctions[sortBy](posts) : posts
+  const [sortBy, setSortBy] = useState("recent");
+  const sortedPosts = useMemo(
+    () => (sortBy ? sortOptions[sortBy](posts) : posts),
+    [sortBy],
+  );
 
   return (
     <>
@@ -23,7 +42,7 @@ const Blog = () => {
         {sortedPosts.map((post) => (
           <BlogCard
             key={post.slug}
-            slug={'/post/' + post.slug}
+            slug={`/post/${post.slug}`}
             image={post.image}
             date={post.date}
             title={post.title}
@@ -35,12 +54,12 @@ const Blog = () => {
       </ul>
       <p />
       <Link href="/" className="btn">
-        {' '}
+        {" "}
         Volver
       </Link>
       <p />
     </>
-  )
-}
+  );
+};
 
-export default Blog
+export default Blog;

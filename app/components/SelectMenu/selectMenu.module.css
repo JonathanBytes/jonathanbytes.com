@@ -16,7 +16,7 @@
 
 .customSelect::before,
 .customSelect::after {
-  content: '';
+  content: "";
   --size: 0.3rem;
   position: absolute;
   right: 1rem;

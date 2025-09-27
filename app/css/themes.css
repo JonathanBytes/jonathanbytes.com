@@ -185,7 +185,7 @@
     }
   }
 
-  [data-theme='dark'] {
+  [data-theme="dark"] {
     .gruvbox {
       --color-foreground: var(--gruvbox-dark-color-foreground);
       --color-background: var(--gruvbox-dark-color-background);
@@ -279,7 +279,7 @@
     }
   }
 
-  [data-theme='light'] {
+  [data-theme="light"] {
     .gruvbox {
       --color-foreground: var(--gruvbox-light-color-foreground);
       --color-background: var(--gruvbox-light-color-background);

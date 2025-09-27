@@ -1,5 +1,5 @@
-import AltText from '../components/AltText'
-import Image from 'next/image'
+import AltText from "../components/AltText";
+import Image from "next/image";
 
 export default function Hero() {
   return (
@@ -36,5 +36,5 @@ export default function Hero() {
         </div>
       </div>
     </div>
-  )
+  );
 }

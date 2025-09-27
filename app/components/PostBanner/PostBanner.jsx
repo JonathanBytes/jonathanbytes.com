@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from "next/image";
 
 export default function PostBanner({ image }) {
   return (
@@ -9,5 +9,5 @@ export default function PostBanner({ image }) {
       width="1100"
       height="472"
     />
-  )
+  );
 }

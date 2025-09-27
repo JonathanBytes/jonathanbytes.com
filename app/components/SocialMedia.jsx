@@ -1,4 +1,4 @@
-import { LinkedIn, GitHub, YouTube, Instagram } from './Icons'
+import { LinkedIn, GitHub, YouTube, Instagram } from "./Icons";
 
 const ListItem = ({ children, href }) => {
   return (
@@ -12,8 +12,8 @@ const ListItem = ({ children, href }) => {
         {children}
       </a>
     </li>
-  )
-}
+  );
+};
 
 const SocialMedia = () => {
   return (
@@ -38,7 +38,7 @@ const SocialMedia = () => {
         Instagram
       </ListItem>
     </ul>
-  )
-}
+  );
+};
 
-export default SocialMedia
+export default SocialMedia;

@@ -13,5 +13,5 @@ export default function HeroCustom({ title, content, heroBGSrc, className }) {
         <p className="text-[6vw] md:text-3xl font-sans">{content}</p>
       </div>
     </div>
-  )
+  );
 }

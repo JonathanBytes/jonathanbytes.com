@@ -1,17 +1,17 @@
-'use client'
+"use client";
 
-import Link from 'next/link'
-import { useState } from 'react'
-import { DesktopNavBar, MobileNavBar } from './NavBar'
-import { Hamburguer, MainLogo } from './Icons'
-import ThemeSwitchDesktop from './theme/ThemeSwitchDesktop'
+import Link from "next/link";
+import { useState } from "react";
+import { DesktopNavBar, MobileNavBar } from "./NavBar";
+import { Hamburguer, MainLogo } from "./Icons";
+import ThemeSwitchDesktop from "./theme/ThemeSwitchDesktop";
 
 export default function Header({ initialUserColors }) {
-  const [isMobileNavVisible, setIsMobileNavVisible] = useState(false)
+  const [isMobileNavVisible, setIsMobileNavVisible] = useState(false);
 
   const handleToggle = () => {
-    setIsMobileNavVisible(!isMobileNavVisible)
-  }
+    setIsMobileNavVisible(!isMobileNavVisible);
+  };
 
   return (
     <header className="flex justify-between align-center items-center flex-wrap w-full max-w-4xl px-4 py-4 min-h-20">
@@ -50,7 +50,7 @@ export default function Header({ initialUserColors }) {
       <button
         type="button"
         className={`hamburger-menu-btn bg-transparent p-0 border-0 w-10 aspect-square md:hidden overflow-hidden cursor-pointer flex items-center justify-center z-30 ${
-          isMobileNavVisible ? 'fixed top-5 right-4' : ''
+          isMobileNavVisible ? "fixed top-5 right-4" : ""
         }`}
         onClick={handleToggle}
         aria-controls="primary-navigation"
@@ -60,5 +60,5 @@ export default function Header({ initialUserColors }) {
         <span className="sr-only">Menu</span>
       </button>
     </header>
-  )
+  );
 }
