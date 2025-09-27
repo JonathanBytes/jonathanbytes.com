@@ -193,6 +193,18 @@
     padding-left: 1.5rem;
   }
 
+  a {
+    color: var(--color-foreground);
+    text-decoration-color: transparent;
+    transition-property: opacity;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+  }
+
+  a:hover {
+    opacity: 0.8;
+  }
+
   article a {
     color: var(--color-primary);
   }
@@ -306,18 +318,6 @@
     width: 100%;
     max-width: 50rem;
     margin: 0.5rem 0;
-  }
-
-  a {
-    color: var(--color-foreground);
-    text-decoration-color: transparent;
-    transition-property: opacity;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
-  a:hover {
-    opacity: 0.8;
   }
 
   button {

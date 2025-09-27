@@ -1,3 +1,4 @@
+/** biome-ignore-all lint/security/noDangerouslySetInnerHtml: This is used for theme loading before any render */
 import "./globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { getCookieColorScheme, getCookieTheme } from "@/lib/userColorsCookies";
