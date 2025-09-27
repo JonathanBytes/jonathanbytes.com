@@ -1,14 +1,14 @@
-import { DocSearch } from '@docsearch/react'
-import './style.css'
+import { DocSearch } from "@docsearch/react";
+import "./style.css";
 //import '@docsearch/css'
-import Head from 'next/head'
+import Head from "next/head";
 
-export const SEARCH_API_KEY = process.env.NEXT_PUBLIC_ALGOLIA_KEY
-export const SEARCH_APP_ID = process.env.NEXT_PUBLIC_ALGOLIA_APP_ID
+export const SEARCH_API_KEY = process.env.NEXT_PUBLIC_ALGOLIA_KEY;
+export const SEARCH_APP_ID = process.env.NEXT_PUBLIC_ALGOLIA_APP_ID;
 
 export function Search() {
   if (!SEARCH_APP_ID || !SEARCH_API_KEY) {
-    return null
+    return null;
   }
   return (
     <>
@@ -23,8 +23,8 @@ export function Search() {
         apiKey={SEARCH_API_KEY}
         appId={SEARCH_APP_ID}
         placeholder="Buscar en el blog"
-        indices={['jonathanbytes']}
+        indices={["jonathanbytes"]}
       />
     </>
-  )
+  );
 }

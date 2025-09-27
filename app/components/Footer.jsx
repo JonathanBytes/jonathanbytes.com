@@ -1,6 +1,6 @@
-import Link from 'next/link'
-import SocialMedia from './SocialMedia'
-import { MainLogo } from './Icons'
+import Link from "next/link";
+import { MainLogo } from "./Icons";
+import SocialMedia from "./SocialMedia";
 
 export default function Footer() {
   return (
@@ -17,5 +17,5 @@ export default function Footer() {
         <SocialMedia />
       </div>
     </footer>
-  )
+  );
 }

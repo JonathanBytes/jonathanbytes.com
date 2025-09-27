@@ -1,22 +1,23 @@
-import './globals.css'
-import { ibm, yeseva, montserrat } from './fonts'
-import Header from './components/Header'
-import Footer from './components/Footer'
-import { SpeedInsights } from '@vercel/speed-insights/next'
-import { getCookieColorScheme, getCookieTheme } from '@/lib/userColorsCookies'
+/** biome-ignore-all lint/security/noDangerouslySetInnerHtml: This is used for theme loading before any render */
+import "./globals.css";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { getCookieColorScheme, getCookieTheme } from "@/lib/userColorsCookies";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import { ibm, montserrat, yeseva } from "./fonts";
 
 export const metadata = {
-  metadataBase: new URL('https://jonathanbytes.com'),
-  'theme-color': '#282828',
-}
+  metadataBase: new URL("https://jonathanbytes.com"),
+  "theme-color": "#282828",
+};
 
 export default async function RootLayout({ children }) {
-  const initialTheme = await getCookieTheme()
-  const initialColorScheme = await getCookieColorScheme()
+  const initialTheme = await getCookieTheme();
+  const initialColorScheme = await getCookieColorScheme();
   const initialUserColors = {
     theme: initialTheme,
     colorScheme: initialColorScheme,
-  }
+  };
   return (
     <html
       lang="es"
@@ -38,7 +39,7 @@ export default async function RootLayout({ children }) {
         <SpeedInsights />
       </body>
     </html>
-  )
+  );
 }
 
 function blockingSetInitialColorMode(initialUserColors) {
@@ -70,5 +71,5 @@ function blockingSetInitialColorMode(initialUserColors) {
     if (theme === 'dark') {
       document.documentElement.classList.add('dark');
     }
-  })();`
+  })();`;
 }

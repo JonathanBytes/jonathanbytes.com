@@ -1,17 +1,17 @@
-import Link from 'next/link'
-import HeroCustom from '../components/HeroVariant'
+import Link from "next/link";
+import HeroCustom from "../components/HeroVariant";
 
 export const metadata = {
-  title: 'Política de privacidad',
+  title: "Política de privacidad",
   description:
-    'Políticas de privacidad de los servicios relacionados a los dispositivos Climaware desarrollados por JonathanBytes',
-}
+    "Políticas de privacidad de los servicios relacionados a los dispositivos Climaware desarrollados por JonathanBytes",
+};
 
 export default function About() {
   return (
     <>
       <HeroCustom
-        title={'Política de privacidad'}
+        title={"Política de privacidad"}
         className="text-foreground h-[150px]"
       />
       <main>
@@ -98,7 +98,7 @@ export default function About() {
             </ul>
             <p>
               Para ejercer estos derechos, puede contactarnos en cualquier
-              momento a través del correo electrónico:{' '}
+              momento a través del correo electrónico:{" "}
               <a href="mailto:contacto@jonathanbytes.com">
                 contacto@jonathanbytes.com
               </a>
@@ -123,7 +123,7 @@ export default function About() {
               de privacidad o el manejo de sus datos, puede contactarnos en:
             </p>
             <p>
-              <strong>Correo electrónico:</strong>{' '}
+              <strong>Correo electrónico:</strong>{" "}
               <a href="mailto:contacto@jonathanbytes.com">
                 contacto@jonathanbytes.com
               </a>
@@ -137,5 +137,5 @@ export default function About() {
         <p />
       </main>
     </>
-  )
+  );
 }

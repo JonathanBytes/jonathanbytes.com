@@ -1,12 +1,16 @@
-import Hero from './components/Hero'
-import { Hearth } from './components/Icons'
+import Hero from "./components/Hero";
+import { Hearth } from "./components/Icons";
+
+// import { useEffect } from 'react'
+// const hello = 'hello'
 
 export const metadata = () => {
   return {
-    title: 'JonathanBytes',
-    description: 'Landing page of JonathanBytes personal website',
-  }
-}
+    title: "JonathanBytes",
+    description: "Landing page of JonathanBytes personal website",
+  };
+};
+// useEfffec((){})
 
 export default function Index() {
   return (
@@ -26,5 +30,5 @@ export default function Index() {
         <p />
       </main>
     </>
-  )
+  );
 }

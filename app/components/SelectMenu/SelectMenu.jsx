@@ -1,12 +1,11 @@
-'use client'
+"use client";
 
-import React from 'react'
-import styles from './selectMenu.module.css'
+import styles from "./selectMenu.module.css";
 
 const SelectMenu = ({ onSortingChange }) => {
   const handleSortingSelectChange = (event) => {
-    onSortingChange?.(event.target.value)
-  }
+    onSortingChange?.(event.target.value);
+  };
 
   return (
     <div className={`${styles.customSelect} `}>
@@ -38,7 +37,7 @@ const SelectMenu = ({ onSortingChange }) => {
         </option>
       </select>
     </div>
-  )
-}
+  );
+};
 
-export default SelectMenu
+export default SelectMenu;

@@ -1,6 +1,6 @@
-import ThemeSwitch from './theme/ThemeSwitch'
-import Dropdown from './Dropdown'
-import ListItemLink from './ListItemLink'
+import Dropdown from "./Dropdown";
+import ListItemLink from "./ListItemLink";
+import ThemeSwitch from "./theme/ThemeSwitch";
 
 export const DesktopNavBar = ({ className }) => {
   return (
@@ -15,8 +15,8 @@ export const DesktopNavBar = ({ className }) => {
         <Dropdown type="desktop" />
       </ul>
     </nav>
-  )
-}
+  );
+};
 
 export const MobileNavBar = ({
   onClick,
@@ -28,7 +28,7 @@ export const MobileNavBar = ({
     <nav
       className={`${className} flex flex-col justify-between`}
       id="primary-navigation"
-      style={{ height: '100%' }}
+      style={{ height: "100%" }}
       {...props}
     >
       <ul className={`list-none flex flex-col gap-6 items-center`}>
@@ -55,5 +55,5 @@ export const MobileNavBar = ({
         initialUserColors={initialUserColors}
       />
     </nav>
-  )
-}
+  );
+};

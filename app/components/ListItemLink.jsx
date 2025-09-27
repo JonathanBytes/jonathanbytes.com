@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import Link from "next/link";
 
 const ListItemLink = ({ children, onClick, href, className }) => {
   return (
@@ -7,7 +7,7 @@ const ListItemLink = ({ children, onClick, href, className }) => {
         {children}
       </Link>
     </li>
-  )
-}
+  );
+};
 
-export default ListItemLink
+export default ListItemLink;

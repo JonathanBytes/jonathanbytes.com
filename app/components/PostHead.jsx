@@ -1,6 +1,6 @@
-import PostBanner from './PostBanner/PostBanner.jsx'
-import { PillCategories } from './Pill/Pill.jsx'
-import ReadTime from './ReadTime.jsx'
+import { PillCategories } from "./Pill/Pill.jsx";
+import PostBanner from "./PostBanner/PostBanner.jsx";
+import ReadTime from "./ReadTime.jsx";
 
 const PostHead = ({ frontmatter }) => {
   return (
@@ -17,7 +17,7 @@ const PostHead = ({ frontmatter }) => {
       </div>
       <h1>{frontmatter.title}</h1>
     </>
-  )
-}
+  );
+};
 
-export default PostHead
+export default PostHead;

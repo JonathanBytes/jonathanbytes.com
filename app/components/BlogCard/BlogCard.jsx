@@ -1,11 +1,11 @@
-import styles from './blogCard.module.css'
-import { PillCategories } from '../Pill/Pill'
-import Link from 'next/link'
-import Image from 'next/image'
-import ReadTime from '../ReadTime'
+import Image from "next/image";
+import Link from "next/link";
+import { PillCategories } from "../Pill/Pill";
+import ReadTime from "../ReadTime";
+import styles from "./blogCard.module.css";
 
 function BlogCard({ slug, title, description, image, date, categories }) {
-  const currentCategory = categories === undefined ? [''] : categories
+  const currentCategory = categories === undefined ? [""] : categories;
   return (
     <li className={styles.blogCard}>
       <div className="relative">
@@ -31,7 +31,7 @@ function BlogCard({ slug, title, description, image, date, categories }) {
         </div>
       </Link>
     </li>
-  )
+  );
 }
 
-export default BlogCard
+export default BlogCard;

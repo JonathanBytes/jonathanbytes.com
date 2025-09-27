@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from "next/image";
 
 const githubCard = ({ name }) => {
   return (
@@ -10,7 +10,7 @@ const githubCard = ({ name }) => {
         alt={`JonathanBytes ${name} Github repository card`}
       />
     </a>
-  )
-}
+  );
+};
 
-export default githubCard
+export default githubCard;
