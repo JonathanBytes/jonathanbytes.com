@@ -8,7 +8,6 @@ Also, the website supports dark mode and colorthemes for the entire website incl
 
 ## TODO
 
-- [ ] Migrate All CSS To Tailwind
 - [ ] Projects Page
 - [ ] Scroll To Top Arrow
 - [ ] Noise/Paper Texture Background
@@ -19,6 +18,7 @@ Also, the website supports dark mode and colorthemes for the entire website incl
 - [ ] Comments Section On Blog Posts (maybe Using Disqus)
 - [ ] Contact Page
 - [ ] OpenGraph Protocol For The Entire Web (landing, Projects, Gallery, Blog, And Posts)
+- [x] Migrate All CSS To Tailwind (Most of it)
 - [x] [Dark mode](https://sreetamdas.com/blog/the-perfect-dark-mode)
   - [x] Make colors as CSS vars
   - [x] Make a way to select the theme
