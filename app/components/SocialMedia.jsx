@@ -1,4 +1,4 @@
-import { GitHub, Instagram, LinkedIn, YouTube } from "./Icons";
+import { GitHub, LinkedIn, YouTube } from "./Icons";
 
 const ListItem = ({ children, href }) => {
   return (
