@@ -33,10 +33,6 @@ const SocialMedia = () => {
         <YouTube />
         YouTube
       </ListItem>
-      <ListItem href="https://www.instagram.com/jonathancard10/">
-        <Instagram />
-        Instagram
-      </ListItem>
     </ul>
   );
 };
