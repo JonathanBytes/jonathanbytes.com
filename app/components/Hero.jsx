@@ -15,10 +15,10 @@ export default function Hero() {
           <AltText classname="m-0 inline" />
         </div>
       </div>
-      <div className="person w-2/3 md:w-auto">
-        <div className="person-container">
+      <div className="flex justify-center items-center w-2/3 md:w-auto hover:scale-105 transition-[transform_500ms_cubic-bezier(0.075,0.82,0.165,1)]">
+        <div className="w-[85%] aspect-[1/1.45] relative overflow-hidden rounded-tl-none rounded-tr-none rounded-br-[100vw] rounded-bl-[100vw]">
           <Image
-            className="person-img"
+            className="transition-[transform_500ms_cubic-bezier(0.075,0.82,0.165,1)] hover:scale-110 hover:-translate-y-[20px] absolute w-full bottom-[-70px] z-2"
             src="/assets/jonathan.webp"
             alt="Jonathan Cardona portrait photo"
             width="350"
@@ -26,7 +26,7 @@ export default function Hero() {
             decoding="async"
           />
           <Image
-            className="person-circle"
+            className="rotate-[-30deg] opacity-90 absolute aspect-square bottom-0 object-cover rounded-full w-full"
             src="/assets/texture.webp"
             alt="Geometric texture"
             decoding="async"

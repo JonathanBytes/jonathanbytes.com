@@ -1,5 +1,6 @@
 import Link from "next/link";
 import GithubCard from "../components/GithubCard/GithubCard";
+import { getGithubRepos } from "../../lib/getGithubRepos";
 
 export const metadata = () => {
   return {
@@ -9,21 +10,23 @@ export const metadata = () => {
 };
 
 const projectsNames = [
-  "dotfiles",
-  "LearningDB",
-  "ESPMidi-Footswitch",
   "totally-biased",
+  "ESPMidi-Footswitch",
+  "dotfiles",
   "nextjs-colorscheme-switch",
+  "LearningDB",
 ];
 
-export default function Projects() {
+export default async function Projects() {
+  const repos = await getGithubRepos(projectsNames);
+
   return (
     <main>
       <h1>Proyectos</h1>
       <p />
       <div className="flex gap-4 flex-wrap items-center justify-center w-full">
-        {projectsNames.map((name) => (
-          <GithubCard name={name} key={name} />
+        {repos.map((repo) => (
+          <GithubCard repo={repo} key={repo.id} />
         ))}
       </div>
       <p />

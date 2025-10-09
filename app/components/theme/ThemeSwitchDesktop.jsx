@@ -18,7 +18,7 @@ const ThemeSwitchDesktop = ({ className, userColors }) => {
       <button
         type="button"
         onClick={handleClick}
-        className="rounded-lg w-6 h-6 text-accent transform active:scale-75 transition-transform"
+        className="rounded-lg w-6 h-6 text-accent transform active:scale-75 transition-transform cursor-pointer"
       >
         <Pallette />
       </button>

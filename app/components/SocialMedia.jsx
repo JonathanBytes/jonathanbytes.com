@@ -1,4 +1,4 @@
-import { GitHub, Instagram, LinkedIn, YouTube } from "./Icons";
+import { GitHub, LinkedIn, YouTube } from "./Icons";
 
 const ListItem = ({ children, href }) => {
   return (
@@ -32,10 +32,6 @@ const SocialMedia = () => {
       <ListItem href="https://www.youtube.com/@JonathanCTutoriales">
         <YouTube />
         YouTube
-      </ListItem>
-      <ListItem href="https://www.instagram.com/jonathancard10/">
-        <Instagram />
-        Instagram
       </ListItem>
     </ul>
   );
