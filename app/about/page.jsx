@@ -6,6 +6,10 @@ export const metadata = {
   description: "About JonathanBytes",
 };
 
+const StyledParagraph = ({ children }) => (
+  <p className="text-xl leading-normal tracking-wide text-pretty">{children}</p>
+);
+
 export default function About() {
   return (
     <>
@@ -15,39 +19,35 @@ export default function About() {
         className="text-background dark:text-foreground"
         heroBGSrc={"/assets/interior.webp"}
       />
-      <main>
-        <p>
-          Soy una persona curiosa y apasionada por el conocimiento, atraído por
-          las leyes que rigen el universo y la naturaleza. Mi gran interés en la
-          física y el universo me llevó a estudiar Ingeniería Física para seguir
-          explorando y descubriendo más sobre estos temas.
-        </p>
-        <p>
-          Además de mi gran pasión por la física y el universo, tengo una gran
-          variedad de intereses y pasatiempos que me hacen una persona versátil:
-          incluyendo la música, la tecnología y el fitness.
-        </p>
-        <p>
-          Siempre busco ser una persona apasionada y dedicada que disfruta
-          explorando y aprendiendo en diferentes áreas, sin temor a enfrentarme
-          a desafíos nuevos y complejos. Mi amor por la música, la tecnología y
-          el fitness refleja mi objetivo de ser una persona equilibrada que
-          busca enriquecer su vida de muchas maneras diferentes. Además, me
-          encanta el senderismo y acampar al aire libre, y siempre busco la
-          oportunidad de conectarme con la naturaleza y apreciar su belleza.
-        </p>
-        <p>
-          Tengo la habilidad de dejar una huella positiva en las personas que
-          conozco y me enorgullece saber que siempre tengo un recuerdo bonito en
-          sus mentes. Me apasiona poner mi esfuerzo en las cosas que me gustan y
-          compartirlas con las personas que me rodean, buscando siempre mejorar
-          y crecer.
-        </p>
-        <p />
-        <Link href="/" className="btn">
+      <main className="max-w-[75ch]">
+        <StyledParagraph>
+          Soy una persona curiosa, con un interés genuino por entender cómo
+          funcionan las cosas y las leyes que rigen el universo. Ese interés me
+          llevó a estudiar Ingeniería Física, buscando aprender y descubrir un
+          poco más cada día.
+        </StyledParagraph>
+        <StyledParagraph>
+          Además de la física, me apasionan la música, la tecnología y el
+          gimnasio. Últimamente he desarrollado una gran fascinación por los
+          microcontroladores y la forma en que permiten conectar la programación
+          con el mundo físico, algo que disfruto explorar en mis proyectos
+          personales.
+        </StyledParagraph>
+        <StyledParagraph>
+          También me gusta mantenerme activo, salir a caminar o acampar para
+          reconectar con la naturaleza. Encuentro equilibrio en aprender cosas
+          nuevas, compartir lo que sé y disfrutar los procesos más que los
+          resultados.
+        </StyledParagraph>
+        <StyledParagraph>
+          Valoro la colaboración y las conexiones humanas; me gusta pensar que
+          dejo una impresión positiva en quienes me rodean. Más que buscar
+          destacar, intento seguir creciendo, aprendiendo y aportando en lo que
+          pueda.
+        </StyledParagraph>
+        <Link href="/" className="btn mt-12">
           Volver
         </Link>
-        <p />
       </main>
     </>
   );
