@@ -35,11 +35,14 @@
     "typed.js": "2.1.0"
   },
   "devDependencies": {
+    "@biomejs/biome": "2.2.0",
     "@tailwindcss/postcss": "^4.1.13",
-    "tailwindcss": "^4.1.13",
-    "postcss": "^8.5.6",
+    "@types/node": "25.0.9",
     "gray-matter": "4.0.3",
-    "@biomejs/biome": "2.2.0"
+    "lightningcss": "^1.30.2",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.13",
+    "typescript": "5.9.3"
   },
   "prettier": {
     "semi": false,
