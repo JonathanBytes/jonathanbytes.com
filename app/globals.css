@@ -80,7 +80,7 @@
   }
 
   /* Inline code (not in code blocks) */
-  :not(pre)>code:not([class*="language-"]) {
+  :not(pre) > code:not([class*="language-"]) {
     padding: 0.25rem 0.75rem;
     margin: 0 0.125rem;
     border-radius: 9999px;

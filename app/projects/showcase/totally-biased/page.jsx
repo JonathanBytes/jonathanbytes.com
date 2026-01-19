@@ -1,7 +1,7 @@
+import Image from "next/image";
+import ZoomableImage from "@/app/components/ZoomableImage";
 import { getGithubRepo } from "@/lib/getGithubRepos";
 import ShowcaseHero from "../components/showcaseHero";
-import ZoomableImage from "@/app/components/ZoomableImage";
-import Image from "next/image";
 
 export const metadata = {
   title: "Totally Biased",

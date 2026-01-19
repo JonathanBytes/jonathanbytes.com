@@ -1,6 +1,6 @@
 import Link from "next/link";
-import GithubCard from "../components/GithubCard/GithubCard";
 import { getGithubRepos } from "../../lib/getGithubRepos";
+import GithubCard from "../components/GithubCard/GithubCard";
 
 export const metadata = () => {
   return {

@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
+import { useCallback, useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 
 export default function ZoomableImage({ src, alt, className = "", ...props }) {

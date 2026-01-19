@@ -1,4 +1,4 @@
-import { Repo, Star, Fork } from "../Icons";
+import { Fork, Repo, Star } from "../Icons";
 
 const GithubCard = ({ repo }) => {
   const {
