@@ -2,11 +2,9 @@ import Link from "next/link";
 import { getGithubRepos } from "../../lib/getGithubRepos";
 import GithubCard from "../components/GithubCard/GithubCard";
 
-export const metadata = () => {
-  return {
-    title: "Projects",
-    description: "Projects of JonathanBytes website",
-  };
+export const metadata = {
+  title: "Projects",
+  description: "Projects of JonathanBytes website",
 };
 
 const projectsNames = [
