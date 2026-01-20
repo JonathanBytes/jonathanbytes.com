@@ -1,10 +1,4 @@
-import {
-  GitHub,
-  System,
-  Star,
-  Fork,
-  LinkIcon,
-} from "../../../components/Icons";
+import { Fork, GitHub, LinkIcon, Star } from "../../../components/Icons";
 
 export default function ShowcaseHero({ repo, customName }) {
   if (!repo) return null;

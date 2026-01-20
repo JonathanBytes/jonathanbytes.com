@@ -4,11 +4,9 @@ import { Hearth } from "./components/Icons";
 // import { useEffect } from 'react'
 // const hello = 'hello'
 
-export const metadata = () => {
-  return {
-    title: "JonathanBytes",
-    description: "Landing page of JonathanBytes personal website",
-  };
+export const metadata = {
+  title: "JonathanBytes",
+  description: "Landing page of JonathanBytes personal website",
 };
 // useEfffec((){})
 

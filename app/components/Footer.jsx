@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { MainLogo, GitHub } from "./Icons";
+import { GitHub, MainLogo } from "./Icons";
 import SocialMedia from "./SocialMedia";
 
 export default function Footer() {
