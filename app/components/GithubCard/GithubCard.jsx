@@ -1,9 +1,12 @@
-import { Fork, Repo, Star } from "../Icons";
+"use client";
+
+import { Fork, GitHub, LinkIcon, Repo, Star } from "../Icons";
 
 const GithubCard = ({ repo }) => {
   const {
     name,
     html_url,
+    homepage,
     description,
     stargazers_count,
     forks_count,
@@ -12,12 +15,7 @@ const GithubCard = ({ repo }) => {
   } = repo;
 
   return (
-    <a
-      href={html_url}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="block w-full max-w-sm p-6 bg-[var(--color-background)] border-2 border-[var(--color-altbg)] rounded-lg hover:border-[var(--color-primary)] transition-all hover:shadow-lg hover:opacity-100"
-    >
+    <div className="relative w-full max-w-sm p-6 bg-[var(--color-background)] border-2 border-[var(--color-altbg)] rounded-lg hover:border-[var(--color-primary)] transition-all hover:shadow-lg">
       {/* Header */}
       <div className="flex items-start gap-2 mb-3">
         <div className="flex items-center gap-2 min-w-0">
@@ -69,10 +67,36 @@ const GithubCard = ({ repo }) => {
               <Fork className="w-4 h-4" />
               <span>{forks_count}</span>
             </div>
+
+            {/* Action Buttons */}
+            <div className="ml-auto flex items-center gap-2">
+              <a
+                href={html_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                title="View source code"
+                onClick={(e) => e.stopPropagation()}
+                className="hover:text-[var(--color-primary)] transition-colors"
+              >
+                <GitHub className="w-5 h-5" />
+              </a>
+              {homepage && (
+                <a
+                  href={homepage}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Visit homepage"
+                  onClick={(e) => e.stopPropagation()}
+                  className="hover:text-[var(--color-primary)] transition-colors"
+                >
+                  <LinkIcon className="w-5 h-5" />
+                </a>
+              )}
+            </div>
           </div>
         </div>
       </div>
-    </a>
+    </div>
   );
 };
 

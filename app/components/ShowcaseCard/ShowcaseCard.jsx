@@ -1,10 +1,14 @@
+"use client";
+
 import Link from "next/link";
-import { Repo, Star, Fork } from "../Icons";
+import { Fork, GitHub, LinkIcon, Repo, Star } from "../Icons";
 
 const ShowcaseCard = ({ project }) => {
   const {
     name,
     slug,
+    html_url,
+    homepage,
     description,
     language,
     topics = [],
@@ -71,6 +75,36 @@ const ShowcaseCard = ({ project }) => {
                   <span>{forks_count}</span>
                 </div>
               </>
+            )}
+
+            {/* Action Button */}
+            {(html_url || homepage) && (
+              <div className="ml-auto flex items-center gap-2">
+                {html_url && (
+                  <a
+                    href={html_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="View source code"
+                    onClick={(e) => e.stopPropagation()}
+                    className="hover:text-[var(--color-primary)] transition-colors"
+                  >
+                    <GitHub className="w-5 h-5" />
+                  </a>
+                )}
+                {homepage && (
+                  <a
+                    href={homepage}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Visit homepage"
+                    onClick={(e) => e.stopPropagation()}
+                    className="hover:text-[var(--color-primary)] transition-colors"
+                  >
+                    <LinkIcon className="w-5 h-5" />
+                  </a>
+                )}
+              </div>
             )}
           </div>
         </div>

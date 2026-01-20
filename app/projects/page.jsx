@@ -19,6 +19,8 @@ const showcaseProjects = [
   {
     name: "Totally Biased",
     slug: "totally-biased",
+    html_url: "https://github.com/JonathanBytes/totally-biased",
+    homepage: "https://rank.jonathanbytes.com",
     description:
       "A subjective sort app to rank by taste, bias and gut instinct.",
     language: "TypeScript",
@@ -31,12 +33,13 @@ const showcaseProjects = [
       "convex",
       "tailwindcss",
     ],
-    stargazers_count: 5,
+    stargazers_count: 1,
     forks_count: 1,
   },
   {
     name: "SATMA",
     slug: "satma",
+    homepage: "https://devsatmadokploy.jonathanbytes.com",
     description:
       "Early Warning and Environmental Monitoring System for real-time hydrological data and automated alerts.",
     language: "TypeScript",
@@ -52,6 +55,7 @@ const showcaseProjects = [
   {
     name: "Climaware",
     slug: "climaware",
+    homepage: "https://climaware.jonathanbytes.com",
     description:
       "Real-time environmental monitoring system with Firebase integration and IoT sensors.",
     language: "TypeScript",
