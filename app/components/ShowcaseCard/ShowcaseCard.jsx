@@ -1,9 +1,10 @@
 "use client";
 
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { Fork, GitHub, LinkIcon, Repo, Star } from "../Icons";
 
 const ShowcaseCard = ({ project }) => {
+  const router = useRouter();
   const {
     name,
     slug,
@@ -16,10 +17,14 @@ const ShowcaseCard = ({ project }) => {
     forks_count = 0,
   } = project;
 
+  const handleCardClick = () => {
+    router.push(`/projects/showcase/${slug}`);
+  };
+
   return (
-    <Link
-      href={`/projects/showcase/${slug}`}
-      className="block w-full max-w-sm p-6 bg-[var(--color-background)] border-2 border-[var(--color-altbg)] rounded-lg hover:border-[var(--color-primary)] transition-all hover:shadow-lg hover:opacity-100"
+    <div
+      onClick={handleCardClick}
+      className="cursor-pointer w-full max-w-sm p-6 bg-[var(--color-background)] border-2 border-[var(--color-altbg)] rounded-lg hover:border-[var(--color-primary)] transition-all hover:shadow-lg"
     >
       {/* Header */}
       <div className="flex items-start gap-2 mb-3">
@@ -109,7 +114,7 @@ const ShowcaseCard = ({ project }) => {
           </div>
         </div>
       </div>
-    </Link>
+    </div>
   );
 };
 
